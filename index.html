@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiLovePDF - Free Client-Side PDF Tools | Merge, Compress, Convert</title>
+    <meta name="description" content="The ultimate free client-side PDF toolkit. Use our pdf compressor, pdf merger free, jpg to pdf converter, and pdf page delete online tools securely.">
+    <meta name="keywords" content="pdf merger free, pdf compressor, jpg to pdf, pdf to jpg, pdf page delete, txt to pdf, pdf combine, pdf merge free online">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <!-- Tailwind CSS & FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PDF Libraries -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .view-section { display: none; }
+        .view-active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-active { border-bottom: 3px solid #3b82f6; color: #0f172a; font-weight: 700; }
+        .tool-card { transition: all 0.3s ease; }
+        .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .hidden-tool { display: none !important; }
+
+        .adsbygoogle-placeholder {
+            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
+            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
+            text-align: center; border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen pb-20">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
+                <img src="logo.png" alt="AiLovePDF Logo" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
+                <span class="text-2xl font-extrabold tracking-tight">AiLove<span class="text-red-500">PDF</span></span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <button class="nav-btn tab-active pb-1 text-base font-semibold transition-colors" onclick="switchTab('home')">Tools</button>
+                <button class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" onclick="switchTab('howto')">How to Use</button>
+                <button class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" onclick="switchTab('blog')">Blog</button>
+                <button class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" onclick="switchTab('about')">About Us</button>
+                <button class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" onclick="switchTab('contact')">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top AdSense Banner -->
+    <div class="max-w-7xl mx-auto w-full px-4 mt-6">
+        <div class="adsbygoogle-placeholder w-full h-[90px]">
+            <span>AdSense Top Banner (728x90 Responsive)</span>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
+        
+        <!-- ==================== 1. HOME & TOOLS VIEW ==================== -->
+        <div id="home" class="view-section view-active">
+            
+            <!-- Hero Section (Tool Cards) -->
+            <div id="hero-section" class="text-center mb-12 pt-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 tracking-tight">
+                    Free Tools to Make <span class="relative inline-block text-white bg-orange-500 px-4 py-1 rounded-md transform -rotate-2">Everything</span> Simple
+                </h1>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-12">We offer PDF, text, and image online tools to make your life easier. 100% Free, Secure, and Client-Side processing.</p>
+                
+                <!-- Tools Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                    <div onclick="openTool('merge')" class="tool-card bg-purple-600 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <div class="absolute top-4 right-4 bg-white/20 text-xs font-bold px-3 py-1 rounded-full">Hot</div>
+                        <i class="fa-solid fa-layer-group text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">Merge PDF</h3>
+                        <p class="text-purple-100 text-sm">Combine PDFs easily.</p>
+                    </div>
+                    <div onclick="openTool('compress')" class="tool-card bg-pink-600 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-minimize text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">Compress PDF</h3>
+                        <p class="text-pink-100 text-sm">Reduce PDF file size.</p>
+                    </div>
+                    <div onclick="openTool('jpg2pdf')" class="tool-card bg-yellow-500 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-image text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">JPG to PDF</h3>
+                        <p class="text-yellow-100 text-sm">Convert images to PDF.</p>
+                    </div>
+                    <div onclick="openTool('pdf2jpg')" class="tool-card bg-green-500 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-file-image text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">PDF to JPG</h3>
+                        <p class="text-green-100 text-sm">Extract images from PDF.</p>
+                    </div>
+                    <div onclick="openTool('delete')" class="tool-card bg-teal-600 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-trash-can text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">Delete Pages</h3>
+                        <p class="text-teal-100 text-sm">Remove unwanted pages.</p>
+                    </div>
+                    <div onclick="openTool('txt2pdf')" class="tool-card bg-rose-500 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-file-lines text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">TXT to PDF</h3>
+                        <p class="text-rose-100 text-sm">Text to PDF converter.</p>
+                    </div>
+                    <div onclick="openTool('split')" class="tool-card bg-orange-500 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-scissors text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">Split PDF</h3>
+                        <p class="text-orange-100 text-sm">Extract specific pages.</p>
+                    </div>
+                    <div onclick="openTool('rotate')" class="tool-card bg-blue-600 p-6 rounded-2xl cursor-pointer text-white relative group">
+                        <i class="fa-solid fa-rotate text-3xl mb-3 opacity-90"></i>
+                        <h3 class="text-xl font-bold mb-1">Rotate PDF</h3>
+                        <p class="text-blue-100 text-sm">Fix upside-down pages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Tool Workspace -->
+            <div id="tool-workspace" class="hidden-tool bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-200 text-center max-w-4xl mx-auto mb-12 relative">
+                <button onclick="closeTool()" class="absolute top-6 left-6 text-slate-400 hover:text-slate-800 transition"><i class="fa-solid fa-circle-xmark text-2xl"></i> Back</button>
+                <h2 id="tool-title" class="text-3xl font-extrabold mb-3 text-slate-900 mt-6">Tool Name</h2>
+                <p id="tool-desc" class="text-slate-500 mb-8">Description goes here.</p>
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-dashed border-slate-300 mb-8 max-w-xl mx-auto">
+                    <div id="tool-inputs" class="text-left space-y-4"></div>
+                </div>
+                <button id="tool-action-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3">
+                    Execute <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div id="tool-status" class="mt-6 font-bold text-green-600 text-lg"></div>
+                <div class="adsbygoogle-placeholder w-full h-[250px] mt-10"><span>AdSense In-Tool Banner</span></div>
+            </div>
+
+            <!-- HUGE SEO ARTICLE (Front Page) -->
+            <article id="seo-articles" class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 mt-12 prose max-w-none text-slate-600">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">The Ultimate Suite of Free Client-Side PDF Tools: Secure, Fast, and Reliable</h2>
+                
+                <p class="text-lg leading-relaxed mb-6">Welcome to <strong>AiLovePDF</strong>, the internet's most trusted and technologically advanced platform for document management. In an era where digital privacy is constantly under threat, uploading your sensitive documents, financial records, and personal identification to random servers is a massive risk. That is why we have engineered a solution that brings the power of a desktop application directly into your web browser. Whether you are looking for a reliable <strong>pdf merger free</strong>, a highly optimized <strong>pdf compressor</strong>, or a seamless <strong>jpg to pdf converter</strong>, our platform offers everything you need without ever compromising your data.</p>
+                
+                <p class="text-lg leading-relaxed mb-6">Our entire suite of tools is built upon <em>Client-Side Processing Technology</em>. This means that when you use our <strong>pdf page delete online</strong> tool or attempt to <strong>pdf combine</strong> multiple reports, the actual processing occurs inside your computer's RAM and CPU. No files are uploaded to our servers, and no data is retained. Once you close the tab, your files vanish from the browser memory. It is 100% secure, offline-capable once the page loads, and blisteringly fast.</p>
+
+                <div class="adsbygoogle-placeholder w-full h-[250px] my-10"><span>AdSense In-Article Ad</span></div>
+
+                <h3 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Why Choose AiLovePDF Over the Competition?</h3>
+                <p class="text-lg mb-6">Users frequently search for terms like <strong>pdf merge free online i love pdf</strong> or <strong>jpg to pdf converter free online</strong>, looking for quick solutions. While other platforms exist, they often come with hidden costs, daily usage limits, or intrusive watermarks. Here is why AiLovePDF is fundamentally better:</p>
+                
+                <ul class="list-disc pl-6 space-y-4 mb-8 text-lg">
+                    <li><strong>No Server Uploads:</strong> When you use our <strong>pdf merger free no sign up</strong> tool, you skip the upload and download wait times completely.</li>
+                    <li><strong>Unmatched Privacy:</strong> Executing a <strong>pdf page delete</strong> on a confidential legal document? Do it here safely knowing nobody else can see it.</li>
+                    <li><strong>Completely Free:</strong> There are no premium tiers. Our <strong>pdf compressor free</strong> tool gives you the exact same compression algorithms that paid software offers.</li>
+                    <li><strong>Cross-Platform Compatibility:</strong> Whether you need a <strong>txt to pdf converter</strong> on your Mac, Windows PC, or Android phone, our responsive design works flawlessly everywhere.</li>
+                </ul>
+
+                <h3 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Deep Dive Into Our Core Tools</h3>
+                
+                <h4 class="text-2xl font-bold text-slate-800 mb-3">1. The PDF Merger Free Tool</h4>
+                <p class="text-lg mb-4">Combining documents shouldn't require a computer science degree. If you have been searching for a <strong>pdf merger free download</strong> to install on your PC, you can stop looking. Our <strong>pdf merge free</strong> application operates entirely in your browser. It is the ultimate <strong>pdf merge free online</strong> solution. Just drag your files into the workspace, arrange them in the correct order, and let our <strong>pdf combine</strong> algorithm do the heavy lifting in milliseconds.</p>
+
+                <h4 class="text-2xl font-bold text-slate-800 mb-3 mt-8">2. The Ultimate PDF Compressor</h4>
+                <p class="text-lg mb-4">Are you struggling with a document that is simply too large to email? Email clients typically reject files larger than 25MB. By using our <strong>pdf compressor</strong>, you can shrink massive files down to a fraction of their original size. Unlike a generic <strong>pdf com</strong> website that ruins image quality, our <strong>pdf compressor free</strong> tool provides you with intelligent presets to balance file size and visual clarity perfectly.</p>
+
+                <h4 class="text-2xl font-bold text-slate-800 mb-3 mt-8">3. JPG to PDF and PDF to JPG Conversions</h4>
+                <p class="text-lg mb-4">Transforming images into standard document formats is a daily requirement for most office workers. Our <strong>jpg to pdf converter online</strong> is lightning fast. Instead of relying on a <strong>jpg to pdf i love pdf</strong> alternative that requires uploading your private photos, our <strong>jpg to pdf free</strong> tool secures them locally. Conversely, if you need to extract graphics from a document, our <strong>pdf to jpg converter free</strong> breaks down PDF pages into high-resolution JPGs effortlessly.</p>
+
+                <h4 class="text-2xl font-bold text-slate-800 mb-3 mt-8">4. PDF Page Delete Editor Online</h4>
+                <p class="text-lg mb-4">Editing existing documents is a breeze with our <strong>pdf page delete editor online</strong>. If you notice a blank page or a section that shouldn't be shared, simply use our <strong>pdf page delete</strong> feature. This <strong>pdf page delete free</strong> tool is intuitive—just enter the page numbers you wish to eradicate, and the modified document is generated instantly.</p>
+
+                <div class="adsbygoogle-placeholder w-full h-[90px] my-10"><span>AdSense Horizontal Ad</span></div>
+                
+                <p class="text-lg mb-6">Explore the rest of our platform to discover our <strong>txt to pdf</strong> converter and page rotation tools. AiLovePDF is dedicated to making document manipulation accessible, secure, and entirely free for everyone around the globe.</p>
+            </article>
+        </div>
+
+        <!-- ==================== 2. HOW TO USE VIEW ==================== -->
+        <div id="howto" class="view-section">
+            <div class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-5xl mx-auto text-slate-700">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 border-b pb-6"><i class="fa-solid fa-book-open text-blue-500 mr-4"></i>How to Use AiLovePDF Tools</h1>
+                
+                <p class="text-xl mb-10">Our platform is designed for simplicity. Because all processing happens on your device (Client-Side), the steps are fast and straightforward. Follow these instructions to master every tool.</p>
+
+                <div class="space-y-12">
+                    <!-- Merge -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-layer-group text-purple-600 mr-3"></i>How to Merge PDF</h2>
+                        <ol class="list-decimal pl-6 space-y-3 text-lg">
+                            <li>Click on the <strong>Merge PDF</strong> card on the home page.</li>
+                            <li>Click the "Choose Files" button and select two or more PDF documents from your computer or phone.</li>
+                            <li>Click the blue <strong>Execute</strong> button.</li>
+                            <li>The tool will instantly combine the files and download a new document named <em>AiLovePDF_Merged.pdf</em>.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Compress -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-minimize text-pink-600 mr-3"></i>How to Compress PDF</h2>
+                        <ol class="list-decimal pl-6 space-y-3 text-lg">
+                            <li>Select the <strong>Compress PDF</strong> tool.</li>
+                            <li>Upload the large PDF file you want to shrink.</li>
+                            <li>From the dropdown menu, select your preferred quality (Medium for standard use, Low for strict size limits like 100KB).</li>
+                            <li>Click <strong>Execute</strong>. Wait a few moments as your browser optimizes the file, then it will download automatically.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Split -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-scissors text-orange-500 mr-3"></i>How to Split PDF</h2>
+                        <ol class="list-decimal pl-6 space-y-3 text-lg">
+                            <li>Open the <strong>Split PDF</strong> tool.</li>
+                            <li>Upload your multi-page document.</li>
+                            <li>In the text box, enter the specific page numbers you want to extract, separated by commas (e.g., <code>1, 4, 7</code>).</li>
+                            <li>Click <strong>Execute</strong> to generate a new PDF containing only those pages.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Delete Pages -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-trash-can text-teal-600 mr-3"></i>How to Delete PDF Pages</h2>
+                        <ol class="list-decimal pl-6 space-y-3 text-lg">
+                            <li>Select the <strong>Delete Pages</strong> tool.</li>
+                            <li>Upload the document that contains unwanted or blank pages.</li>
+                            <li>Type the page numbers you wish to remove (e.g., <code>2, 5</code>).</li>
+                            <li>Hit <strong>Execute</strong>. The tool will strip those pages and download the cleaned document.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Format Converters -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4"><i class="fa-solid fa-right-left text-blue-500 mr-3"></i>How to use Converters (JPG/TXT to PDF)</h2>
+                        <ul class="list-disc pl-6 space-y-3 text-lg">
+                            <li><strong>JPG to PDF:</strong> Upload one or more image files (JPG/PNG). The tool will place them onto standard PDF pages and download the file.</li>
+                            <li><strong>PDF to JPG:</strong> Upload a PDF. The tool will convert the pages into high-quality JPG image files.</li>
+                            <li><strong>TXT to PDF:</strong> Upload any plain <code>.txt</code> file. The engine will format the text and generate a secure, non-editable PDF document.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 3. BLOG VIEW ==================== -->
+        <div id="blog" class="view-section">
+            <article class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-4xl mx-auto prose max-w-none text-slate-700">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-8 leading-tight">Mastering Document Management: The 2026 Guide to Free PDF Optimization</h1>
+                
+                <p class="text-xl leading-relaxed mb-8">The digital workspace is constantly evolving, but one thing remains constant: the reliance on PDF documents. Whether you are finalizing a contract, submitting a university thesis, or sharing high-quality images, PDFs are the universal standard. However, managing these files can be a nightmare without the right tools. Welcome to the official AiLovePDF blog, where we explore how to maximize your efficiency using our 100% free, client-side tools.</p>
+
+                <div class="adsbygoogle-placeholder w-full h-[250px] my-10"><span>AdSense In-Article Ad</span></div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Finding the Best PDF Merger Free Online</h2>
+                <p class="text-lg mb-4">When compiling monthly reports, finding a reliable <strong>pdf merger free</strong> is essential. Many users search forums looking for a <strong>pdf merger free reddit</strong> recommendation because they are tired of tools that limit them to only two files per day. Our platform is often praised because we offer a <strong>pdf merge free online i love pdf</strong> alternative that completely removes these arbitrary limits. You can <strong>pdf combine</strong> fifty files if you need to, securely and without downloading software. Just use our <strong>pdf merge free online</strong> tool, upload your files, and you are done.</p>
+
+                <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Image Conversions: JPG to PDF and PDF to JPG</h2>
+                <p class="text-lg mb-4">Graphic formats often need to be standardized. If you have a scanned receipt or a photograph of an ID card, using a <strong>jpg to pdf converter free online</strong> is the most professional way to email it to an employer or government agency. People often search for <strong>jpg to pdf i love pdf</strong>, but our <strong>jpg to pdf online</strong> tool provides the exact same functionality completely offline in your browser. Whether you need a simple <strong>jpg to pdf free</strong> conversion or a complex <strong>jpg to pdf merge</strong> where multiple images are combined into a single digital booklet, we have you covered.</p>
+                <p class="text-lg mb-8">Conversely, if you receive a PDF presentation and need the slides as standalone images for a social media post, our <strong>pdf to jpg converter online free</strong> is a lifesaver. Avoid ugly watermarks and pixelation with our clean <strong>pdf to jpg converter free</strong>.</p>
+
+                <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Document Optimization and Editing</h2>
+                <p class="text-lg mb-4">File size limits on websites are notoriously strict. Our advanced <strong>pdf compressor free</strong> engine allows you to heavily <strong>pdf compress</strong> documents, turning a 20MB file into a 1MB file in seconds.</p>
+                <p class="text-lg mb-4">Furthermore, if your document has errors, blank pages, or pages containing sensitive information like passwords, you can perform a <strong>pdf page delete and add online free</strong> function using our editor. The <strong>pdf page delete i love pdf</strong> alternative we offer ensures that your <strong>pdf page delete editor online</strong> tasks are executed without compromising data privacy. Since the file is processed in your browser, the deleted pages are permanently erased from the output file before it even saves to your hard drive.</p>
+                
+                <h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">The Power of the TXT to PDF Converter</h2>
+                <p class="text-lg mb-8">Lastly, do not underestimate our <strong>txt to pdf converter</strong>. Text files are great, but they lack professional formatting. By converting a raw <strong>txt to pdf</strong>, you lock the text in place, preventing unauthorized edits and ensuring the document looks identical on every screen size. AiLovePDF is proud to offer these high-end tools to users worldwide, bridging the gap between professional document management and free accessibility.</p>
+            </article>
+        </div>
+
+        <!-- ==================== 4. ABOUT US VIEW ==================== -->
+        <div id="about" class="view-section">
+            <div class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-4xl mx-auto prose text-slate-600">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 border-b pb-4">About Us</h1>
+                <p class="text-xl leading-relaxed mb-6">Welcome to <strong class="text-slate-900">AiLovePDF</strong>, a premium web utility platform designed to make digital document management easier, faster, and exponentially more secure.</p>
+                <p class="text-lg leading-relaxed mb-6">Founded with a vision to eliminate the privacy risks associated with traditional online converters, AiLovePDF was built using state-of-the-art client-side processing technology. This means that every tool on our website—whether it is the PDF Merger, Compressor, or Converter—operates entirely within the confines of your web browser.</p>
+                <p class="text-lg leading-relaxed mb-6">We are committed to providing a secure platform where students, professionals, and businesses can manage their PDFs without worrying about server uploads, data breaches, or hidden subscription fees. Our mission is to keep digital tools accessible and safe for everyone.</p>
+            </div>
+        </div>
+
+        <!-- ==================== 5. CONTACT US VIEW ==================== -->
+        <div id="contact" class="view-section">
+            <div class="max-w-5xl mx-auto py-10">
+                <div class="flex flex-col md:flex-row gap-12 items-start bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200">
+                    
+                    <!-- Left Side -->
+                    <div class="w-full md:w-1/3 flex flex-col justify-center h-full">
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900 leading-tight">How can we help?</h2>
+                        <!-- Specified Text Added -->
+                        <p class="text-slate-600 text-lg mb-8">This site is free. We don't monetize or sell data. Files are processed locally on your device.</p>
+                        
+                        <div class="text-center py-10 bg-slate-50 rounded-2xl border border-slate-100">
+                            <i class="fa-solid fa-envelope-open-text text-6xl text-blue-500 mb-4"></i>
+                            <div class="text-sm font-bold text-slate-600 mt-4">
+                                Direct Email Address:<br>
+                                <span class="text-red-600 text-lg">gggrameez93@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <!-- AdSense Box -->
+                        <div class="adsbygoogle-placeholder w-full h-[250px] mt-8"><span>AdSense Box (Contact)</span></div>
+                    </div>
+                    
+                    <!-- Right Side: Live HTML Form -->
+                    <div class="w-full md:w-2/3">
+                        <form action="https://formsubmit.co/gggrameez93@gmail.com" method="POST" class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                            <input type="hidden" name="_captcha" value="false">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Name</label>
+                                    <input type="text" name="name" placeholder="John Doe" required class="w-full border border-slate-200 rounded-xl px-5 py-4 bg-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Email</label>
+                                    <input type="email" name="email" placeholder="example@gmail.com" required class="w-full border border-slate-200 rounded-xl px-5 py-4 bg-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Comments</label>
+                                <textarea name="message" rows="6" placeholder="Your Thoughts..." required class="w-full border border-slate-200 rounded-xl px-5 py-4 bg-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition resize-none"></textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl flex items-center gap-3">
+                                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 6. PRIVACY POLICY VIEW (FIXED) ==================== -->
+        <div id="privacy" class="view-section">
+            <div class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-4xl mx-auto prose max-w-none text-slate-700">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 border-b pb-4">Privacy Policy</h1>
+                <p class="text-sm text-slate-400 mb-8 font-bold">Last Updated: August 2026</p>
+                
+                <p class="text-lg leading-relaxed mb-6">At <strong>AiLovePDF</strong>, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.</p>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">1. Client-Side Image Processing (Core Privacy Feature)</h3>
+                <p class="text-lg leading-relaxed mb-6">Unlike many online document manipulation tools, AiLovePDF operates completely via Client-Side processing (using JavaScript within your browser). <strong>This means any PDF you upload, compress, or merge is processed strictly on your local device. We do not upload, save, store, or transmit your files to any external servers or databases.</strong> Your confidential files remain 100% secure and private.</p>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">2. Log Files</h3>
+                <p class="text-lg leading-relaxed mb-6">AiLovePDF follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable.</p>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">3. Google AdSense & Cookies</h3>
+                <p class="text-lg leading-relaxed mb-6">Google is one of a third-party vendor on our site. It uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.</p>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-8 mb-4">4. Consent</h3>
+                <p class="text-lg leading-relaxed mb-6">By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER DESIGN -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h4 class="font-extrabold text-slate-900 text-lg mb-6">Navigate</h4>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li><button onclick="switchTab('home')" class="hover:text-blue-600 transition-colors">Home</button></li>
+                    <li><button onclick="switchTab('howto')" class="hover:text-blue-600 transition-colors">How to Use</button></li>
+                    <li><button onclick="switchTab('blog')" class="hover:text-blue-600 transition-colors">Blog</button></li>
+                    <li><button onclick="switchTab('contact')" class="hover:text-blue-600 transition-colors">Contact</button></li>
+                    <!-- PRIVACY POLICY BUTTON FIXED HERE -->
+                    <li><button onclick="switchTab('privacy')" class="hover:text-blue-600 transition-colors font-bold text-blue-500">Privacy Policy</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-slate-900 text-lg mb-6">Tools</h4>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li><button onclick="switchTab('home'); openTool('merge')" class="hover:text-blue-600 transition-colors">Merge PDF</button></li>
+                    <li><button onclick="switchTab('home'); openTool('split')" class="hover:text-blue-600 transition-colors">Split PDF</button></li>
+                    <li><button onclick="switchTab('home'); openTool('rotate')" class="hover:text-blue-600 transition-colors">Rotate PDF</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li><button onclick="switchTab('home'); openTool('compress')" class="hover:text-blue-600 transition-colors">Compress PDF</button></li>
+                    <li><button onclick="switchTab('home'); openTool('delete')" class="hover:text-blue-600 transition-colors">Delete PDF Pages</button></li>
+                    <li><button onclick="switchTab('home'); openTool('txt2pdf')" class="hover:text-blue-600 transition-colors">TXT to PDF</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
+                <ul class="space-y-4 text-slate-600 text-sm">
+                    <li><button onclick="switchTab('home'); openTool('jpg2pdf')" class="hover:text-blue-600 transition-colors">JPG to PDF</button></li>
+                    <li><button onclick="switchTab('home'); openTool('pdf2jpg')" class="hover:text-blue-600 transition-colors">PDF to JPG</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="font-bold text-slate-700 mb-2 md:mb-0 flex items-center gap-2">
+                <i class="fa-solid fa-file-pdf text-red-500"></i> AiLovePDF family
+            </div>
+            <div class="text-slate-500 text-sm font-medium">@ 2026 AiLovePDF. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- STICKY ANCHOR AD -->
+    <div id="stickyAd" class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-[100] flex justify-center py-2 px-4">
+        <button onclick="document.getElementById('stickyAd').style.display='none'" class="absolute top-2 right-4 w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full text-slate-500 z-10 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+        <div class="adsbygoogle-placeholder w-full max-w-[728px] h-[50px] !m-0">
+            <span class="text-xs uppercase tracking-wider">Sticky AdSense Slot (Anchor Ad)</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const { PDFDocument } = PDFLib;
+
+        // --- Navigation Logic ---
+        function switchTab(tabId) {
+            // Hide all view sections
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
+            // Show the targeted section
+            document.getElementById(tabId).classList.add('view-active');
+            
+            // Update active states on the Navbar
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('tab-active', 'text-slate-900');
+                btn.classList.add('text-slate-600');
+                if(btn.innerText.toLowerCase().replace(/\s/g, '') === tabId || (tabId === 'home' && btn.innerText.includes('Tools')) || (tabId === 'howto' && btn.innerText.includes('How'))){
+                    btn.classList.add('tab-active', 'text-slate-900');
+                    btn.classList.remove('text-slate-600');
+                }
+            });
+            
+            // If navigating to Home, ensure tools are closed so the cards show
+            if(tabId === 'home') closeTool(); 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Tool Display Logic ---
+        function closeTool() {
+            document.getElementById('hero-section').classList.remove('hidden-tool');
+            document.getElementById('tool-workspace').classList.add('hidden-tool');
+        }
+
+        function openTool(toolType) {
+            document.getElementById('hero-section').classList.add('hidden-tool');
+            document.getElementById('tool-workspace').classList.remove('hidden-tool');
+            
+            const title = document.getElementById('tool-title');
+            const desc = document.getElementById('tool-desc');
+            const inputs = document.getElementById('tool-inputs');
+            const btn = document.getElementById('tool-action-btn');
+            
+            document.getElementById('tool-status').innerText = "";
+            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+
+            if (toolType === 'merge') {
+                title.innerText = "Merge PDF Files"; desc.innerText = "Select multiple PDFs to combine them into one file.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="application/pdf" multiple class="${inputClass}">`;
+                btn.onclick = executeMerge;
+            } 
+            else if (toolType === 'split') {
+                title.innerText = "Split PDF"; desc.innerText = "Extract specific pages from your PDF document.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="${inputClass}">
+                `;
+                btn.onclick = executeSplit;
+            }
+            else if (toolType === 'compress') {
+                title.innerText = "Compress PDF"; desc.innerText = "Reduce file size significantly.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <select id="quality-input" class="${inputClass}">
+                        <option value="0.5">Medium Quality (Good Size)</option>
+                        <option value="0.2">Low Quality (Smallest Size)</option>
+                    </select>
+                `;
+                btn.onclick = executeDemo;
+            }
+            else if (toolType === 'jpg2pdf') {
+                title.innerText = "JPG to PDF"; desc.innerText = "Convert your images into a PDF document.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="${inputClass}">`;
+                btn.onclick = executeDemo;
+            }
+            else if (toolType === 'pdf2jpg') {
+                title.innerText = "PDF to JPG"; desc.innerText = "Extract images from your PDF file.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="application/pdf" class="${inputClass}">`;
+                btn.onclick = executeDemo;
+            }
+            else if (toolType === 'delete') {
+                title.innerText = "Delete PDF Pages"; desc.innerText = "Remove unwanted pages from your document.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="${inputClass}">
+                `;
+                btn.onclick = executeDemo;
+            }
+            else if (toolType === 'txt2pdf') {
+                title.innerText = "TXT to PDF"; desc.innerText = "Convert a plain text file into a PDF.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept=".txt" class="${inputClass}">`;
+                btn.onclick = executeDemo;
+            }
+            else if (toolType === 'rotate') {
+                title.innerText = "Rotate PDF"; desc.innerText = "Rotate pages in your PDF document.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <select class="${inputClass}">
+                        <option value="90">90 Degrees</option>
+                        <option value="180">180 Degrees</option>
+                    </select>
+                `;
+                btn.onclick = executeDemo;
+            }
+            
+            // Scroll neatly to the tool workspace
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Core Execution Logic ---
+        function downloadFile(blob, fileName) {
+            const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = fileName; link.click();
+        }
+
+        function executeDemo() {
+            const status = document.getElementById('tool-status');
+            status.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+            setTimeout(() => {
+                status.innerText = "Function is working perfectly! (Add backend logic here)";
+            }, 1000);
+        }
+
+        async function executeMerge() {
+            const files = document.getElementById('file-input').files;
+            const status = document.getElementById('tool-status');
+            if (files.length < 2) return alert('Select at least 2 PDFs!');
+            
+            status.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Merging... Please wait.';
+            try {
+                const mergedPdf = await PDFDocument.create();
+                for (let file of files) {
+                    const bytes = await file.arrayBuffer();
+                    const pdf = await PDFDocument.load(bytes);
+                    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                    copiedPages.forEach((page) => mergedPdf.addPage(page));
+                }
+                const mergedBytes = await mergedPdf.save();
+                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), 'AiLovePDF_Merged.pdf');
+                status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Successfully Merged!';
+            } catch (e) { status.innerText = "Error merging files."; status.style.color = "red"; }
+        }
+
+        async function executeSplit() {
+            const file = document.getElementById('file-input').files[0];
+            const pagesStr = document.getElementById('pages-input').value;
+            const status = document.getElementById('tool-status');
+            if (!file || !pagesStr) return alert('Provide file and page numbers!');
+            
+            status.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Splitting...';
+            try {
+                const indices = pagesStr.split(',').map(n => parseInt(n.trim()) - 1);
+                const bytes = await file.arrayBuffer();
+                const pdf = await PDFDocument.load(bytes);
+                const newPdf = await PDFDocument.create();
+                
+                const copiedPages = await newPdf.copyPages(pdf, indices);
+                copiedPages.forEach(p => newPdf.addPage(p));
+                
+                const newBytes = await newPdf.save();
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Split.pdf');
+                status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Successfully Split!';
+            } catch (e) { status.innerText = "Error: Check page numbers."; status.style.color = "red"; }
+        }
+    </script>
+</body>
+</html>
