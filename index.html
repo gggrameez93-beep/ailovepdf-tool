@@ -15,6 +15,13 @@
     <meta id="og-title" property="og:title" content="AiLovePDF - Free Client-Side PDF Tools">
     <meta id="og-desc" property="og:description" content="The ultimate free client-side PDF toolkit for fast, secure, in-browser document processing.">
     <meta property="og:site_name" content="AiLovePDF">
+    <meta id="og-image" property="og:image" content="https://www.ailovepdf.site/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta id="twitter-title" name="twitter:title" content="AiLovePDF - Free Client-Side PDF Tools">
+    <meta id="twitter-desc" name="twitter:description" content="The ultimate free client-side PDF toolkit for fast, secure, in-browser document processing.">
+    <meta name="twitter:image" content="https://www.ailovepdf.site/logo.png">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" id="schema-structured-data">
@@ -184,7 +191,7 @@
                     <li><strong>No Server Uploads:</strong> When you use our <strong>pdf merger free no sign up</strong> tool, you skip the upload and download wait times completely.</li>
                     <li><strong>Unmatched Privacy:</strong> Executing a <strong>pdf page delete</strong> on a confidential legal document? Do it here safely knowing nobody else can see it.</li>
                     <li><strong>Completely Free:</strong> There are no premium tiers. Our <strong>pdf compressor free</strong> tool gives you the exact same compression algorithms that paid software offers.</li>
-                    <li><strong>Cross-Platform Compatibility:</strong> Whether you need a <strong>txt to pdf converter</strong> on your Mac, Windows PC, or Android phone, our responsive design works flawlessly everywhere.</li>
+                    <li><strong>Cross-Platform Compatibility:</strong> Whether you need a <strong>txt to pdf converter</strong> on your Mac, Windows PC, Chromebook, or Android phone, our responsive design works flawlessly everywhere \u2014 since everything runs in the browser, there's nothing to install even on locked-down school or work Chromebooks.</li>
                 </ul>
 
                 <h3 class="text-3xl font-bold text-slate-900 mt-12 mb-6">Deep Dive Into Our Core Tools</h3>
@@ -549,16 +556,16 @@
         const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
         
         const routeConfig = {
-            '/': { view: 'home-view', title: 'AiLovePDF - Free Client-Side PDF Tools | Merge, Compress, Convert', desc: 'The ultimate free client-side PDF toolkit.' },
-            '/howto': { view: 'howto-view', title: 'How to Use AiLovePDF Tools | AiLovePDF', desc: 'Learn how to use our free PDF tools securely.' },
-            '/guide': { view: 'guide-view', title: 'PDF Optimization Guide 2026 | AiLovePDF', desc: 'Master document management with our client-side tools.' },
-            '/about': { view: 'about-view', title: 'About Us | AiLovePDF', desc: 'Learn about our privacy-first mission.' },
-            '/contact': { view: 'contact-view', title: 'Contact Us | AiLovePDF', desc: 'Get in touch with the AiLovePDF team.' },
-            '/privacy-policy': { view: 'privacy-view', title: 'Privacy Policy | AiLovePDF', desc: 'We process all files locally. Read our privacy policy.' },
+            '/': { view: 'home-view', title: 'AiLovePDF - Free Client-Side PDF Tools | Merge, Compress, Convert', desc: 'Free online PDF tools to merge, compress, split, rotate and convert PDF files. No sign up, no uploads \u2014 100% secure client-side processing in your browser.' },
+            '/howto': { view: 'howto-view', title: 'How to Use AiLovePDF Tools | AiLovePDF', desc: 'Step-by-step guides for using every free AiLovePDF tool \u2014 merge, compress, split, rotate and convert PDFs securely in your browser on any device.' },
+            '/guide': { view: 'guide-view', title: 'PDF Optimization Guide 2026 | AiLovePDF', desc: 'A complete 2026 guide to free client-side PDF optimization: merging, compressing and converting PDF files securely without uploading to a server.' },
+            '/about': { view: 'about-view', title: 'About Us | AiLovePDF', desc: 'Learn about AiLovePDF, a free privacy-first PDF toolkit built to process every file locally in your browser with zero server uploads.' },
+            '/contact': { view: 'contact-view', title: 'Contact Us | AiLovePDF', desc: 'Contact the AiLovePDF team with questions, feedback or support requests about our free client-side PDF tools.' },
+            '/privacy-policy': { view: 'privacy-view', title: 'Privacy Policy | AiLovePDF', desc: 'Read the AiLovePDF privacy policy. All PDF files are processed locally in your browser \u2014 we never upload, store or transmit your documents.' },
             
             // 1. MERGE PDF - EXPANDED SEO
             '/merge-pdf': { 
-                view: 'tool-view', toolKey: 'merge', title: 'Merge PDF Online Free | AiLovePDF', h1: 'Merge PDF Online Free', desc: 'Combine multiple PDF files into one single document locally.',
+                view: 'tool-view', toolKey: 'merge', title: 'Merge PDF Online Free | AiLovePDF', h1: 'Merge PDF Online Free', desc: 'Merge multiple PDF files online free, no sign up or upload limits. Combine PDFs into one document securely in your browser on desktop or mobile.',
                 toolDesc: 'Select multiple PDFs to combine them into one file.',
                 seoHtml: `
                     <h2>Combine Multiple PDF Files into One Securely</h2>
@@ -591,7 +598,7 @@
 
             // 2. COMPRESS PDF - EXPANDED SEO
             '/compress-pdf': { 
-                view: 'tool-view', toolKey: 'compress', title: 'Compress PDF Online Free | AiLovePDF', h1: 'Compress PDF Online Free', desc: 'Reduce PDF file size online without losing readability.',
+                view: 'tool-view', toolKey: 'compress', title: 'Compress PDF Online Free | AiLovePDF', h1: 'Compress PDF Online Free', desc: 'Compress PDF online free to 100kb, 200kb or smaller without losing quality. Reduce PDF file size securely in your browser \u2014 no uploads, no watermark.',
                 toolDesc: 'Reduce file size significantly.',
                 seoHtml: `
                     <h2>Reduce PDF File Size Online for Free</h2>
@@ -624,7 +631,7 @@
 
             // 3. JPG TO PDF - EXPANDED SEO
             '/jpg-to-pdf': { 
-                view: 'tool-view', toolKey: 'jpg2pdf', title: 'JPG to PDF Converter Online Free | AiLovePDF', h1: 'JPG to PDF Converter Online Free', desc: 'Convert JPG images to PDF locally.',
+                view: 'tool-view', toolKey: 'jpg2pdf', title: 'JPG to PDF Converter Online Free | AiLovePDF', h1: 'JPG to PDF Converter Online Free', desc: 'Convert JPG or PNG images to PDF online free. Combine multiple photos into one PDF document instantly and securely in your browser, no sign up required.',
                 toolDesc: 'Convert your images into a PDF document.',
                 seoHtml: `
                     <h2>Convert JPG Images to PDF Securely</h2>
@@ -657,7 +664,7 @@
 
             // 4. PDF TO JPG - EXPANDED SEO
             '/pdf-to-jpg': { 
-                view: 'tool-view', toolKey: 'pdf2jpg', title: 'PDF to JPG Converter Online Free | AiLovePDF', h1: 'PDF to JPG Converter Online Free', desc: 'Extract pages as JPG images.',
+                view: 'tool-view', toolKey: 'pdf2jpg', title: 'PDF to JPG Converter Online Free | AiLovePDF', h1: 'PDF to JPG Converter Online Free', desc: 'Convert PDF pages to high-quality JPG images online free. Extract images from any PDF instantly in your browser \u2014 no uploads, no software required.',
                 toolDesc: 'Extract images from your PDF file.',
                 seoHtml: `
                     <h2>Extract Images from PDF Pages Instantly</h2>
@@ -690,7 +697,7 @@
 
             // 5. DELETE PDF PAGES - EXPANDED SEO
             '/delete-pdf-pages': { 
-                view: 'tool-view', toolKey: 'delete', title: 'Delete PDF Pages Online Free | AiLovePDF', h1: 'Delete PDF Pages Online Free', desc: 'Remove pages from PDF.',
+                view: 'tool-view', toolKey: 'delete', title: 'Delete PDF Pages Online Free | AiLovePDF', h1: 'Delete PDF Pages Online Free', desc: 'Delete or remove unwanted pages from a PDF online free. Select exact page numbers and download the edited file instantly and securely in your browser.',
                 toolDesc: 'Remove unwanted pages from your document.',
                 seoHtml: `
                     <h2>Remove Unwanted Pages from PDF Files</h2>
@@ -723,7 +730,7 @@
 
             // 6. TXT TO PDF - EXPANDED SEO
             '/txt-to-pdf': { 
-                view: 'tool-view', toolKey: 'txt2pdf', title: 'TXT to PDF Converter Online Free | AiLovePDF', h1: 'TXT to PDF Converter Online Free', desc: 'Convert Text to PDF files.',
+                view: 'tool-view', toolKey: 'txt2pdf', title: 'TXT to PDF Converter Online Free | AiLovePDF', h1: 'TXT to PDF Converter Online Free', desc: 'Convert TXT files to PDF online free. Turn plain text or code notes into a clean, secure, non-editable PDF document instantly in your browser.',
                 toolDesc: 'Convert a plain text file into a PDF.',
                 seoHtml: `
                     <h2>Convert Plain Text Files to PDF Format</h2>
@@ -756,7 +763,7 @@
 
             // 7. SPLIT PDF - EXPANDED SEO
             '/split-pdf': { 
-                view: 'tool-view', toolKey: 'split', title: 'Split PDF Online Free | AiLovePDF', h1: 'Split PDF Online Free', desc: 'Extract specific pages from PDF files.',
+                view: 'tool-view', toolKey: 'split', title: 'Split PDF Online Free | AiLovePDF', h1: 'Split PDF Online Free', desc: 'Split a PDF online free and extract specific pages or ranges into a new document. Fast, secure browser-based PDF splitter \u2014 no sign up, no uploads.',
                 toolDesc: 'Extract specific pages from your PDF document.',
                 seoHtml: `
                     <h2>Extract Pages and Split PDF Files Easily</h2>
@@ -789,7 +796,7 @@
 
             // 8. ROTATE PDF - EXPANDED SEO
             '/rotate-pdf': { 
-                view: 'tool-view', toolKey: 'rotate', title: 'Rotate PDF Pages Online Free | AiLovePDF', h1: 'Rotate PDF Pages Online Free', desc: 'Fix sideways PDF pages.',
+                view: 'tool-view', toolKey: 'rotate', title: 'Rotate PDF Pages Online Free | AiLovePDF', h1: 'Rotate PDF Pages Online Free', desc: 'Rotate PDF pages online free to fix upside-down or sideways scans. Permanently rotate 90\u00b0, 180\u00b0 or 270\u00b0 securely in your browser, no software needed.',
                 toolDesc: 'Rotate pages in your PDF document.',
                 seoHtml: `
                     <h2>Fix Upside-Down and Sideways PDF Pages</h2>
@@ -826,9 +833,38 @@
             const route = routeConfig[normalizedPath] || routeConfig['/'];
 
             // Update Meta Tags for SEO
+            const fullUrl = `https://www.ailovepdf.site${normalizedPath === '/' ? '/' : normalizedPath}`;
             document.getElementById('meta-title').innerText = route.title;
             document.getElementById('meta-desc').setAttribute('content', route.desc);
-            document.getElementById('meta-canonical').setAttribute('href', `https://www.ailovepdf.site${normalizedPath}`);
+            document.getElementById('meta-canonical').setAttribute('href', fullUrl);
+
+            // Keep Open Graph / Twitter Card in sync with the active route (was previously stuck on homepage values)
+            document.getElementById('og-title').setAttribute('content', route.title);
+            document.getElementById('og-desc').setAttribute('content', route.desc);
+            document.getElementById('og-url').setAttribute('content', fullUrl);
+            document.getElementById('twitter-title').setAttribute('content', route.title);
+            document.getElementById('twitter-desc').setAttribute('content', route.desc);
+
+            // Update structured data: WebSite + BreadcrumbList always, SoftwareApplication for tool pages
+            const graph = [
+                { "@type": "WebSite", "@id": "https://www.ailovepdf.site/#website", "url": "https://www.ailovepdf.site/", "name": "AiLovePDF", "description": "Free client-side online PDF tools." },
+                { "@type": "BreadcrumbList", "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ailovepdf.site/" },
+                    ...(normalizedPath !== '/' ? [{ "@type": "ListItem", "position": 2, "name": route.h1 || route.title.split('|')[0].trim(), "item": fullUrl }] : [])
+                ]}
+            ];
+            if (route.view === 'tool-view') {
+                graph.push({
+                    "@type": "SoftwareApplication",
+                    "name": route.h1,
+                    "url": fullUrl,
+                    "applicationCategory": "Utility",
+                    "operatingSystem": "Any (Web Browser)",
+                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                    "description": route.desc
+                });
+            }
+            document.getElementById('schema-structured-data').textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
             
             // Hide all views, show active
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
