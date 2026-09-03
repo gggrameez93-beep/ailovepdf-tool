@@ -106,10 +106,10 @@
     </div>
 
     <!-- MAIN CONTENT AREA -->
-        <section class="max-w-4xl mx-auto mb-8 bg-blue-50 border border-blue-100 rounded-2xl p-6 md:p-8" aria-labelledby="route-intro-title">
-            <nav class="text-sm text-blue-700 mb-3"><a href="/" class="hover:underline">Home</a> <span aria-hidden="true">/</span> Compress PDF Online</nav>
+        <section id="route-intro" class="max-w-4xl mx-auto mb-8 bg-blue-50 border border-blue-100 rounded-2xl p-6 md:p-8" aria-labelledby="route-intro-title">
+            <nav class="text-sm text-blue-700 mb-3"><a href="/" onclick="switchTab('home'); return false;" class="hover:underline">Home</a> <span aria-hidden="true">/</span> <span id="route-intro-label">Compress PDF Online</span></nav>
             <h1 id="route-intro-title" class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">Compress PDF Online</h1>
-            <p class="text-slate-700 leading-relaxed">Reduce the size of a PDF for easier sharing and storage. Compression results depend on the document, browser and device, so always review the output before sending it.</p>
+            <p id="route-intro-desc" class="text-slate-700 leading-relaxed">Reduce the size of a PDF for easier sharing and storage. Compression results depend on the document, browser and device, so always review the output before sending it.</p>
         </section>
 
     <main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8">
@@ -866,6 +866,24 @@
             '/split-pdf': ['split', 'Split PDF Online Free | AiLovePDF', 'Create a new PDF from selected pages in your browser.'],
             '/rotate-pdf': ['rotate', 'Rotate PDF Pages Online Free | AiLovePDF', 'Rotate PDF pages directly in your browser.']
         };
+        const ROUTE_INTROS = {"/merge-pdf":["Merge PDF Online","Combine multiple PDF files into one document in your browser. Select your files, arrange them in the required order, and create a single PDF without a dedicated PDF-processing upload server."],"/compress-pdf":["Compress PDF Online","Reduce the size of a PDF for easier sharing and storage. Compression results depend on the document, browser and device, so always review the output before sending it."],"/jpg-to-pdf":["JPG to PDF Converter","Convert JPG and other supported images into a PDF directly in your browser. This is useful for scans, receipts, photos, notes and image collections."],"/pdf-to-jpg":["PDF to JPG Converter","Render PDF pages as JPG images in your browser. Choose this tool when you need page images for sharing, previews or other everyday document workflows."],"/delete-pdf-pages":["Delete PDF Pages","Remove selected pages from a PDF and create a new copy. Enter the page numbers you want to remove, then review the resulting document."],"/txt-to-pdf":["TXT to PDF Converter","Turn a plain text file into a PDF using your browser. It is useful for simple notes, text documents and code snippets that need a printable PDF copy."],"/split-pdf":["Split PDF Online","Extract selected pages from a PDF and create a new document. Specify the page numbers or ranges you need, then download the resulting PDF."],"/rotate-pdf":["Rotate PDF Pages","Correct sideways or upside-down PDF pages by applying a 90°, 180° or 270° rotation in your browser."],"/how-to-use":["How to Use AiLovePDF","Step-by-step instructions for merging, compressing, converting, splitting, deleting and rotating PDF pages with the browser-based tools."],"/pdf-guide":["PDF Guide","Practical guidance for common PDF workflows, including choosing the right tool, preparing files and checking output quality."],"/about":["About AiLovePDF","Learn what AiLovePDF does, how its browser-based PDF tools work and what users should know about third-party services and document privacy."],"/contact":["Contact AiLovePDF","Send feedback, report a problem or ask a question about the PDF tools using the contact form."],"/privacy":["Privacy Policy","Read how AiLovePDF handles browser-based PDF processing, technical information, cookies, third-party services and contact-form submissions."],"/terms":["Terms & Conditions","Review the terms for using AiLovePDF, including acceptable use, service limitations and responsibilities when processing documents."],"/disclaimer":["Disclaimer","Important information about document-processing results, availability and your responsibility to review important files before relying on them."],"/cookies":["Cookie Policy","Information about cookies and similar technologies that may be used by AiLovePDF or third-party services enabled on the website."]};
+        function setRouteIntro(path) {
+            const section = document.getElementById('route-intro');
+            if (!section) return;
+            const data = ROUTE_INTROS[path];
+            if (!data) {
+                section.classList.add('hidden');
+                return;
+            }
+            const label = document.getElementById('route-intro-label');
+            const title = document.getElementById('route-intro-title');
+            const desc = document.getElementById('route-intro-desc');
+            if (label) label.textContent = data[0];
+            if (title) title.textContent = data[0];
+            if (desc) desc.textContent = data[1];
+            section.classList.remove('hidden');
+        }
+
         function setPageMeta(title, desc, canonicalPath) {
             document.title = title;
             let meta = document.querySelector('meta[name="description"]');
@@ -883,6 +901,7 @@
             if (push && location.pathname !== path) history.pushState({path}, '', path);
             const page = SEO_PAGES[path] || SEO_PAGES['/'];
             setPageMeta(page.title, page.desc, path);
+            setRouteIntro(path);
         }
         function openTool(toolType, push=true) {
             baseOpenTool(toolType);
@@ -890,7 +909,10 @@
             const path = routeByTool[toolType] || '/';
             if (push && location.pathname !== path) history.pushState({path}, '', path);
             const data = Object.values(TOOL_ROUTES).find(v => v[0] === toolType);
-            if (data) setPageMeta(data[1], data[2], path);
+            if (data) {
+                setPageMeta(data[1], data[2], path);
+                setRouteIntro(path);
+            }
         }
         function loadRoute(push=false) {
             const path = location.pathname.replace(/\/$/, '') || '/';
@@ -900,11 +922,13 @@
                 baseOpenTool(tool);
                 const data = TOOL_ROUTES[path];
                 setPageMeta(data[1], data[2], path);
+                setRouteIntro(path);
                 return;
             }
             const page = SEO_PAGES[path] || SEO_PAGES['/'];
             baseSwitchTab(page.tab);
             setPageMeta(page.title, page.desc, SEO_PAGES[path] ? path : '/');
+            setRouteIntro(SEO_PAGES[path] ? path : '/');
         }
         window.addEventListener('popstate', () => loadRoute(false));
         document.addEventListener('DOMContentLoaded', () => loadRoute(false));
