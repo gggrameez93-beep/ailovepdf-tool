@@ -284,8 +284,14 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 
         // --- Navigation Logic ---
         function baseSwitchTab(tabId) {
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
-            document.getElementById(tabId).classList.add('view-active');
+            const targetView = document.getElementById(tabId);
+            const views = document.querySelectorAll('.view-section');
+            if (!targetView) {
+                // Tool pages intentionally contain only the tool workspace, not the homepage SPA views.
+                return false;
+            }
+            views.forEach(el => el.classList.remove('view-active'));
+            targetView.classList.add('view-active');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('tab-active', 'text-slate-900');
@@ -307,12 +313,15 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             
             if(tabId === 'home') closeTool(); 
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Tool Display Logic ---
         function closeTool() {
-            document.getElementById('hero-section').classList.remove('hidden-tool');
-            document.getElementById('tool-workspace').classList.add('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (hero) hero.classList.remove('hidden-tool');
+            if (workspace) workspace.classList.add('hidden-tool');
         }
 
         const TOOL_SEO_CONTENT = {
@@ -336,8 +345,11 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         }
 
         function baseOpenTool(toolType) {
-            document.getElementById('hero-section').classList.add('hidden-tool');
-            document.getElementById('tool-workspace').classList.remove('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (!workspace) return false;
+            if (hero) hero.classList.add('hidden-tool');
+            workspace.classList.remove('hidden-tool');
             updateToolSeoHeader(toolType);
             
             const title = document.getElementById('tool-title');
@@ -409,6 +421,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Helper: Download File ---
@@ -510,7 +523,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- REUSABLE 5-SECOND COUNTDOWN & PROCESS WRAPPER ---
+        // --- PROCESS WRAPPER ---
         async function runWith5SecDelay(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
@@ -922,6 +935,14 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (heading) heading.textContent = data.title;
         }
         function switchTab(tabId, push=true) {
+            const targetView = document.getElementById(tabId);
+            if (!targetView) {
+                const routeByTab = {home:'/', howto:'/how-to-use', guide:'/pdf-guide', about:'/about', contact:'/contact', privacy:'/privacy', terms:'/terms', disclaimer:'/disclaimer', cookies:'/cookies'};
+                const destination = localPath(routeByTab[tabId] || '/');
+                if (typeof window.__navigateAiLovePDF === 'function') window.__navigateAiLovePDF(destination, push);
+                else window.location.href = destination;
+                return;
+            }
             baseSwitchTab(tabId);
             updateInfoSeoHeader(tabId);
             const routeByTab = {home:'/', howto:'/como-usar', guide:'/guia-pdf', about:'/sobre-nosotros', contact:'/contacto', privacy:'/privacidad', terms:'/terminos', disclaimer:'/aviso-legal', cookies:'/cookies'};
@@ -946,7 +967,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const path = getLocalRoute();
             if (LOCAL_TOOL_ROUTES[path]) {
                 const tool = LOCAL_TOOL_ROUTES[path].tool;
-                baseSwitchTab('home');
+                // Native tool pages do not contain the homepage SPA views. Initialize only the tool workspace.
                 baseOpenTool(tool);
                 updateToolSeoHeader(tool);
                 localizeDynamicToolUI(tool);
