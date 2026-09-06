@@ -494,8 +494,8 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- PROCESS WRAPPER ---
-        async function runWith5SecDelay(processCallback) {
+        // --- PROCESS WRAPPER (immediate; no artificial delay) ---
+        async function runProcess(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -504,7 +504,6 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
-                await new Promise(resolve => requestAnimationFrame(resolve));
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -525,7 +524,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const files = document.getElementById('file-input').files;
             if (files.length < 2) return alert('Wählen Sie mindestens 2 PDF-Dateien zum Zusammenführen aus.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
                 for (let file of files) {
@@ -545,7 +544,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert('Laden Sie ein PDF hoch und geben Sie die Seitenzahlen ein (z. B. 1, 3).');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -572,7 +571,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const quality = parseFloat(document.getElementById('quality-input').value);
             if (!file) return alert('Laden Sie eine PDF-Datei zum Komprimieren hoch.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
                 const fileBytes = await file.arrayBuffer();
@@ -609,7 +608,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const files = document.getElementById('file-input').files;
             if (files.length === 0) return alert('Wählen Sie mindestens ein Bild aus.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
                 for (let file of files) {
@@ -636,7 +635,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const file = input && input.files ? input.files[0] : null;
             if (!file) return alert('Please upload a PDF file.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
@@ -649,17 +648,13 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
                 const base = safeBaseName(file.name);
                 const entries = [];
                 const targetScale = 3.0;
-                const maxCanvasDimension = 8192;
-                const maxCanvasPixels = 50000000;
                 const digits = String(total).length;
 
                 for (let i = 1; i <= total; i++) {
                     setProgress(t('render', {i, total}), ((i - 1) / total) * 100);
                     const page = await pdf.getPage(i);
                     const natural = page.getViewport({ scale: targetScale });
-                    const dimensionScale = Math.min(1, maxCanvasDimension / Math.max(natural.width, natural.height));
-                    const pixelScale = Math.min(1, Math.sqrt(maxCanvasPixels / Math.max(1, natural.width * natural.height)));
-                    const renderScale = targetScale * Math.min(dimensionScale, pixelScale);
+                    const renderScale = targetScale;
                     const viewport = page.getViewport({ scale: renderScale });
                     const canvas = document.createElement('canvas');
                     canvas.width = Math.ceil(viewport.width);
@@ -691,7 +686,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert('Laden Sie ein PDF hoch und geben Sie die zu löschenden Seitenzahlen ein.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -716,9 +711,9 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         // 7. TXT TO PDF
         function executeTxtToPdf() {
             const file = document.getElementById('file-input').files[0];
-            if (!file) return alert('Wählen Sie eine Textdatei (.txt) aus.');
+            if (!file) return alert(t('txt'));
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
@@ -761,7 +756,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const angle = parseInt(document.getElementById('angle-input').value);
             if (!file) return alert('Laden Sie ein PDF zum Drehen hoch.');
 
-            runWith5SecDelay(async () => {
+            runProcess(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -924,12 +919,18 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (page) setPageMeta(page.title, page.desc, publicPath);
         }
         function openTool(toolType, push=true) {
-            baseOpenTool(toolType);
-            updateToolSeoHeader(toolType);
-            localizeDynamicToolUI(toolType);
             const routeByTool = {merge:'/pdf-zusammenfuegen', compress:'/pdf-komprimieren', jpg2pdf:'/jpg-zu-pdf', pdf2jpg:'/pdf-zu-jpg', delete:'/pdf-seiten-loeschen', txt2pdf:'/txt-zu-pdf', split:'/pdf-teilen', rotate:'/pdf-drehen'};
             const path = routeByTool[toolType] || '/';
             const publicPath = localPath(path);
+            // Single source of truth: every tool card/button uses the same SPA router.
+            // Never change only the URL; always load the destination page root too.
+            if (push && typeof window.__navigateAiLovePDF === 'function') {
+                window.__navigateAiLovePDF(publicPath, true);
+                return;
+            }
+            baseOpenTool(toolType);
+            updateToolSeoHeader(toolType);
+            localizeDynamicToolUI(toolType);
             if (push && location.pathname !== publicPath) history.pushState({path: publicPath}, '', publicPath);
             const data = LOCAL_TOOL_ROUTES[publicPath] || LOCAL_TOOL_ROUTES[path];
             if (data) setPageMeta(data.title, data.desc, publicPath);
@@ -959,23 +960,6 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         else initAiLovePDFRoute();
 
 
-        // Localized SPA navigation: keep all internal navigation in the current language without hard refreshes.
-        document.addEventListener('click', function (event) {
-            const a = event.target.closest && event.target.closest('a[href]');
-            if (!a || a.target === '_blank' || event.defaultPrevented) return;
-            const raw = a.getAttribute('href');
-            if (!raw || raw.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(raw)) return;
-            let url;
-            try { url = new URL(raw, location.origin); } catch (_) { return; }
-            if (url.origin !== location.origin) return;
-            const currentPrefix = SITE_ROUTE_PREFIX || '';
-            if (currentPrefix && !(url.pathname === currentPrefix || url.pathname.startsWith(currentPrefix + '/'))) return;
-            if (!currentPrefix && url.pathname !== '/' && url.pathname.startsWith('/' + ['es','fr','de','pt-br','ar'].find(x => url.pathname.startsWith('/'+x+'/')))) return;
-            event.preventDefault();
-            history.pushState({path:url.pathname}, '', url.pathname);
-            loadRoute(false);
-            window.scrollTo({top:0, behavior:'smooth'});
-        }, {capture:true});
 </script>
 <script>
 (function(){
@@ -998,6 +982,10 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
       if(!next) throw new Error('page root missing');
       if(push) history.pushState({path:u.pathname},'',u.pathname);
       const cur=pageRoot(); if(cur) cur.replaceWith(next);
+      if(doc.documentElement){
+        document.documentElement.lang = doc.documentElement.lang || document.documentElement.lang;
+        if(doc.documentElement.dir) document.documentElement.dir = doc.documentElement.dir;
+      }
       const headTags=[['title',''],['meta','name=description'],['link','rel=canonical'],['meta','property=og:title'],['meta','property=og:description'],['meta','property=og:url'],['meta','property=og:image'],['meta','name=twitter:title'],['meta','name=twitter:description'],['meta','name=twitter:image']];
       const sel=(t,k)=>k?document.head.querySelector(t+'['+k+']'):document.head.querySelector(t);
       const set=(t,k,attrs)=>{let el=sel(t,k); const src=doc.head.querySelector(t+(k?'['+k+']':'')); if(!src)return; if(!el){el=document.createElement(t); document.head.appendChild(el);} for(const a of src.attributes) el.setAttribute(a.name,a.value); if(t==='title') el.textContent=src.textContent;};
@@ -1017,7 +1005,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
     const pref=(typeof SITE_ROUTE_PREFIX!=='undefined'?SITE_ROUTE_PREFIX:'');
     if(pref && !(u.pathname===pref || u.pathname.startsWith(pref+'/'))) return;
     e.preventDefault(); navigateTo(u.href,true);
-  },true);
+  },false);
 })();
 </script>
 </body>
