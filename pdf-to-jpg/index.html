@@ -148,10 +148,10 @@
 <div class="adsbygoogle-placeholder w-full h-[90px]">
 <span>Advertisement</span>
 </div>
-</div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/pdf-to-jpg" id="page-root"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
+</div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/pdf-to-jpg" id="page-root" data-tool="pdf2jpg"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
 <!-- Two-container tool layout: localized SEO intro + separate tool card -->
 <div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-left" id="tool-seo-header">
-<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/">Home</a> / PDF to JPG</div>
+<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/pdf-to-jpg/">Home</a> / PDF to JPG</div>
 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight" id="tool-seo-title">PDF to JPG Converter</h1>
 <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl" id="tool-seo-desc">Convert PDF pages into JPG images directly in your browser.</p>
 </div>
@@ -267,24 +267,24 @@
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Tools</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">Merge PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Split PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Rotate PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/merge-pdf/">Merge PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/split-pdf/">Split PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/rotate-pdf/">Rotate PDF</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">Compress PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Delete PDF Pages</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">TXT to PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/compress-pdf/">Compress PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/delete-pdf-pages/">Delete PDF Pages</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/txt-to-pdf/">TXT to PDF</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">JPG to PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">PDF to JPG</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/jpg-to-pdf/">JPG to PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/pdf-to-jpg/">PDF to JPG</a></li>
 </ul>
 </div>
 </div>
@@ -1034,7 +1034,26 @@
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
         function initAiLovePDFRoute() {
-            try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
+            try {
+                const root = document.getElementById('page-root');
+                const directTool = root && root.dataset ? root.dataset.tool : '';
+                if (directTool && typeof baseOpenTool === 'function') {
+                    baseOpenTool(directTool);
+                    updateToolSeoHeader(directTool);
+                    localizeDynamicToolUI(directTool);
+                    const data = (typeof LOCAL_TOOL_ROUTES !== 'undefined') ? LOCAL_TOOL_ROUTES[getLocalRoute()] : null;
+                    if (data) setPageMeta(data.title, data.desc, localPath(getLocalRoute()));
+                    return;
+                }
+                loadRoute(false);
+            } catch (error) {
+                console.error('AiLovePDF route initialization failed:', error);
+                const root = document.getElementById('page-root');
+                const directTool = root && root.dataset ? root.dataset.tool : '';
+                if (directTool && typeof baseOpenTool === 'function') {
+                    try { baseOpenTool(directTool); localizeDynamicToolUI(directTool); } catch (_) {}
+                }
+            }
         }
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAiLovePDFRoute, { once: true });
         else initAiLovePDFRoute();
@@ -1063,14 +1082,15 @@
       if(push) history.pushState({path:u.pathname},'',u.pathname);
       const cur=pageRoot(); if(cur) cur.replaceWith(next);
       if(doc.documentElement){
-        document.documentElement.lang = doc.documentElement.lang || document.documentElement.lang;
-        if(doc.documentElement.dir) document.documentElement.dir = doc.documentElement.dir;
+        if(doc.documentElement.lang) document.documentElement.lang = doc.documentElement.lang;
+        document.documentElement.dir = doc.documentElement.dir || '';
       }
       const headTags=[['title',''],['meta','name=description'],['link','rel=canonical'],['meta','property=og:title'],['meta','property=og:description'],['meta','property=og:url'],['meta','property=og:image'],['meta','name=twitter:title'],['meta','name=twitter:description'],['meta','name=twitter:image']];
       const sel=(t,k)=>k?document.head.querySelector(t+'['+k+']'):document.head.querySelector(t);
       const set=(t,k,attrs)=>{let el=sel(t,k); const src=doc.head.querySelector(t+(k?'['+k+']':'')); if(!src)return; if(!el){el=document.createElement(t); document.head.appendChild(el);} for(const a of src.attributes) el.setAttribute(a.name,a.value); if(t==='title') el.textContent=src.textContent;};
       set('title','',{}); set('meta','name="description"',{}); set('link','rel="canonical"',{}); set('meta','property="og:title"',{}); set('meta','property="og:description"',{}); set('meta','property="og:url"',{}); set('meta','property="og:image"',{}); set('meta','name="twitter:title"',{}); set('meta','name="twitter:description"',{}); set('meta','name="twitter:image"',{});
-      const tool=(typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)])?LOCAL_TOOL_ROUTES[norm(u.pathname)].tool:null;
+      const fetchedTool=(next.dataset && next.dataset.tool) ? next.dataset.tool : null;
+      const tool=(fetchedTool || ((typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)]) ? LOCAL_TOOL_ROUTES[norm(u.pathname)].tool : null));
       if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); }
       window.scrollTo({top:0,behavior:'smooth'});
     }catch(e){ window.location.href=u.href; }
