@@ -255,8 +255,14 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 
         // --- Navigation Logic ---
         function baseSwitchTab(tabId) {
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
-            document.getElementById(tabId).classList.add('view-active');
+            const targetView = document.getElementById(tabId);
+            const views = document.querySelectorAll('.view-section');
+            if (!targetView) {
+                // Tool pages intentionally contain only the tool workspace, not the homepage SPA views.
+                return false;
+            }
+            views.forEach(el => el.classList.remove('view-active'));
+            targetView.classList.add('view-active');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('tab-active', 'text-slate-900');
@@ -278,12 +284,15 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             
             if(tabId === 'home') closeTool(); 
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Tool Display Logic ---
         function closeTool() {
-            document.getElementById('hero-section').classList.remove('hidden-tool');
-            document.getElementById('tool-workspace').classList.add('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (hero) hero.classList.remove('hidden-tool');
+            if (workspace) workspace.classList.add('hidden-tool');
         }
 
         const TOOL_SEO_CONTENT = {
@@ -307,8 +316,11 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         }
 
         function baseOpenTool(toolType) {
-            document.getElementById('hero-section').classList.add('hidden-tool');
-            document.getElementById('tool-workspace').classList.remove('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (!workspace) return false;
+            if (hero) hero.classList.add('hidden-tool');
+            workspace.classList.remove('hidden-tool');
             updateToolSeoHeader(toolType);
             
             const title = document.getElementById('tool-title');
@@ -380,6 +392,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Helper: Download File ---
@@ -481,7 +494,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- REUSABLE 5-SECOND COUNTDOWN & PROCESS WRAPPER ---
+        // --- PROCESS WRAPPER ---
         async function runWith5SecDelay(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
@@ -621,7 +634,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
-            if (!file) return alert('Please upload a PDF file.');
+            if (!file) return alert(t('pdf'));
 
             runWith5SecDelay(async () => {
                 ensurePdfJs();
@@ -636,17 +649,13 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
                 const base = safeBaseName(file.name);
                 const entries = [];
                 const targetScale = 3.0;
-                const maxCanvasDimension = 8192;
-                const maxCanvasPixels = 50000000;
                 const digits = String(total).length;
 
                 for (let i = 1; i <= total; i++) {
                     setProgress(t('render', {i, total}), ((i - 1) / total) * 100);
                     const page = await pdf.getPage(i);
                     const natural = page.getViewport({ scale: targetScale });
-                    const dimensionScale = Math.min(1, maxCanvasDimension / Math.max(natural.width, natural.height));
-                    const pixelScale = Math.min(1, Math.sqrt(maxCanvasPixels / Math.max(1, natural.width * natural.height)));
-                    const renderScale = targetScale * Math.min(dimensionScale, pixelScale);
+                    const renderScale = targetScale;
                     const viewport = page.getViewport({ scale: renderScale });
                     const canvas = document.createElement('canvas');
                     canvas.width = Math.ceil(viewport.width);
@@ -825,7 +834,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         const SITE_ROUTE_PREFIX = "/pt-br";
         const LOCAL_INFO_VISIBLE_SEO = {"home": {"title": "Ferramentas PDF online gratuitas", "desc": ""}, "howto": {"title": "Como usar as ferramentas AiLovePDF", "desc": ""}, "guide": {"title": "Guia de PDF: dicas práticas para tarefas comuns", "desc": ""}, "about": {"title": "Sobre a AiLovePDF", "desc": ""}, "contact": {"title": "Contate a AiLovePDF", "desc": ""}, "privacy": {"title": "Política de privacidade", "desc": ""}, "terms": {"title": "Termos e condições", "desc": ""}, "disclaimer": {"title": "Aviso legal", "desc": ""}, "cookies": {"title": "Política de cookies", "desc": ""}};
         const LOCAL_TOOL_SEO = {"merge": {"title": "Mesclar PDF", "desc": "Combine vários arquivos PDF em um documento diretamente no navegador.", "breadcrumb": "Início / Mesclar PDF"}, "compress": {"title": "Comprimir PDF online grátis", "desc": "Reduza o tamanho de um PDF diretamente no navegador com a AiLovePDF.", "breadcrumb": "Início / Comprimir PDF"}, "jpg2pdf": {"title": "Conversor JPG para PDF online grátis", "desc": "Converta imagens JPG e compatíveis para PDF diretamente no navegador.", "breadcrumb": "Início / JPG para PDF"}, "pdf2jpg": {"title": "Conversor PDF para JPG online grátis", "desc": "Converta páginas de PDF em imagens JPG diretamente no navegador.", "breadcrumb": "Início / PDF para JPG"}, "delete": {"title": "Excluir páginas de PDF online grátis", "desc": "Remova páginas selecionadas de um PDF diretamente no navegador.", "breadcrumb": "Início / Excluir páginas"}, "txt2pdf": {"title": "Conversor TXT para PDF online grátis", "desc": "Crie um PDF a partir de um arquivo de texto diretamente no navegador.", "breadcrumb": "Início / TXT para PDF"}, "split": {"title": "Dividir PDF online grátis", "desc": "Crie um novo PDF a partir de páginas selecionadas diretamente no navegador.", "breadcrumb": "Início / Dividir PDF"}, "rotate": {"title": "Girar páginas PDF online", "desc": "Gire páginas PDF diretamente no navegador.", "breadcrumb": "Início / Girar PDF"}};
-        const LOCAL_TOOL_UI = {"merge": {"title": "Mesclar PDF", "desc": "Selecione vários PDFs para combiná-los em um arquivo."}, "split": {"title": "Dividir PDF", "desc": "Extraia páginas específicas do seu documento PDF."}, "compress": {"title": "Comprimir PDF", "desc": "Reduza significativamente o tamanho do arquivo."}, "jpg2pdf": {"title": "JPG para PDF", "desc": "Converta suas imagens em um documento PDF."}, "pdf2jpg": {"title": "PDF para JPG", "desc": "Converta todas as páginas do PDF em imagens JPG de alta qualidade e baixe todas as páginas em um único ZIP."}, "delete": {"title": "Excluir páginas", "desc": "Remova páginas indesejadas do seu documento."}, "txt2pdf": {"title": "TXT para PDF", "desc": "Converta um arquivo de texto em PDF."}, "rotate": {"title": "Girar PDF", "desc": "Gire as páginas do seu documento PDF."}};
+        const LOCAL_TOOL_UI = {"merge": {"title": "Mesclar PDF", "desc": "Selecione vários PDFs para combiná-los em um arquivo."}, "split": {"title": "Dividir PDF", "desc": "Extraia páginas específicas do seu documento PDF."}, "compress": {"title": "Comprimir PDF", "desc": "Reduza significativamente o tamanho do arquivo."}, "jpg2pdf": {"title": "JPG para PDF", "desc": "Converta suas imagens em um documento PDF."}, "pdf2jpg": {"title": "PDF to JPG", "desc": "Convert all PDF pages into high-quality JPG images and download all pages in a single ZIP file."}, "delete": {"title": "Excluir páginas", "desc": "Remova páginas indesejadas do seu documento."}, "txt2pdf": {"title": "TXT para PDF", "desc": "Converta um arquivo de texto em PDF."}, "rotate": {"title": "Girar PDF", "desc": "Gire as páginas do seu documento PDF."}};
         const LOCAL_SEO_PAGES = {"/": {"tab": "home", "title": "AiLovePDF - Ferramentas PDF online gratuitas | Mesclar, comprimir e converter", "desc": "Ferramentas PDF gratuitas no navegador para mesclar, comprimir, dividir, girar e converter arquivos PDF."}, "/como-usar": {"tab": "howto", "title": "Como usar as ferramentas PDF da AiLovePDF", "desc": "Aprenda a usar as ferramentas PDF da AiLovePDF diretamente no navegador."}, "/guia-pdf": {"tab": "guide", "title": "Guia de PDF | AiLovePDF", "desc": "Orientações práticas para tarefas comuns com PDF usando as ferramentas AiLovePDF."}, "/sobre-nos": {"tab": "about", "title": "Sobre a AiLovePDF", "desc": "Conheça a AiLovePDF e suas ferramentas PDF baseadas no navegador."}, "/contato": {"tab": "contact", "title": "Contato | AiLovePDF", "desc": "Entre em contato com a AiLovePDF para dúvidas, feedback ou suporte."}, "/privacidade": {"tab": "privacy", "title": "Política de privacidade | AiLovePDF", "desc": "Leia a política de privacidade da AiLovePDF e saiba como funciona o processamento de PDF no navegador."}, "/termos": {"tab": "terms", "title": "Termos e condições | AiLovePDF", "desc": "Leia os termos e condições para usar a AiLovePDF."}, "/aviso-legal": {"tab": "disclaimer", "title": "Aviso legal | AiLovePDF", "desc": "Leia o aviso legal do serviço AiLovePDF."}, "/cookies": {"tab": "cookies", "title": "Política de cookies | AiLovePDF", "desc": "Leia a política de cookies da AiLovePDF."}};
         const LOCAL_TOOL_ROUTES = {"/mesclar-pdf": {"tool": "merge", "title": "Mesclar PDF online grátis | AiLovePDF", "desc": "Combine vários arquivos PDF em um documento diretamente no navegador."}, "/comprimir-pdf": {"tool": "compress", "title": "Comprimir PDF online grátis | AiLovePDF", "desc": "Reduza o tamanho de um PDF diretamente no navegador com a AiLovePDF."}, "/jpg-para-pdf": {"tool": "jpg2pdf", "title": "Conversor JPG para PDF online grátis | AiLovePDF", "desc": "Converta imagens JPG e compatíveis para PDF diretamente no navegador."}, "/pdf-para-jpg": {"tool": "pdf2jpg", "title": "Conversor PDF para JPG online grátis | AiLovePDF", "desc": "Converta páginas de PDF em imagens JPG diretamente no navegador."}, "/excluir-paginas-pdf": {"tool": "delete", "title": "Excluir páginas de PDF online grátis | AiLovePDF", "desc": "Remova páginas selecionadas de um PDF diretamente no navegador."}, "/txt-para-pdf": {"tool": "txt2pdf", "title": "Conversor TXT para PDF online grátis | AiLovePDF", "desc": "Crie um PDF a partir de um arquivo de texto diretamente no navegador."}, "/dividir-pdf": {"tool": "split", "title": "Dividir PDF online grátis | AiLovePDF", "desc": "Crie um novo PDF a partir de páginas selecionadas diretamente no navegador."}, "/girar-pdf": {"tool": "rotate", "title": "Girar páginas PDF online | AiLovePDF", "desc": "Gire páginas PDF diretamente no navegador."}};
 
@@ -893,6 +902,14 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (heading) heading.textContent = data.title;
         }
         function switchTab(tabId, push=true) {
+            const targetView = document.getElementById(tabId);
+            if (!targetView) {
+                const routeByTab = {home:'/', howto:'/how-to-use', guide:'/pdf-guide', about:'/about', contact:'/contact', privacy:'/privacy', terms:'/terms', disclaimer:'/disclaimer', cookies:'/cookies'};
+                const destination = localPath(routeByTab[tabId] || '/');
+                if (typeof window.__navigateAiLovePDF === 'function') window.__navigateAiLovePDF(destination, push);
+                else window.location.href = destination;
+                return;
+            }
             baseSwitchTab(tabId);
             updateInfoSeoHeader(tabId);
             const routeByTab = {home:'/', howto:'/como-usar', guide:'/guia-pdf', about:'/sobre-nos', contact:'/contato', privacy:'/privacidade', terms:'/termos', disclaimer:'/aviso-legal', cookies:'/cookies'};
@@ -903,12 +920,18 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (page) setPageMeta(page.title, page.desc, publicPath);
         }
         function openTool(toolType, push=true) {
-            baseOpenTool(toolType);
-            updateToolSeoHeader(toolType);
-            localizeDynamicToolUI(toolType);
             const routeByTool = {merge:'/mesclar-pdf', compress:'/comprimir-pdf', jpg2pdf:'/jpg-para-pdf', pdf2jpg:'/pdf-para-jpg', delete:'/excluir-paginas-pdf', txt2pdf:'/txt-para-pdf', split:'/dividir-pdf', rotate:'/girar-pdf'};
             const path = routeByTool[toolType] || '/';
             const publicPath = localPath(path);
+            // Single source of truth: every tool card/button uses the same SPA router.
+            // Never change only the URL; always load the destination page root too.
+            if (push && typeof window.__navigateAiLovePDF === 'function') {
+                window.__navigateAiLovePDF(publicPath, true);
+                return;
+            }
+            baseOpenTool(toolType);
+            updateToolSeoHeader(toolType);
+            localizeDynamicToolUI(toolType);
             if (push && location.pathname !== publicPath) history.pushState({path: publicPath}, '', publicPath);
             const data = LOCAL_TOOL_ROUTES[publicPath] || LOCAL_TOOL_ROUTES[path];
             if (data) setPageMeta(data.title, data.desc, publicPath);
@@ -917,7 +940,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const path = getLocalRoute();
             if (LOCAL_TOOL_ROUTES[path]) {
                 const tool = LOCAL_TOOL_ROUTES[path].tool;
-                baseSwitchTab('home');
+                // Native tool pages do not contain the homepage SPA views. Initialize only the tool workspace.
                 baseOpenTool(tool);
                 updateToolSeoHeader(tool);
                 localizeDynamicToolUI(tool);
@@ -930,7 +953,6 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             updateInfoSeoHeader(page.tab);
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
-        window.addEventListener('popstate', () => loadRoute(false));
         function initAiLovePDFRoute() {
             try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
         }
@@ -938,23 +960,6 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         else initAiLovePDFRoute();
 
 
-        // Localized SPA navigation: keep all internal navigation in the current language without hard refreshes.
-        document.addEventListener('click', function (event) {
-            const a = event.target.closest && event.target.closest('a[href]');
-            if (!a || a.target === '_blank' || event.defaultPrevented) return;
-            const raw = a.getAttribute('href');
-            if (!raw || raw.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(raw)) return;
-            let url;
-            try { url = new URL(raw, location.origin); } catch (_) { return; }
-            if (url.origin !== location.origin) return;
-            const currentPrefix = SITE_ROUTE_PREFIX || '';
-            if (currentPrefix && !(url.pathname === currentPrefix || url.pathname.startsWith(currentPrefix + '/'))) return;
-            if (!currentPrefix && url.pathname !== '/' && url.pathname.startsWith('/' + ['es','fr','de','pt-br','ar'].find(x => url.pathname.startsWith('/'+x+'/')))) return;
-            event.preventDefault();
-            history.pushState({path:url.pathname}, '', url.pathname);
-            loadRoute(false);
-            window.scrollTo({top:0, behavior:'smooth'});
-        }, {capture:true});
 </script>
 <script>
 (function(){
@@ -977,6 +982,10 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
       if(!next) throw new Error('page root missing');
       if(push) history.pushState({path:u.pathname},'',u.pathname);
       const cur=pageRoot(); if(cur) cur.replaceWith(next);
+      if(doc.documentElement){
+        document.documentElement.lang = doc.documentElement.lang || document.documentElement.lang;
+        if(doc.documentElement.dir) document.documentElement.dir = doc.documentElement.dir;
+      }
       const headTags=[['title',''],['meta','name=description'],['link','rel=canonical'],['meta','property=og:title'],['meta','property=og:description'],['meta','property=og:url'],['meta','property=og:image'],['meta','name=twitter:title'],['meta','name=twitter:description'],['meta','name=twitter:image']];
       const sel=(t,k)=>k?document.head.querySelector(t+'['+k+']'):document.head.querySelector(t);
       const set=(t,k,attrs)=>{let el=sel(t,k); const src=doc.head.querySelector(t+(k?'['+k+']':'')); if(!src)return; if(!el){el=document.createElement(t); document.head.appendChild(el);} for(const a of src.attributes) el.setAttribute(a.name,a.value); if(t==='title') el.textContent=src.textContent;};
@@ -996,7 +1005,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
     const pref=(typeof SITE_ROUTE_PREFIX!=='undefined'?SITE_ROUTE_PREFIX:'');
     if(pref && !(u.pathname===pref || u.pathname.startsWith(pref+'/'))) return;
     e.preventDefault(); navigateTo(u.href,true);
-  },true);
+  },false);
 })();
 </script>
 </body>

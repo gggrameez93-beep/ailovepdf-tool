@@ -525,8 +525,8 @@
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- PROCESS WRAPPER (immediate; no artificial delay) ---
-        async function runProcess(processCallback) {
+        // --- PROCESS WRAPPER ---
+        async function runWith5SecDelay(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -535,6 +535,7 @@
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
+                await new Promise(resolve => requestAnimationFrame(resolve));
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -555,7 +556,7 @@
             const files = document.getElementById('file-input').files;
             if (files.length < 2) return alert(t('merge'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
                 for (let file of files) {
@@ -575,7 +576,7 @@
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert(t('split'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -602,7 +603,7 @@
             const quality = parseFloat(document.getElementById('quality-input').value);
             if (!file) return alert(t('compress'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
                 const fileBytes = await file.arrayBuffer();
@@ -639,7 +640,7 @@
             const files = document.getElementById('file-input').files;
             if (files.length === 0) return alert(t('image'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
                 for (let file of files) {
@@ -664,9 +665,9 @@
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
-            if (!file) return alert('Please upload a PDF file.');
+            if (!file) return alert(t('pdf'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
@@ -717,7 +718,7 @@
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert(t('delete'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -744,7 +745,7 @@
             const file = document.getElementById('file-input').files[0];
             if (!file) return alert(t('txt'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
@@ -787,7 +788,7 @@
             const angle = parseInt(document.getElementById('angle-input').value);
             if (!file) return alert(t('rotate'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -983,7 +984,6 @@
             updateInfoSeoHeader(page.tab);
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
-        window.addEventListener('popstate', () => loadRoute(false));
         function initAiLovePDFRoute() {
             try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
         }

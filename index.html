@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script>
         (function () {
-            var languages = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).map(function (x) { return String(x).toLowerCase(); });
-            var lang = languages[0] || '';
+            var lang = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
             var path = window.location.pathname.replace(/\/+$/, '') || '/';
             if (path === '/index.html') path = '/';
             var target = null;
@@ -123,9 +123,8 @@
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
-
+<script defer="" src="/_vercel/insights/script.js"></script>
+<script defer="" src="/_vercel/speed-insights/script.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AiLovePDF","url":"https://www.ailovepdf.site/","logo":"https://www.ailovepdf.site/logo.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AiLovePDF","url":"https://www.ailovepdf.site/","inLanguage":"en"}</script>
 </head>
@@ -176,47 +175,47 @@
 <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-12">Merge, compress, split, rotate and convert PDF files in your browser. AiLovePDF is a simple client-side document toolkit with no account required for the listed tools.</p>
 <!-- Tools Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-<div class="tool-card bg-purple-600 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('merge')">
+<a aria_label="merge" class="tool-card bg-purple-600 p-6 rounded-2xl cursor-pointer text-white relative group" href="/merge-pdf/" onclick="openTool('merge'); return false;" role="link">
 <div class="absolute top-4 right-4 bg-white/20 text-xs font-bold px-3 py-1 rounded-full">Hot</div>
 <i class="fa-solid fa-layer-group text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">Merge PDF</h3>
 <p class="text-purple-100 text-sm">Combine PDFs easily.</p>
-</div>
-<div class="tool-card bg-pink-600 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('compress')">
+</a>
+<a aria_label="compress" class="tool-card bg-pink-600 p-6 rounded-2xl cursor-pointer text-white relative group" href="/compress-pdf/" onclick="openTool('compress'); return false;" role="link">
 <i class="fa-solid fa-minimize text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">Compress PDF</h3>
 <p class="text-pink-100 text-sm">Reduce PDF file size.</p>
-</div>
-<div class="tool-card bg-yellow-500 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('jpg2pdf')">
+</a>
+<a aria_label="jpg2pdf" class="tool-card bg-yellow-500 p-6 rounded-2xl cursor-pointer text-white relative group" href="/jpg-to-pdf/" onclick="openTool('jpg2pdf'); return false;" role="link">
 <i class="fa-solid fa-image text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">JPG to PDF</h3>
 <p class="text-yellow-100 text-sm">Convert images to PDF.</p>
-</div>
-<div class="tool-card bg-green-500 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('pdf2jpg')">
+</a>
+<a aria_label="pdf2jpg" class="tool-card bg-green-500 p-6 rounded-2xl cursor-pointer text-white relative group" href="/pdf-to-jpg/" onclick="openTool('pdf2jpg'); return false;" role="link">
 <i class="fa-solid fa-file-image text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">PDF to JPG</h3>
 <p class="text-green-100 text-sm">Extract images from PDF.</p>
-</div>
-<div class="tool-card bg-teal-600 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('delete')">
+</a>
+<a aria_label="delete" class="tool-card bg-teal-600 p-6 rounded-2xl cursor-pointer text-white relative group" href="/delete-pdf-pages/" onclick="openTool('delete'); return false;" role="link">
 <i class="fa-solid fa-trash-can text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">Delete Pages</h3>
 <p class="text-teal-100 text-sm">Remove unwanted pages.</p>
-</div>
-<div class="tool-card bg-rose-500 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('txt2pdf')">
+</a>
+<a aria_label="txt2pdf" class="tool-card bg-rose-500 p-6 rounded-2xl cursor-pointer text-white relative group" href="/txt-to-pdf/" onclick="openTool('txt2pdf'); return false;" role="link">
 <i class="fa-solid fa-file-lines text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">TXT to PDF</h3>
 <p class="text-rose-100 text-sm">Text to PDF converter.</p>
-</div>
-<div class="tool-card bg-orange-500 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('split')">
+</a>
+<a aria_label="split" class="tool-card bg-orange-500 p-6 rounded-2xl cursor-pointer text-white relative group" href="/split-pdf/" onclick="openTool('split'); return false;" role="link">
 <i class="fa-solid fa-scissors text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">Split PDF</h3>
 <p class="text-orange-100 text-sm">Extract specific pages.</p>
-</div>
-<div class="tool-card bg-blue-600 p-6 rounded-2xl cursor-pointer text-white relative group" onclick="openTool('rotate')">
+</a>
+<a aria_label="rotate" class="tool-card bg-blue-600 p-6 rounded-2xl cursor-pointer text-white relative group" href="/rotate-pdf/" onclick="openTool('rotate'); return false;" role="link">
 <i class="fa-solid fa-rotate text-3xl mb-3 opacity-90"></i>
 <h3 class="text-xl font-bold mb-1">Rotate PDF</h3>
 <p class="text-blue-100 text-sm">Fix upside-down pages.</p>
-</div>
+</a>
 </div>
 </div></main>
 <!-- MAIN CONTENT AREA -->
@@ -543,8 +542,8 @@
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- PROCESS WRAPPER (immediate; no artificial delay) ---
-        async function runProcess(processCallback) {
+        // --- PROCESS WRAPPER ---
+        async function runWith5SecDelay(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -553,6 +552,7 @@
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
+                await new Promise(resolve => requestAnimationFrame(resolve));
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -573,7 +573,7 @@
             const files = document.getElementById('file-input').files;
             if (files.length < 2) return alert(t('merge'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
                 for (let file of files) {
@@ -593,7 +593,7 @@
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert(t('split'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -620,7 +620,7 @@
             const quality = parseFloat(document.getElementById('quality-input').value);
             if (!file) return alert(t('compress'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
                 const fileBytes = await file.arrayBuffer();
@@ -657,7 +657,7 @@
             const files = document.getElementById('file-input').files;
             if (files.length === 0) return alert(t('image'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
                 for (let file of files) {
@@ -682,9 +682,9 @@
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
-            if (!file) return alert('Please upload a PDF file.');
+            if (!file) return alert(t('pdf'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
@@ -735,7 +735,7 @@
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert(t('delete'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -762,7 +762,7 @@
             const file = document.getElementById('file-input').files[0];
             if (!file) return alert(t('txt'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
@@ -805,7 +805,7 @@
             const angle = parseInt(document.getElementById('angle-input').value);
             if (!file) return alert(t('rotate'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -1001,7 +1001,6 @@
             updateInfoSeoHeader(page.tab);
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
-        window.addEventListener('popstate', () => loadRoute(false));
         function initAiLovePDFRoute() {
             try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
         }

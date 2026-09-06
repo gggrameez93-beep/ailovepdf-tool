@@ -523,8 +523,8 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             return new Blob(parts, { type: 'application/zip' });
         }
 
-        // --- PROCESS WRAPPER (immediate; no artificial delay) ---
-        async function runProcess(processCallback) {
+        // --- PROCESS WRAPPER ---
+        async function runWith5SecDelay(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -533,6 +533,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
+                await new Promise(resolve => requestAnimationFrame(resolve));
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -553,7 +554,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const files = document.getElementById('file-input').files;
             if (files.length < 2) return alert('Wählen Sie mindestens 2 PDF-Dateien zum Zusammenführen aus.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
                 for (let file of files) {
@@ -573,7 +574,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert('Laden Sie ein PDF hoch und geben Sie die Seitenzahlen ein (z. B. 1, 3).');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -600,7 +601,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const quality = parseFloat(document.getElementById('quality-input').value);
             if (!file) return alert('Laden Sie eine PDF-Datei zum Komprimieren hoch.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
                 const fileBytes = await file.arrayBuffer();
@@ -637,7 +638,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const files = document.getElementById('file-input').files;
             if (files.length === 0) return alert('Wählen Sie mindestens ein Bild aus.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
                 for (let file of files) {
@@ -662,9 +663,9 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
-            if (!file) return alert('Please upload a PDF file.');
+            if (!file) return alert(t('pdf'));
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
@@ -715,7 +716,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const pagesStr = document.getElementById('pages-input').value;
             if (!file || !pagesStr) return alert('Laden Sie ein PDF hoch und geben Sie die zu löschenden Seitenzahlen ein.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -740,9 +741,9 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         // 7. TXT TO PDF
         function executeTxtToPdf() {
             const file = document.getElementById('file-input').files[0];
-            if (!file) return alert(t('txt'));
+            if (!file) return alert('Wählen Sie eine Textdatei (.txt) aus.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
@@ -785,7 +786,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             const angle = parseInt(document.getElementById('angle-input').value);
             if (!file) return alert('Laden Sie ein PDF zum Drehen hoch.');
 
-            runProcess(async () => {
+            runWith5SecDelay(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
@@ -981,7 +982,6 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             updateInfoSeoHeader(page.tab);
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
-        window.addEventListener('popstate', () => loadRoute(false));
         function initAiLovePDFRoute() {
             try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
         }
