@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dividir PDF Online Gratis | AiLovePDF</title>
+<meta content="Crea un nuevo PDF a partir de páginas seleccionadas directamente en tu navegador." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="AiLovePDF" name="author"/>
+<link href="https://www.ailovepdf.site/es/dividir-pdf/" rel="canonical"/>
+<link href="https://www.ailovepdf.site/split-pdf/" hreflang="en" rel="alternate"/>
+<link href="https://www.ailovepdf.site/es/dividir-pdf/" hreflang="es" rel="alternate"/>
+<link href="https://www.ailovepdf.site/fr/diviser-pdf/" hreflang="fr" rel="alternate"/>
+<link href="https://www.ailovepdf.site/de/pdf-teilen/" hreflang="de" rel="alternate"/>
+<link href="https://www.ailovepdf.site/pt-br/dividir-pdf/" hreflang="pt-BR" rel="alternate"/>
+<link href="https://www.ailovepdf.site/ar/taqseem-pdf/" hreflang="ar" rel="alternate"/>
+<link href="https://www.ailovepdf.site/split-pdf/" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="AiLovePDF" property="og:site_name"/>
+<meta content="Dividir PDF Online Gratis | AiLovePDF" property="og:title"/>
+<meta content="Crea un nuevo PDF a partir de páginas seleccionadas directamente en tu navegador." property="og:description"/>
+<meta content="https://www.ailovepdf.site/es/dividir-pdf/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dividir PDF Online Gratis | AiLovePDF" name="twitter:title"/>
+<meta content="Combina, comprime, divide, gira y convierte archivos PDF directamente en tu navegador. AiLovePDF es un conjunto sencillo de herramientas para documentos, sin necesidad de crear una cuenta para las herramientas disponibles." name="twitter:description"/>
+<!-- Favicon -->
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<!-- Tailwind CSS & FontAwesome -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- PDF Libraries -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .view-section { display: none; }
+        .view-active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-active { border-bottom: 3px solid #3b82f6; color: #0f172a; font-weight: 700; }
+        .tool-card { transition: all 0.3s ease; }
+        .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .hidden-tool { display: none !important; }
+
+        .adsbygoogle-placeholder {
+            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
+            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
+            text-align: center; border-radius: 8px;
+        }
+    </style>
+<style>
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.9rem;
+            background: #fff;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-arrow {
+            flex: 0 0 auto;
+            font-size: 1.15rem;
+            transition: transform .2s ease;
+        }
+        .faq-item[open] .faq-arrow { transform: rotate(180deg); }
+        .faq-item > p {
+            margin: 0;
+            padding: 0 1.15rem 1.1rem;
+            line-height: 1.65;
+        }
+        @media (max-width: 640px) {
+            .faq-item summary { padding: .9rem; font-size: .95rem; }
+            .faq-item > p { padding: 0 .9rem 1rem; font-size: .9rem; }
+        }
+    </style>
+<style>
+    /* Tool page layout refinements */
+    #tool-workspace .tool-back-button { position: absolute; top: 1.5rem; left: 1.5rem; }
+    html[dir="rtl"] #tool-workspace .tool-back-button { left: auto; right: 1.5rem; }
+    html[dir="rtl"] #tool-workspace .text-left { text-align: right; }
+    @media (max-width: 640px) {
+        #tool-workspace .tool-back-button { top: 1.25rem; left: 1.25rem; }
+        html[dir="rtl"] #tool-workspace .tool-back-button { left: auto; right: 1.25rem; }
+    }
+</style>
+<style>
+/* Final production visual system */
+.final-content-card{background:#fff;border:1px solid #e2e8f0;border-radius:28px;max-width:1120px;margin:0 auto;padding:52px 64px;box-shadow:0 1px 2px rgba(15,23,42,.03);color:#334155}
+.final-content-card h1{font-size:clamp(2.25rem,4.5vw,4rem);line-height:1.12;font-weight:800;color:#0f172a;margin:0 0 26px;letter-spacing:-.02em}
+.final-content-card .guide-intro{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;text-align:center;margin:0 auto 38px;max-width:1050px;color:#334155}
+.final-content-card h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.25;font-weight:800;color:#0f172a;margin:48px 0 18px}
+.final-content-card p{font-size:1.08rem;line-height:1.85;margin:0 0 22px}
+.final-content-card .adsbygoogle-placeholder{border-radius:10px;background:#f1f5f9;border:2px dashed #cbd5e1;min-height:250px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
+.howto-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:26px 30px;margin:24px 0}
+.howto-step h2{margin:0 0 14px;font-size:1.55rem}
+.howto-step ol{margin:0;padding-left:1.5rem;line-height:1.8;font-size:1.05rem}
+.contact-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.contact-card .contact-copy h1{margin-bottom:20px}
+.contact-secure{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:8px;margin:24px 0}
+.contact-form-wrap h2{margin-top:0}
+.contact-form-wrap form{display:grid;gap:10px}
+.contact-form-wrap input,.contact-form-wrap textarea{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px;font:inherit;background:#fff}
+.contact-form-wrap button{border:0;border-radius:999px;padding:14px 24px;background:#2563eb;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+html[dir="rtl"] .final-content-card{text-align:right}
+html[dir="rtl"] .final-content-card h1,html[dir="rtl"] .final-content-card h2{text-align:right}
+html[dir="rtl"] .final-content-card .guide-intro{text-align:center}
+html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
+@media(max-width:768px){.final-content-card{padding:32px 22px;border-radius:22px}.contact-card{grid-template-columns:1fr;gap:28px}.final-content-card p{font-size:1rem;line-height:1.75}}
+</style><meta content="https://www.ailovepdf.site/assets/og/ailovepdf-pdf-tools.png" property="og:image"/><meta content="https://www.ailovepdf.site/assets/og/ailovepdf-pdf-tools.png" name="twitter:image"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Dividir PDF Online Gratis | AiLovePDF","description":"Crea un nuevo PDF a partir de páginas seleccionadas directamente en tu navegador.","url":"https://www.ailovepdf.site/es/dividir-pdf/","inLanguage":"es","isPartOf":{"@type":"WebSite","name":"AiLovePDF","url":"https://www.ailovepdf.site/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Dividir PDF Online","url":"https://www.ailovepdf.site/es/dividir-pdf/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","inLanguage":"es","description":""}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.ailovepdf.site/es/"},{"@type":"ListItem","position":2,"name":"Herramientas PDF online gratuitas","item":"https://www.ailovepdf.site/es/dividir-pdf/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito una cuenta para usar AiLovePDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"No. Las herramientas PDF disponibles pueden utilizarse sin crear una cuenta."}},{"@type":"Question","name":"¿Mis archivos PDF se suben a un servidor? ⌄","acceptedAnswer":{"@type":"Answer","text":"El procesamiento PDF disponible está diseñado para ejecutarse en tu navegador y no requiere un servidor dedicado de procesamiento PDF."}},{"@type":"Question","name":"¿AiLovePDF es gratis? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Las utilidades PDF disponibles se ofrecen como herramientas gratuitas basadas en el navegador."}},{"@type":"Question","name":"¿Puedo unir varios archivos PDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Abre Unir PDF, selecciona los archivos PDF y crea un único documento en tu navegador."}},{"@type":"Question","name":"¿Puedo comprimir un PDF online? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Comprimir PDF puede reducir el tamaño del archivo directamente en tu navegador."}},{"@type":"Question","name":"¿Puedo dividir un PDF por páginas? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Dividir PDF permite indicar los números de página que quieres extraer y crear un nuevo PDF."}},{"@type":"Question","name":"¿Puedo eliminar páginas específicas de un PDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Eliminar páginas PDF permite indicar las páginas que quieres quitar y crear una nueva copia."}},{"@type":"Question","name":"¿Puedo convertir imágenes JPG a PDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. JPG a PDF acepta imágenes compatibles y las coloca en un documento PDF desde el navegador."}},{"@type":"Question","name":"¿Puedo convertir todas las páginas de un PDF a JPG? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. PDF a JPG procesa todas las páginas del PDF seleccionado y crea una imagen JPG de alta calidad para cada página."}},{"@type":"Question","name":"¿Puedo convertir un TXT largo en un PDF de varias páginas? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. TXT a PDF ajusta las líneas largas y crea automáticamente páginas adicionales cuando es necesario."}},{"@type":"Question","name":"¿Puedo girar páginas PDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"Sí. Girar PDF permite girar las páginas según las opciones disponibles directamente en el navegador."}},{"@type":"Question","name":"¿AiLovePDF funciona en teléfonos móviles? ⌄","acceptedAnswer":{"@type":"Answer","text":"La interfaz es adaptable y está diseñada para navegadores móviles modernos. Los archivos grandes pueden requerir más memoria."}},{"@type":"Question","name":"¿Qué navegadores puedo usar? ⌄","acceptedAnswer":{"@type":"Answer","text":"Usa una versión actual de Chrome, Edge, Safari, Firefox u otro navegador moderno con JavaScript activado."}},{"@type":"Question","name":"¿Hay límites de tamaño o rendimiento? ⌄","acceptedAnswer":{"@type":"Answer","text":"La memoria del navegador, el dispositivo, el tamaño, el número de páginas y la complejidad del documento pueden afectar al rendimiento."}},{"@type":"Question","name":"¿Mis datos son privados al usar estas herramientas PDF? ⌄","acceptedAnswer":{"@type":"Answer","text":"El procesamiento PDF está diseñado para realizarse localmente en el navegador. Los servicios de terceros pueden tener prácticas de datos independientes."}}]}</script><link href="/logo.png" rel="apple-touch-icon"/>
+<meta content="es_ES" property="og:locale"/>
+<!-- AiLovePDF first-party analytics: enable Web Analytics in the Vercel dashboard. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen pb-20">
+<!-- Navigation -->
+<nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+<div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+<!-- Brand Logo -->
+<div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('home')">
+<img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.png"/>
+<i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex space-x-6 items-center">
+<a class="nav-btn tab-active pb-1 text-base font-semibold transition-colors" href="/es/">Herramientas</a>
+<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/es/como-usar/">Cómo usar</a>
+<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/es/guia-pdf/">Guía PDF</a>
+<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/es/sobre-nosotros/">Sobre nosotros</a>
+<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/es/contacto/">Contacto</a>
+<!-- External Blog Link -->
+<a class="text-slate-600 hover:text-blue-600 pb-1 text-base font-semibold transition-colors flex items-center gap-1" href="https://es.blog.ailovepdf.site" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+</div>
+<!-- Mobile Menu Toggle Button (3 lines) -->
+<button class="md:hidden text-slate-700 text-2xl focus:outline-none" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden bg-white border-t border-slate-100 flex flex-col absolute w-full left-0 top-full shadow-lg z-40" id="mobile-menu">
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-bold text-blue-600" href="/es/">Herramientas</a>
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/es/como-usar/">Cómo usar</a>
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/es/guia-pdf/">Guía PDF</a>
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/es/sobre-nosotros/">Sobre nosotros</a>
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/es/contacto/">Contacto</a>
+<a class="text-left px-6 py-4 font-semibold text-slate-600 flex items-center gap-2" href="https://es.blog.ailovepdf.site" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+</div>
+</nav>
+<!-- Top AdSense Banner -->
+<div class="max-w-7xl mx-auto w-full px-4 mt-6">
+<div class="adsbygoogle-placeholder w-full h-[90px]">
+<span>Publicidad</span>
+</div>
+</div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/es/dividir-pdf" id="page-root"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
+<!-- Two-container tool layout: localized SEO intro + separate tool card -->
+<div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-left" id="tool-seo-header">
+<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/es/">Inicio</a> / Dividir PDF</div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight" id="tool-seo-title">Dividir PDF Online</h1>
+<p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl" id="tool-seo-desc">Extrae páginas seleccionadas de un PDF y crea un nuevo documento en tu navegador.</p>
+</div>
+<div data-tool-workspace-card="true" class="bg-white p-7 md:p-12 rounded-3xl shadow-sm border border-slate-200 text-center relative">
+<a aria-label="Atrás" class="tool-back-button text-slate-400 hover:text-slate-800 transition flex items-center gap-2 font-semibold" href="/es/"><i class="fa-solid fa-circle-xmark text-2xl"></i> Atrás</a>
+<div class="pt-12 md:pt-10">
+<h2 class="text-3xl font-extrabold mb-3 text-slate-900" id="tool-title">PDF</h2>
+<p class="text-slate-500 mb-8" id="tool-desc">Combina, comprime, divide, gira y convierte archivos PDF directamente en tu navegador. AiLovePDF es un conjunto sencillo de herramientas para documentos, sin necesidad de crear una cuenta para las herramientas disponibles.</p>
+<div class="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-dashed border-slate-300 mb-8 max-w-xl mx-auto">
+<div class="text-left space-y-4" id="tool-inputs"></div>
+</div>
+<button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">Ejecutar <i class="fa-solid fa-arrow-right"></i></button>
+<div class="mt-6 font-bold text-lg min-h-[30px]" id="tool-status"></div>
+<div class="adsbygoogle-placeholder w-full h-[250px] mt-10"><span>Anuncio</span></div>
+</div>
+</div>
+</div><article class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 mt-12 prose max-w-none text-slate-600" id="seo-articles">
+<h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Herramientas PDF sencillas para documentos cotidianos</h2>
+<p class="text-lg leading-relaxed mb-6">AiLovePDF ofrece herramientas sencillas que funcionan en el navegador para las tareas habituales con PDF. Puedes unir documentos, reducir su tamaño, convertir imágenes, dividir páginas, girar documentos, eliminar páginas y crear PDF desde texto.</p>
+<p class="text-lg leading-relaxed mb-6">Las operaciones PDF disponibles se realizan en tu navegador. Esto significa que el procesamiento se ejecuta localmente en el dispositivo y no mediante un servidor dedicado. La memoria del navegador, el tamaño del archivo y la complejidad del documento pueden afectar al rendimiento.</p>
+<h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Elige la herramienta PDF adecuada</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/unir-pdf/" onclick="openTool('merge'); return false;"><strong>Unir PDF</strong><span class="block text-sm text-slate-500 mt-1">Combina varios archivos PDF en un solo documento.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/comprimir-pdf/" onclick="openTool('compress'); return false;"><strong>Comprimir PDF</strong><span class="block text-sm text-slate-500 mt-1">Reduce el tamaño del PDF para compartirlo y almacenarlo con mayor facilidad.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/jpg-a-pdf/" onclick="openTool('jpg2pdf'); return false;"><strong>JPG a PDF</strong><span class="block text-sm text-slate-500 mt-1">Convierte imágenes JPG y compatibles en archivos PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/pdf-a-jpg/" onclick="openTool('pdf2jpg'); return false;"><strong>PDF a JPG</strong><span class="block text-sm text-slate-500 mt-1">Convierte las páginas de un PDF en imágenes JPG.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/eliminar-paginas-pdf/" onclick="openTool('delete'); return false;"><strong>Eliminar páginas</strong><span class="block text-sm text-slate-500 mt-1">Elimina las páginas seleccionadas de un PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/txt-a-pdf/" onclick="openTool('txt2pdf'); return false;"><strong>TXT a PDF</strong><span class="block text-sm text-slate-500 mt-1">Crea un PDF a partir de un archivo de texto.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/dividir-pdf/" onclick="openTool('split'); return false;"><strong>Dividir PDF</strong><span class="block text-sm text-slate-500 mt-1">Crea un nuevo PDF a partir de las páginas seleccionadas.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/es/girar-pdf/" onclick="openTool('rotate'); return false;"><strong>Girar PDF</strong><span class="block text-sm text-slate-500 mt-1">Cambia la orientación de las páginas PDF.</span></a>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Compatibilidad del navegador</h3>
+<p class="text-lg leading-relaxed">AiLovePDF está diseñado para navegadores modernos en Windows, macOS, Android y otros dispositivos compatibles. La velocidad depende del navegador, la memoria del dispositivo, el tamaño del archivo y la complejidad del documento.</p>
+</article><div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 mt-12 mb-12">
+<h2 class="text-3xl font-extrabold text-slate-900 mb-8">Preguntas frecuentes</h2>
+<div class="space-y-3 max-w-4xl mx-auto">
+<details class="faq-item">
+<summary>¿Necesito una cuenta para usar AiLovePDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">No. Las herramientas PDF disponibles pueden utilizarse sin crear una cuenta.</p>
+</details>
+<details class="faq-item">
+<summary>¿Mis archivos PDF se suben a un servidor?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">El procesamiento PDF disponible está diseñado para ejecutarse en tu navegador y no requiere un servidor dedicado de procesamiento PDF.</p>
+</details>
+<details class="faq-item">
+<summary>¿AiLovePDF es gratis?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Las utilidades PDF disponibles se ofrecen como herramientas gratuitas basadas en el navegador.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo unir varios archivos PDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Abre Unir PDF, selecciona los archivos PDF y crea un único documento en tu navegador.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo comprimir un PDF online?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Comprimir PDF puede reducir el tamaño del archivo directamente en tu navegador.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo dividir un PDF por páginas?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Dividir PDF permite indicar los números de página que quieres extraer y crear un nuevo PDF.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo eliminar páginas específicas de un PDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Eliminar páginas PDF permite indicar las páginas que quieres quitar y crear una nueva copia.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo convertir imágenes JPG a PDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. JPG a PDF acepta imágenes compatibles y las coloca en un documento PDF desde el navegador.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo convertir todas las páginas de un PDF a JPG?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. PDF a JPG procesa todas las páginas del PDF seleccionado y crea una imagen JPG de alta calidad para cada página.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo convertir un TXT largo en un PDF de varias páginas?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. TXT a PDF ajusta las líneas largas y crea automáticamente páginas adicionales cuando es necesario.</p>
+</details>
+<details class="faq-item">
+<summary>¿Puedo girar páginas PDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Sí. Girar PDF permite girar las páginas según las opciones disponibles directamente en el navegador.</p>
+</details>
+<details class="faq-item">
+<summary>¿AiLovePDF funciona en teléfonos móviles?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">La interfaz es adaptable y está diseñada para navegadores móviles modernos. Los archivos grandes pueden requerir más memoria.</p>
+</details>
+<details class="faq-item">
+<summary>¿Qué navegadores puedo usar?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">Usa una versión actual de Chrome, Edge, Safari, Firefox u otro navegador moderno con JavaScript activado.</p>
+</details>
+<details class="faq-item">
+<summary>¿Hay límites de tamaño o rendimiento?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">La memoria del navegador, el dispositivo, el tamaño, el número de páginas y la complejidad del documento pueden afectar al rendimiento.</p>
+</details>
+<details class="faq-item">
+<summary>¿Mis datos son privados al usar estas herramientas PDF?<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">El procesamiento PDF está diseñado para realizarse localmente en el navegador. Los servicios de terceros pueden tener prácticas de datos independientes.</p>
+</details>
+</div>
+</div></main>
+<!-- MAIN CONTENT AREA -->
+<!-- FOOTER DESIGN -->
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">Navegar</h4>
+<ul class="space-y-4 text-slate-600 text-sm">
+<li><a class="hover:text-blue-600 transition-colors" href="/es/" onclick="switchTab('home'); return false;">Inicio</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/como-usar/">Cómo usar</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/guia-pdf/">Guía PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/contacto/">Contacto</a></li>
+<li><a class="hover:text-blue-600 transition-colors font-bold text-blue-500" href="/es/privacidad/">Política de privacidad</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">Herramientas</h4>
+<ul class="space-y-4 text-slate-600 text-sm">
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">Unir PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">Dividir PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">Girar PDF</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
+<ul class="space-y-4 text-slate-600 text-sm">
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">Comprimir PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">Eliminar páginas</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">TXT a PDF</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
+<ul class="space-y-4 text-slate-600 text-sm">
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">JPG a PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/es/">PDF a JPG</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
+<a class="hover:text-blue-600" href="/es/sobre-nosotros/" onclick="switchTab('about'); return false;">Sobre nosotros</a>
+<a class="hover:text-blue-600" href="/es/contacto/" onclick="switchTab('contact'); return false;">Contacto</a>
+<a class="hover:text-blue-600" href="/es/privacidad/" onclick="switchTab('privacy'); return false;">Política de privacidad</a>
+<a class="hover:text-blue-600" href="/es/terminos/" onclick="switchTab('terms'); return false;">Términos</a>
+<a class="hover:text-blue-600" href="/es/aviso-legal/" onclick="switchTab('disclaimer'); return false;">Aviso legal</a>
+<a class="hover:text-blue-600" href="/es/cookies/" onclick="switchTab('cookies'); return false;">Política de cookies</a>
+</div>
+<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center">
+<div class="font-bold text-slate-700 mb-2 md:mb-0 flex items-center gap-2">
+<i class="fa-solid fa-file-pdf text-red-500"></i> AiLovePDF family
+            </div>
+<div class="text-slate-500 text-sm font-medium">@ 2026 AiLovePDF. Todos los derechos reservados.</div>
+</div>
+</footer>
+<!-- STICKY ANCHOR AD -->
+<!-- 100% COMPLETE & WORKING JAVASCRIPT LOGIC -->
+<script>
+        // PDF libraries are loaded from CDN, so do not reference them at parse time.
+        // This keeps direct tool pages usable even if a CDN is temporarily unavailable;
+        // the actual operation will report a clear error when the user starts processing.
+        let PDFDocument, degrees;
+        function ensurePdfLib() {
+            if (!window.PDFLib) throw new Error((typeof t === 'function' && t('libraries')) || 'PDF processing library could not be loaded. Please refresh the page and try again.');
+            PDFDocument = window.PDFLib.PDFDocument;
+            degrees = window.PDFLib.degrees;
+        }
+        function ensurePdfJs() {
+            if (!window.pdfjsLib) throw new Error((typeof t === 'function' && t('libraries')) || 'PDF rendering library could not be loaded. Please refresh the page and try again.');
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        }
+        function ensureJspdf() {
+            if (!window.jspdf || !window.jspdf.jsPDF) throw new Error((typeof t === 'function' && t('libraries')) || 'PDF creation library could not be loaded. Please refresh the page and try again.');
+        }
+
+        // --- Mobile Menu Toggle ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // --- Navigation Logic ---
+        function baseSwitchTab(tabId) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
+            document.getElementById(tabId).classList.add('view-active');
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('tab-active', 'text-slate-900');
+                btn.classList.add('text-slate-600');
+                if(btn.innerText.toLowerCase().replace(/\s/g, '') === tabId || (tabId === 'home' && btn.innerText.includes('Tools')) || (tabId === 'howto' && btn.innerText.includes('How')) || (tabId === 'guide' && btn.innerText.includes('Guide'))){
+                    btn.classList.add('tab-active', 'text-slate-900');
+                    btn.classList.remove('text-slate-600');
+                }
+            });
+
+            document.querySelectorAll('.nav-btn-mob').forEach(btn => {
+                btn.classList.remove('font-bold', 'text-blue-600');
+                btn.classList.add('font-semibold', 'text-slate-600');
+                if(btn.innerText.toLowerCase().replace(/\s/g, '') === tabId || (tabId === 'home' && btn.innerText.includes('Tools')) || (tabId === 'howto' && btn.innerText.includes('How')) || (tabId === 'guide' && btn.innerText.includes('Guide'))){
+                    btn.classList.add('font-bold', 'text-blue-600');
+                    btn.classList.remove('font-semibold', 'text-slate-600');
+                }
+            });
+            
+            if(tabId === 'home') closeTool(); 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Tool Display Logic ---
+        function closeTool() {
+            document.getElementById('hero-section').classList.remove('hidden-tool');
+            document.getElementById('tool-workspace').classList.add('hidden-tool');
+        }
+
+        const TOOL_SEO_CONTENT = {
+            merge: { title: 'Merge PDF Online', desc: 'Combine multiple PDF files into one document directly in your browser.', breadcrumb: 'Home / Merge PDF' },
+            compress: { title: 'Comprimir PDF Online', desc: 'Reduce PDF file size in your browser with a simple client-side PDF compressor.', breadcrumb: 'Home / Comprimir PDF' },
+            jpg2pdf: { title: 'JPG a PDF Converter', desc: 'Convert JPG and PNG images into a PDF document directly in your browser.', breadcrumb: 'Home / JPG a PDF' },
+            pdf2jpg: { title: 'PDF a JPG Converter', desc: 'Convert PDF pages into JPG images directly in your browser.', breadcrumb: 'Home / PDF a JPG' },
+            delete: { title: 'Eliminar páginas', desc: 'Remove unwanted pages from a PDF document directly in your browser.', breadcrumb: 'Home / Eliminar páginas' },
+            txt2pdf: { title: 'TXT a PDF Converter', desc: 'Convert a plain text file into a PDF directly in your browser.', breadcrumb: 'Home / TXT a PDF' },
+            split: { title: 'Dividir PDF Online', desc: 'Extract selected pages from a PDF and create a new document in your browser.', breadcrumb: 'Home / Dividir PDF' },
+            rotate: { title: 'Girar PDF Pages', desc: 'Girar PDF pages by 90, 180, or 270 degrees directly in your browser.', breadcrumb: 'Home / Girar PDF' }
+        };
+
+        function updateToolSeoHeader(toolType) {
+            const data = TOOL_SEO_CONTENT[toolType];
+            const header = document.getElementById('tool-seo-header');
+            if (!data || !header) return;
+            document.getElementById('tool-seo-title').textContent = data.title;
+            document.getElementById('tool-seo-desc').textContent = data.desc;
+            document.getElementById('tool-breadcrumb').textContent = data.breadcrumb;
+        }
+
+        function baseOpenTool(toolType) {
+            document.getElementById('hero-section').classList.add('hidden-tool');
+            document.getElementById('tool-workspace').classList.remove('hidden-tool');
+            updateToolSeoHeader(toolType);
+            
+            const title = document.getElementById('tool-title');
+            const desc = document.getElementById('tool-desc');
+            const inputs = document.getElementById('tool-inputs');
+            const btn = document.getElementById('tool-action-btn');
+            
+            document.getElementById('tool-status').innerHTML = "";
+            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+
+            if (toolType === 'merge') {
+                title.innerText = "Unir archivos PDF"; desc.innerText = "Selecciona varios PDF para combinarlos en un solo archivo.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="application/pdf" multiple class="${inputClass}">`;
+                btn.onclick = executeMerge;
+            } 
+            else if (toolType === 'split') {
+                title.innerText = "Dividir PDF"; desc.innerText = "Extrae páginas específicas de tu documento PDF.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <input type="text" id="pages-input" placeholder="Introduce los números de página (p. ej., 1, 3, 5)" class="${inputClass}">
+                `;
+                btn.onclick = executeSplit;
+            }
+            else if (toolType === 'compress') {
+                title.innerText = "Comprimir PDF"; desc.innerText = "Reduce significativamente el tamaño del archivo.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <select id="quality-input" class="${inputClass}">
+                        <option value="0.5">Calidad media (buen tamaño)</option>
+                        <option value="0.2">Calidad baja (tamaño mínimo)</option>
+                    </select>
+                `;
+                btn.onclick = executeCompress;
+            }
+            else if (toolType === 'jpg2pdf') {
+                title.innerText = "JPG a PDF"; desc.innerText = "Convierte tus imágenes en un documento PDF.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="${inputClass}">`;
+                btn.onclick = executeJpgToPdf;
+            }
+            else if (toolType === 'pdf2jpg') {
+                title.innerText = "PDF a JPG"; desc.innerText = "Convierte las páginas de tu PDF en imágenes JPG.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept="application/pdf" class="${inputClass}">`;
+                btn.onclick = executePdfToJpg;
+            }
+            else if (toolType === 'delete') {
+                title.innerText = "Eliminar páginas"; desc.innerText = "Elimina las páginas no deseadas de tu documento.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <input type="text" id="pages-input" placeholder="Páginas a eliminar (p. ej., 2, 4)" class="${inputClass}">
+                `;
+                btn.onclick = executeDelete;
+            }
+            else if (toolType === 'txt2pdf') {
+                title.innerText = "TXT a PDF"; desc.innerText = "Convierte un archivo de texto plano en un PDF.";
+                inputs.innerHTML = `<input type="file" id="file-input" accept=".txt, text/plain" class="${inputClass}">`;
+                btn.onclick = executeTxtToPdf;
+            }
+            else if (toolType === 'rotate') {
+                title.innerText = "Girar PDF"; desc.innerText = "Gira las páginas de tu documento PDF.";
+                inputs.innerHTML = `
+                    <input type="file" id="file-input" accept="application/pdf" class="${inputClass}">
+                    <select id="angle-input" class="${inputClass}">
+                        <option value="90">90 grados (sentido horario)</option>
+                        <option value="180">180 grados</option>
+                        <option value="270">270 grados (sentido antihorario)</option>
+                    </select>
+                `;
+                btn.onclick = executeRotate;
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Helper: Download File ---
+        const TOOL_MESSAGES_I18N = {"en": {"processing": "Processing…", "done": "Done — your file is ready.", "something": "Something went wrong. Please try again.", "pdf": "Please upload a PDF file.", "invalidpdf": "Invalid PDF file.", "nopages": "The PDF contains no pages.", "render": "Rendering page {i} of {total}…", "zip": "Preparing your ZIP download…", "jpgpage": "Could not create JPG for page {i}.", "merge": "Select at least 2 PDF files to merge!", "split": "Please upload a PDF and enter page numbers (e.g., 1, 3)!", "compress": "Please upload a PDF file to compress!", "image": "Please select at least one image!", "delete": "Please upload a PDF and enter page numbers to delete!", "txt": "Please select a text (.txt) file!", "rotate": "Please upload a PDF to rotate!"}, "es": {"processing": "Procesando…", "done": "Listo — tu archivo está preparado.", "something": "Algo salió mal. Inténtalo de nuevo.", "pdf": "Sube un archivo PDF.", "invalidpdf": "El archivo PDF no es válido.", "nopages": "El PDF no contiene páginas.", "render": "Procesando la página {i} de {total}…", "zip": "Preparando tu descarga ZIP…", "jpgpage": "No se pudo crear el JPG de la página {i}.", "merge": "¡Selecciona al menos 2 archivos PDF para unirlos!", "split": "¡Sube un PDF e introduce los números de página (por ejemplo, 1, 3)!", "compress": "¡Sube un archivo PDF para comprimirlo!", "image": "¡Selecciona al menos una imagen!", "delete": "¡Sube un PDF e introduce las páginas que quieres eliminar!", "txt": "¡Selecciona un archivo de texto (.txt)!", "rotate": "¡Sube un PDF para girarlo!"}, "fr": {"processing": "Traitement…", "done": "Terminé — votre fichier est prêt.", "something": "Une erreur est survenue. Veuillez réessayer.", "pdf": "Veuillez importer un fichier PDF.", "invalidpdf": "Fichier PDF invalide.", "nopages": "Le PDF ne contient aucune page.", "render": "Traitement de la page {i} sur {total}…", "zip": "Préparation de votre téléchargement ZIP…", "jpgpage": "Impossible de créer le JPG de la page {i}.", "merge": "Sélectionnez au moins 2 fichiers PDF à fusionner !", "split": "Importez un PDF et indiquez les numéros de page (ex. 1, 3) !", "compress": "Importez un fichier PDF à compresser !", "image": "Sélectionnez au moins une image !", "delete": "Importez un PDF et indiquez les pages à supprimer !", "txt": "Sélectionnez un fichier texte (.txt) !", "rotate": "Importez un PDF à faire pivoter !"}, "de": {"processing": "Verarbeitung…", "done": "Fertig — Ihre Datei ist bereit.", "something": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.", "pdf": "Bitte laden Sie eine PDF-Datei hoch.", "invalidpdf": "Ungültige PDF-Datei.", "nopages": "Das PDF enthält keine Seiten.", "render": "Seite {i} von {total} wird verarbeitet…", "zip": "ZIP-Download wird vorbereitet…", "jpgpage": "JPG für Seite {i} konnte nicht erstellt werden.", "merge": "Wählen Sie mindestens 2 PDF-Dateien zum Zusammenführen aus!", "split": "Laden Sie ein PDF hoch und geben Sie Seitenzahlen ein (z. B. 1, 3)!", "compress": "Laden Sie eine PDF-Datei zum Komprimieren hoch!", "image": "Wählen Sie mindestens ein Bild aus!", "delete": "Laden Sie ein PDF hoch und geben Sie die zu löschenden Seiten ein!", "txt": "Wählen Sie eine Textdatei (.txt) aus!", "rotate": "Laden Sie ein PDF zum Drehen hoch!"}, "pt-br": {"processing": "Processando…", "done": "Concluído — seu arquivo está pronto.", "something": "Algo deu errado. Tente novamente.", "pdf": "Envie um arquivo PDF.", "invalidpdf": "Arquivo PDF inválido.", "nopages": "O PDF não contém páginas.", "render": "Processando a página {i} de {total}…", "zip": "Preparando seu download ZIP…", "jpgpage": "Não foi possível criar o JPG da página {i}.", "merge": "Selecione pelo menos 2 arquivos PDF para mesclar!", "split": "Envie um PDF e informe os números das páginas (ex.: 1, 3)!", "compress": "Envie um arquivo PDF para comprimir!", "image": "Selecione pelo menos uma imagem!", "delete": "Envie um PDF e informe as páginas que deseja excluir!", "txt": "Selecione um arquivo de texto (.txt)!", "rotate": "Envie um PDF para girar!"}, "ar": {"processing": "جارٍ المعالجة…", "done": "تم — ملفك جاهز.", "something": "حدث خطأ. يرجى المحاولة مرة أخرى.", "pdf": "يرجى رفع ملف PDF.", "invalidpdf": "ملف PDF غير صالح.", "nopages": "ملف PDF لا يحتوي على صفحات.", "render": "جارٍ معالجة الصفحة {i} من {total}…", "zip": "جارٍ تجهيز تنزيل ZIP…", "jpgpage": "تعذر إنشاء صورة JPG للصفحة {i}.", "merge": "يرجى اختيار ملفي PDF على الأقل لدمجهما!", "split": "يرجى رفع ملف PDF وإدخال أرقام الصفحات (مثال: 1، 3)!", "compress": "يرجى رفع ملف PDF لضغطه!", "image": "يرجى اختيار صورة واحدة على الأقل!", "delete": "يرجى رفع ملف PDF وإدخال الصفحات التي تريد حذفها!", "txt": "يرجى اختيار ملف نصي (.txt)!", "rotate": "يرجى رفع ملف PDF لتدويره!"}};
+        function getLangKey() {
+            const raw = (typeof CURRENT_SITE_LANG !== 'undefined' && CURRENT_SITE_LANG) ? CURRENT_SITE_LANG : 'en';
+            const lang = String(raw).toLowerCase();
+            return lang === 'pt-br' ? 'pt-br' : (lang.split('-')[0] || 'en');
+        }
+        function t(key, vars = {}) {
+            const table = TOOL_MESSAGES_I18N[getLangKey()] || TOOL_MESSAGES_I18N.en;
+            return String(table[key] || TOOL_MESSAGES_I18N.en[key] || key).replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
+        }
+
+        function downloadFile(blob, fileName) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            link.rel = 'noopener';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1500);
+        }
+
+        function safeBaseName(fileName) {
+            const raw = String(fileName || 'document').replace(/\.[^.]+$/, '');
+            const clean = raw.replace(/[\\/:*?"<>|\x00-\x1F]/g, '_').trim();
+            return clean || 'document';
+        }
+
+        function setProgress(message, percent) {
+            const statusEl = document.getElementById('tool-status');
+            if (!statusEl) return;
+            const safe = String(message || '').replace(/[<>]/g, '');
+            const pct = Math.max(0, Math.min(100, Number(percent) || 0));
+            statusEl.innerHTML = `<div class="text-blue-600 font-medium">${safe}</div><div class="mt-2 h-2 w-full max-w-md mx-auto rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-blue-600 transition-all" style="width:${pct}%"></div></div>`;
+        }
+
+        function crc32(bytes) {
+            let crc = 0xFFFFFFFF;
+            for (let i = 0; i < bytes.length; i++) {
+                crc ^= bytes[i];
+                for (let j = 0; j < 8; j++) crc = (crc >>> 1) ^ (0xEDB88320 & -(crc & 1));
+            }
+            return (crc ^ 0xFFFFFFFF) >>> 0;
+        }
+
+        // Create a standard ZIP using stored JPG entries. JPG is already compressed,
+        // so re-compressing it only wastes CPU and can increase memory use.
+        async function createStoredZip(entries) {
+            const parts = [];
+            const central = [];
+            const encoder = new TextEncoder();
+            let offset = 0;
+            for (const entry of entries) {
+                const nameBytes = encoder.encode(entry.name);
+                const data = new Uint8Array(await entry.blob.arrayBuffer());
+                const crc = crc32(data);
+                const local = new Uint8Array(30 + nameBytes.length);
+                const dv = new DataView(local.buffer);
+                dv.setUint32(0, 0x04034b50, true);
+                dv.setUint16(4, 20, true);
+                dv.setUint16(6, 0x0800, true);
+                dv.setUint32(14, crc, true);
+                dv.setUint32(18, data.byteLength, true);
+                dv.setUint32(22, data.byteLength, true);
+                dv.setUint16(26, nameBytes.length, true);
+                local.set(nameBytes, 30);
+                parts.push(local, data);
+
+                const cd = new Uint8Array(46 + nameBytes.length);
+                const cv = new DataView(cd.buffer);
+                cv.setUint32(0, 0x02014b50, true);
+                cv.setUint16(4, 20, true);
+                cv.setUint16(6, 20, true);
+                cv.setUint16(8, 0x0800, true);
+                cv.setUint32(16, crc, true);
+                cv.setUint32(20, data.byteLength, true);
+                cv.setUint32(24, data.byteLength, true);
+                cv.setUint16(28, nameBytes.length, true);
+                cv.setUint32(42, offset, true);
+                cd.set(nameBytes, 46);
+                central.push(cd);
+                offset += local.byteLength + data.byteLength;
+            }
+            const centralOffset = offset;
+            let centralSize = 0;
+            for (const cd of central) { parts.push(cd); centralSize += cd.byteLength; }
+            const end = new Uint8Array(22);
+            const ev = new DataView(end.buffer);
+            ev.setUint32(0, 0x06054b50, true);
+            ev.setUint16(8, entries.length, true);
+            ev.setUint16(10, entries.length, true);
+            ev.setUint32(12, centralSize, true);
+            ev.setUint32(16, centralOffset, true);
+            parts.push(end);
+            return new Blob(parts, { type: 'application/zip' });
+        }
+
+        // --- REUSABLE 5-SECOND COUNTDOWN & PROCESS WRAPPER ---
+        async function runWith5SecDelay(processCallback) {
+            const btn = document.getElementById('tool-action-btn');
+            const statusEl = document.getElementById('tool-status');
+            if (!btn) return;
+            const originalHTML = btn.innerHTML;
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
+            try {
+                await new Promise(resolve => requestAnimationFrame(resolve));
+                await processCallback();
+                if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
+            } catch (error) {
+                console.error(error);
+                if (statusEl) statusEl.innerHTML = `<span class="text-red-600 font-medium"><i class="fa-solid fa-circle-exclamation mr-1"></i> ${String(error?.message || t('something'))}</span>`;
+                alert(error?.message || t('something'));
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                btn.innerHTML = originalHTML;
+            }
+        }
+
+        // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
+
+        // 1. MERGE PDF
+        function executeMerge() {
+            const files = document.getElementById('file-input').files;
+            if (files.length < 2) return alert('Selecciona al menos 2 archivos PDF para unirlos.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                const mergedPdf = await PDFDocument.create();
+                for (let file of files) {
+                    const bytes = await file.arrayBuffer();
+                    const pdf = await PDFDocument.load(bytes);
+                    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                    copiedPages.forEach((page) => mergedPdf.addPage(page));
+                }
+                const mergedBytes = await mergedPdf.save();
+                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_merged.pdf`);
+            });
+        }
+
+        // 2. SPLIT PDF
+        function executeSplit() {
+            const file = document.getElementById('file-input').files[0];
+            const pagesStr = document.getElementById('pages-input').value;
+            if (!file || !pagesStr) return alert('Sube un PDF e introduce los números de página (por ejemplo, 1, 3).');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                const bytes = await file.arrayBuffer();
+                const pdf = await PDFDocument.load(bytes);
+                const totalPages = pdf.getPageCount();
+                
+                const indices = pagesStr.split(',')
+                    .map(n => parseInt(n.trim()) - 1)
+                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages);
+
+                if (indices.length === 0) throw new Error("Invalid page numbers");
+
+                const newPdf = await PDFDocument.create();
+                const copiedPages = await newPdf.copyPages(pdf, indices);
+                copiedPages.forEach(p => newPdf.addPage(p));
+                
+                const newBytes = await newPdf.save();
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_split.pdf`);
+            });
+        }
+
+        // 3. COMPRESS PDF (Client-Side Canvas Trick)
+        function executeCompress() {
+            const file = document.getElementById('file-input').files[0];
+            const quality = parseFloat(document.getElementById('quality-input').value);
+            if (!file) return alert('Sube un archivo PDF para comprimirlo.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                ensurePdfJs();
+                const fileBytes = await file.arrayBuffer();
+                const typedarray = new Uint8Array(fileBytes);
+                const originalPdf = await pdfjsLib.getDocument(typedarray).promise;
+                const newPdf = await PDFDocument.create();
+
+                for (let i = 1; i <= originalPdf.numPages; i++) {
+                    const page = await originalPdf.getPage(i);
+                    const viewport = page.getViewport({ scale: 1.2 });
+                    
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+                    
+                    const imgDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
+                    
+                    const jpgImage = await newPdf.embedJpg(imgBytes);
+                    const newPage = newPdf.addPage([jpgImage.width, jpgImage.height]);
+                    newPage.drawImage(jpgImage, { x: 0, y: 0, width: jpgImage.width, height: jpgImage.height });
+                }
+
+                const pdfBytes = await newPdf.save();
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_compressed.pdf`);
+            });
+        }
+
+        // 4. JPG TO PDF
+        function executeJpgToPdf() {
+            const files = document.getElementById('file-input').files;
+            if (files.length === 0) return alert('Selecciona al menos una imagen.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                const pdfDoc = await PDFDocument.create();
+                for (let file of files) {
+                    const imageBytes = await file.arrayBuffer();
+                    let image;
+                    if (file.type === 'image/jpeg' || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')) {
+                        image = await pdfDoc.embedJpg(imageBytes);
+                    } else if (file.type === 'image/png' || file.name.endsWith('.png')) {
+                        image = await pdfDoc.embedPng(imageBytes);
+                    } else {
+                        continue;
+                    }
+                    const page = pdfDoc.addPage([image.width, image.height]);
+                    page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
+                }
+                const pdfBytes = await pdfDoc.save();
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_images.pdf`);
+            });
+        }
+
+        // 5. PDF TO JPG (All Pages / High Quality)
+        function executePdfToJpg() {
+            const input = document.getElementById('file-input');
+            const file = input && input.files ? input.files[0] : null;
+            if (!file) return alert('Please upload a PDF file.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfJs();
+                const bytes = new Uint8Array(await file.arrayBuffer());
+                const signature = new TextDecoder().decode(bytes.subarray(0, 5));
+                if (signature !== '%PDF-') throw new Error(t('invalidpdf'));
+
+                const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+                const total = pdf.numPages;
+                if (!total) throw new Error(t('nopages'));
+
+                const base = safeBaseName(file.name);
+                const entries = [];
+                const targetScale = 3.0;
+                const maxCanvasDimension = 8192;
+                const maxCanvasPixels = 50000000;
+                const digits = String(total).length;
+
+                for (let i = 1; i <= total; i++) {
+                    setProgress(t('render', {i, total}), ((i - 1) / total) * 100);
+                    const page = await pdf.getPage(i);
+                    const natural = page.getViewport({ scale: targetScale });
+                    const dimensionScale = Math.min(1, maxCanvasDimension / Math.max(natural.width, natural.height));
+                    const pixelScale = Math.min(1, Math.sqrt(maxCanvasPixels / Math.max(1, natural.width * natural.height)));
+                    const renderScale = targetScale * Math.min(dimensionScale, pixelScale);
+                    const viewport = page.getViewport({ scale: renderScale });
+                    const canvas = document.createElement('canvas');
+                    canvas.width = Math.ceil(viewport.width);
+                    canvas.height = Math.ceil(viewport.height);
+                    const context = canvas.getContext('2d', { alpha: false, willReadFrequently: false });
+                    context.fillStyle = '#ffffff';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    await page.render({ canvasContext: context, viewport, intent: 'print' }).promise;
+
+                    const blob = await new Promise((resolve, reject) => {
+                        canvas.toBlob(b => b ? resolve(b) : reject(new Error(t('jpgpage', {i}))), 'image/jpeg', 1.0);
+                    });
+                    entries.push({ name: `${base}_page_${String(i).padStart(digits, '0')}.jpg`, blob });
+                    canvas.width = 1;
+                    canvas.height = 1;
+                    if (page.cleanup) page.cleanup();
+                    if (i % 3 === 0) await new Promise(resolve => requestAnimationFrame(resolve));
+                }
+
+                setProgress(t('zip'), 100);
+                const zipBlob = await createStoredZip(entries);
+                downloadFile(zipBlob, `${base}_JPG.zip`);
+            });
+        }
+
+        // 6. DELETE PAGES
+        function executeDelete() {
+            const file = document.getElementById('file-input').files[0];
+            const pagesStr = document.getElementById('pages-input').value;
+            if (!file || !pagesStr) return alert('Sube un PDF e introduce los números de página que quieres eliminar.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                const bytes = await file.arrayBuffer();
+                const pdf = await PDFDocument.load(bytes);
+                const totalPages = pdf.getPageCount();
+                
+                const toDelete = pagesStr.split(',')
+                    .map(n => parseInt(n.trim()) - 1)
+                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages)
+                    .sort((a, b) => b - a);
+
+                if (toDelete.length === 0) throw new Error("Invalid page numbers");
+
+                toDelete.forEach(idx => {
+                    pdf.removePage(idx);
+                });
+                
+                const newBytes = await pdf.save();
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_pages_removed.pdf`);
+            });
+        }
+
+        // 7. TXT TO PDF
+        function executeTxtToPdf() {
+            const file = document.getElementById('file-input').files[0];
+            if (!file) return alert('Selecciona un archivo de texto (.txt).');
+
+            runWith5SecDelay(async () => {
+                ensureJspdf();
+                const text = await file.text();
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                const marginLeft = 15;
+                const marginRight = 15;
+                const marginTop = 15;
+                const marginBottom = 15;
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const pageHeight = doc.internal.pageSize.getHeight();
+                const usableWidth = pageWidth - marginLeft - marginRight;
+                const lineHeight = 6;
+                const maxY = pageHeight - marginBottom;
+
+                // Preserve paragraph/line breaks while wrapping long lines to the page width.
+                const sourceLines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+                let y = marginTop;
+
+                for (const sourceLine of sourceLines) {
+                    const wrappedLines = doc.splitTextToSize(sourceLine || ' ', usableWidth);
+
+                    for (const line of wrappedLines) {
+                        if (y + lineHeight > maxY) {
+                            doc.addPage();
+                            y = marginTop;
+                        }
+                        doc.text(String(line), marginLeft, y);
+                        y += lineHeight;
+                    }
+                }
+
+                doc.save(`${safeBaseName(file.name)}.pdf`);
+            });
+        }
+
+        // 8. ROTATE PDF
+        function executeRotate() {
+            const file = document.getElementById('file-input').files[0];
+            const angle = parseInt(document.getElementById('angle-input').value);
+            if (!file) return alert('Sube un PDF para girarlo.');
+
+            runWith5SecDelay(async () => {
+                ensurePdfLib();
+                const bytes = await file.arrayBuffer();
+                const pdf = await PDFDocument.load(bytes);
+                const pages = pdf.getPages();
+                
+                pages.forEach(page => {
+                    const currentRotation = page.getRotation().angle;
+                    page.setRotation(degrees(currentRotation + angle));
+                });
+                
+                const newBytes = await pdf.save();
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_rotated.pdf`);
+            });
+        }
+    
+
+        // ==================== SEO ROUTING / PAGE METADATA ====================
+        const SEO_PAGES = {
+            '/': { tab: 'home', title: 'AiLovePDF - Free Online PDF Tools | Merge, Compress & Convert', desc: 'Free browser-based PDF tools to merge, compress, split, rotate and convert PDF files. Simple client-side PDF tools from AiLovePDF.' },
+            '/como-usar': { tab: 'howto', title: 'How to Use AiLovePDF PDF Tools', desc: 'Learn how to use AiLovePDF browser-based PDF tools for merging, compression, conversion, splitting and rotation.' },
+            '/guia-pdf': { tab: 'guide', title: 'PDF Guide | AiLovePDF', desc: 'Practical guidance for common PDF tasks using AiLovePDF browser-based tools.' },
+            '/sobre-nosotros': { tab: 'about', title: 'About AiLovePDF', desc: 'Learn about AiLovePDF and its browser-based PDF tools.' },
+            '/contacto': { tab: 'contact', title: 'Contact AiLovePDF', desc: 'Contact AiLovePDF with questions, feedback or support requests.' },
+            '/privacidad': { tab: 'privacy', title: 'Privacy Policy | AiLovePDF', desc: 'Read the AiLovePDF privacy policy and learn how browser-based PDF processing works.' },
+            '/terminos': { tab: 'terms', title: 'Terms & Conditions | AiLovePDF', desc: 'Read the terms and conditions for using AiLovePDF.' },
+            '/aviso-legal': { tab: 'disclaimer', title: 'Disclaimer | AiLovePDF', desc: 'Read the AiLovePDF service disclaimer.' },
+            '/cookies': { tab: 'cookies', title: 'Cookie Policy | AiLovePDF', desc: 'Read the AiLovePDF cookie policy.' }
+        };
+        const TOOL_ROUTES = {
+            '/unir-pdf': ['merge', 'Merge PDF Online Free | AiLovePDF', 'Merge multiple PDF files into one document directly in your browser.'],
+            '/comprimir-pdf': ['compress', 'Comprimir PDF Online Free | AiLovePDF', 'Reduce PDF file size in your browser with AiLovePDF.'],
+            '/jpg-a-pdf': ['jpg2pdf', 'JPG a PDF Converter Online Free | AiLovePDF', 'Convert JPG and supported images to PDF in your browser.'],
+            '/pdf-a-jpg': ['pdf2jpg', 'PDF a JPG Converter Online Free | AiLovePDF', 'Render PDF pages as JPG images in your browser.'],
+            '/eliminar-paginas-pdf': ['delete', 'Eliminar páginas Online Free | AiLovePDF', 'Remove selected pages from a PDF in your browser.'],
+            '/txt-a-pdf': ['txt2pdf', 'TXT a PDF Converter Online Free | AiLovePDF', 'Create a PDF from a plain text file in your browser.'],
+            '/dividir-pdf': ['split', 'Dividir PDF Online Free | AiLovePDF', 'Create a new PDF from selected pages in your browser.'],
+            '/girar-pdf': ['rotate', 'Girar PDF Pages Online Free | AiLovePDF', 'Girar PDF pages directly in your browser.']
+        };
+        function setPageMeta(title, desc, canonicalPath) {
+            document.title = title;
+            let meta = document.querySelector('meta[name="description"]');
+            if (meta) meta.setAttribute('content', desc);
+            let canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.setAttribute('href', 'https://www.ailovepdf.site' + (canonicalPath === '/' ? '/' : canonicalPath));
+            const ogTitle = document.querySelector('meta[property="og:title"]'); if (ogTitle) ogTitle.setAttribute('content', title);
+            const ogDesc = document.querySelector('meta[property="og:description"]'); if (ogDesc) ogDesc.setAttribute('content', desc);
+            const ogUrl = document.querySelector('meta[property="og:url"]'); if (ogUrl) ogUrl.setAttribute('content', 'https://www.ailovepdf.site' + (canonicalPath === '/' ? '/' : canonicalPath));
+        }
+
+        // Keep the visible SEO heading synchronized with SPA navigation.
+        // This runs on every click, so no hard refresh is required.
+        const INFO_VISIBLE_SEO = {
+            home: { title: 'Free Online PDF Tools', desc: 'Merge, compress, split, rotate and convert PDF files in your browser.' },
+            howto: { title: 'How to Use AiLovePDF PDF Tools', desc: 'Learn how to use AiLovePDF browser-based PDF tools step by step.' },
+            guide: { title: 'PDF Guide: Practical Tips for Common Document Tasks', desc: 'Practical guidance for working with PDF files using AiLovePDF tools.' },
+            about: { title: 'About AiLovePDF', desc: 'Learn about AiLovePDF and its browser-based PDF tools.' },
+            contact: { title: 'Contact AiLovePDF', desc: 'Get in touch with AiLovePDF for questions, feedback or support.' },
+            privacy: { title: 'Privacy Policy', desc: 'Read how AiLovePDF handles privacy and browser-based PDF processing.' },
+            terms: { title: 'Terms & Conditions', desc: 'Read the terms and conditions for using AiLovePDF.' },
+            disclaimer: { title: 'Disclaimer', desc: 'Read the AiLovePDF service disclaimer.' },
+            cookies: { title: 'Cookie Policy', desc: 'Read the AiLovePDF cookie policy.' }
+        };
+
+        function updateInfoSeoHeader(tabId) {
+            const data = INFO_VISIBLE_SEO[tabId];
+            if (!data || tabId === 'home') return;
+            const view = document.getElementById(tabId);
+            if (!view) return;
+            const heading = view.querySelector('h1, h2');
+            if (heading) heading.textContent = data.title;
+        }
+        
+        const CURRENT_SITE_LANG = "es";
+        const SITE_ROUTE_PREFIX = "/es";
+        const LOCAL_INFO_VISIBLE_SEO = {"home": {"title": "Herramientas PDF online gratuitas", "desc": ""}, "howto": {"title": "Cómo usar las herramientas de AiLovePDF", "desc": ""}, "guide": {"title": "Guía PDF: consejos prácticos para tareas comunes", "desc": ""}, "about": {"title": "Sobre AiLovePDF", "desc": ""}, "contact": {"title": "Contactar con AiLovePDF", "desc": ""}, "privacy": {"title": "Política de privacidad", "desc": ""}, "terms": {"title": "Términos y condiciones", "desc": ""}, "disclaimer": {"title": "Aviso legal", "desc": ""}, "cookies": {"title": "Política de cookies", "desc": ""}};
+        const LOCAL_TOOL_SEO = {"merge": {"title": "Unir PDF Online", "desc": "Combina varios archivos PDF en un solo documento directamente en tu navegador.", "breadcrumb": "Inicio / Unir PDF"}, "compress": {"title": "Comprimir PDF Online", "desc": "Reduce el tamaño de un PDF en tu navegador con un compresor PDF del lado del cliente.", "breadcrumb": "Inicio / Comprimir PDF"}, "jpg2pdf": {"title": "Convertidor JPG a PDF", "desc": "Convierte imágenes JPG y PNG en un documento PDF directamente en tu navegador.", "breadcrumb": "Inicio / JPG a PDF"}, "pdf2jpg": {"title": "Convertidor PDF a JPG", "desc": "Convierte las páginas de un PDF en imágenes JPG directamente en tu navegador.", "breadcrumb": "Inicio / PDF a JPG"}, "delete": {"title": "Eliminar páginas PDF", "desc": "Elimina páginas no deseadas de un documento PDF directamente en tu navegador.", "breadcrumb": "Inicio / Eliminar páginas PDF"}, "txt2pdf": {"title": "Convertidor TXT a PDF", "desc": "Convierte un archivo de texto plano en un PDF directamente en tu navegador.", "breadcrumb": "Inicio / TXT a PDF"}, "split": {"title": "Dividir PDF Online", "desc": "Extrae páginas seleccionadas de un PDF y crea un nuevo documento en tu navegador.", "breadcrumb": "Inicio / Dividir PDF"}, "rotate": {"title": "Girar páginas PDF", "desc": "Gira páginas PDF 90, 180 o 270 grados directamente en tu navegador.", "breadcrumb": "Inicio / Girar PDF"}};
+        const LOCAL_TOOL_UI = {"merge": {"title": "Unir PDF", "desc": "Selecciona varios PDF para combinarlos en un archivo."}, "split": {"title": "Dividir PDF", "desc": "Extrae páginas específicas de tu documento PDF."}, "compress": {"title": "Comprimir PDF", "desc": "Reduce significativamente el tamaño del archivo."}, "jpg2pdf": {"title": "JPG a PDF", "desc": "Convierte tus imágenes en un documento PDF."}, "pdf2jpg": {"title": "PDF a JPG", "desc": "Convierte todas las páginas del PDF en imágenes JPG de alta calidad y descarga todas las páginas en un ZIP."}, "delete": {"title": "Eliminar páginas", "desc": "Elimina páginas no deseadas de tu documento."}, "txt2pdf": {"title": "TXT a PDF", "desc": "Convierte un archivo de texto plano en PDF."}, "rotate": {"title": "Girar PDF", "desc": "Gira las páginas de tu documento PDF."}};
+        const LOCAL_SEO_PAGES = {"/": {"tab": "home", "title": "AiLovePDF - Herramientas PDF online gratuitas | Unir, comprimir y convertir", "desc": "Herramientas PDF gratuitas que funcionan en el navegador para unir, comprimir, dividir, girar y convertir archivos PDF."}, "/como-usar": {"tab": "howto", "title": "Cómo usar las herramientas PDF de AiLovePDF", "desc": "Aprende a usar las herramientas PDF de AiLovePDF basadas en el navegador."}, "/guia-pdf": {"tab": "guide", "title": "Guía PDF | AiLovePDF", "desc": "Guía práctica para tareas habituales con PDF usando las herramientas de AiLovePDF."}, "/sobre-nosotros": {"tab": "about", "title": "Sobre AiLovePDF", "desc": "Conoce AiLovePDF y sus herramientas PDF basadas en el navegador."}, "/contacto": {"tab": "contact", "title": "Contacto | AiLovePDF", "desc": "Contacta con AiLovePDF para preguntas, comentarios o soporte."}, "/privacidad": {"tab": "privacy", "title": "Política de privacidad | AiLovePDF", "desc": "Lee la política de privacidad de AiLovePDF y cómo funciona el procesamiento PDF en el navegador."}, "/terminos": {"tab": "terms", "title": "Términos y condiciones | AiLovePDF", "desc": "Lee los términos y condiciones para usar AiLovePDF."}, "/aviso-legal": {"tab": "disclaimer", "title": "Aviso legal | AiLovePDF", "desc": "Lee el aviso legal del servicio AiLovePDF."}, "/cookies": {"tab": "cookies", "title": "Política de cookies | AiLovePDF", "desc": "Lee la política de cookies de AiLovePDF."}};
+        const LOCAL_TOOL_ROUTES = {"/unir-pdf": {"tool": "merge", "title": "Unir PDF Online Gratis | AiLovePDF", "desc": "Combina varios archivos PDF en un solo documento directamente en tu navegador."}, "/comprimir-pdf": {"tool": "compress", "title": "Comprimir PDF Online Gratis | AiLovePDF", "desc": "Reduce el tamaño de un PDF directamente en tu navegador con AiLovePDF."}, "/jpg-a-pdf": {"tool": "jpg2pdf", "title": "Convertidor JPG a PDF Online Gratis | AiLovePDF", "desc": "Convierte imágenes JPG y compatibles a PDF directamente en tu navegador."}, "/pdf-a-jpg": {"tool": "pdf2jpg", "title": "Convertidor PDF a JPG Online Gratis | AiLovePDF", "desc": "Convierte las páginas de un PDF en imágenes JPG directamente en tu navegador."}, "/eliminar-paginas-pdf": {"tool": "delete", "title": "Eliminar páginas PDF Online Gratis | AiLovePDF", "desc": "Elimina páginas seleccionadas de un PDF directamente en tu navegador."}, "/txt-a-pdf": {"tool": "txt2pdf", "title": "Convertidor TXT a PDF Online Gratis | AiLovePDF", "desc": "Crea un PDF a partir de un archivo de texto directamente en tu navegador."}, "/dividir-pdf": {"tool": "split", "title": "Dividir PDF Online Gratis | AiLovePDF", "desc": "Crea un nuevo PDF a partir de páginas seleccionadas directamente en tu navegador."}, "/girar-pdf": {"tool": "rotate", "title": "Girar páginas PDF Online Gratis | AiLovePDF", "desc": "Gira las páginas PDF directamente en tu navegador."}};
+
+        function localPath(path) {
+            if (!SITE_ROUTE_PREFIX) return path;
+            return SITE_ROUTE_PREFIX + (path === '/' ? '/' : path);
+        }
+        function getLocalRoute() {
+            let path = location.pathname.replace(/\/+$/, '') || '/';
+            if (SITE_ROUTE_PREFIX && (path === SITE_ROUTE_PREFIX || path.startsWith(SITE_ROUTE_PREFIX + '/'))) {
+                path = path.slice(SITE_ROUTE_PREFIX.length) || '/';
+            }
+            return path;
+        }
+        function localizeDynamicToolUI(toolType) {
+            const data = LOCAL_TOOL_UI[toolType];
+            if (!data) return;
+            const title = document.getElementById('tool-title');
+            const desc = document.getElementById('tool-desc');
+            const btn = document.getElementById('tool-action-btn');
+            if (title) title.textContent = data.title;
+            if (desc) desc.textContent = data.desc;
+            const lang = getLangKey();
+            const actionLabels = {en:'Execute',es:'Ejecutar',fr:'Exécuter',de:'Ausführen','pt-br':'Executar',ar:'تنفيذ'};
+            const converterLabels = {en:'Convert to JPG',es:'Convertir a JPG',fr:'Convertir en JPG',de:'In JPG umwandeln','pt-br':'Converter para JPG',ar:'تحويل إلى JPG'};
+            if (btn) btn.innerHTML = (toolType === 'pdf2jpg' ? (converterLabels[lang] || converterLabels.en) : (actionLabels[lang] || actionLabels.en)) + ' <i class="fa-solid fa-arrow-right"></i>';
+            const inputs = document.getElementById('tool-inputs');
+            if (!inputs) return;
+            const labels = {
+                en:{pages:'Enter page numbers (e.g. 1, 3, 5)',deletePages:'Pages to delete (e.g. 2, 4)',medium:'Medium Quality (Good Size)',low:'Low Quality (Smallest Size)',a90:'90 Degrees (Clockwise)',a180:'180 Degrees',a270:'270 Degrees (Counter-Clockwise)'},
+                es:{pages:'Introduce los números de página (ej.: 1, 3, 5)',deletePages:'Páginas que eliminar (ej.: 2, 4)',medium:'Calidad media (buen tamaño)',low:'Calidad baja (tamaño mínimo)',a90:'90 grados (sentido horario)',a180:'180 grados',a270:'270 grados (sentido antihorario)'},
+                fr:{pages:'Entrez les numéros de page (ex. : 1, 3, 5)',deletePages:'Pages à supprimer (ex. : 2, 4)',medium:'Qualité moyenne (bonne taille)',low:'Qualité faible (taille minimale)',a90:'90 degrés (sens horaire)',a180:'180 degrés',a270:'270 degrés (sens antihoraire)'},
+                de:{pages:'Seitennummern eingeben (z. B. 1, 3, 5)',deletePages:'Zu löschende Seiten (z. B. 2, 4)',medium:'Mittlere Qualität (gute Größe)',low:'Niedrige Qualität (kleinste Größe)',a90:'90 Grad (im Uhrzeigersinn)',a180:'180 Grad',a270:'270 Grad (gegen den Uhrzeigersinn)'},
+                'pt-br':{pages:'Digite os números das páginas (ex.: 1, 3, 5)',deletePages:'Páginas para excluir (ex.: 2, 4)',medium:'Qualidade média (bom tamanho)',low:'Qualidade baixa (menor tamanho)',a90:'90 graus (sentido horário)',a180:'180 graus',a270:'270 graus (sentido anti-horário)'},
+                ar:{pages:'أدخل أرقام الصفحات (مثال: 1، 3، 5)',deletePages:'الصفحات المراد حذفها (مثال: 2، 4)',medium:'جودة متوسطة (حجم جيد)',low:'جودة منخفضة (أصغر حجم)',a90:'90 درجة (مع عقارب الساعة)',a180:'180 درجة',a270:'270 درجة (عكس عقارب الساعة)'}
+            };
+            const l = labels[lang] || labels.en;
+            const pageInput = inputs.querySelector('#pages-input');
+            if (pageInput) pageInput.placeholder = toolType === 'delete' ? l.deletePages : l.pages;
+            const quality = inputs.querySelector('#quality-input');
+            if (quality) {
+                if (quality.options[0]) quality.options[0].text = l.medium;
+                if (quality.options[1]) quality.options[1].text = l.low;
+            }
+            const angle = inputs.querySelector('#angle-input');
+            if (angle) {
+                const angleLabels = [l.a90, l.a180, l.a270];
+                angle.options.forEach((o, i) => { if (angleLabels[i]) o.text = angleLabels[i]; });
+            }
+        }
+        function updateToolSeoHeader(toolType) {
+            const data = LOCAL_TOOL_SEO[toolType] || TOOL_SEO_CONTENT[toolType];
+            const header = document.getElementById('tool-seo-header');
+            if (!data || !header) return;
+            document.getElementById('tool-seo-title').textContent = data.title;
+            document.getElementById('tool-seo-desc').textContent = data.desc;
+            document.getElementById('tool-breadcrumb').textContent = data.breadcrumb;
+        }
+        function updateInfoSeoHeader(tabId) {
+            const data = LOCAL_INFO_VISIBLE_SEO[tabId];
+            if (!data || tabId === 'home') return;
+            const view = document.getElementById(tabId);
+            if (!view) return;
+            const heading = view.querySelector('h1, h2');
+            if (heading) heading.textContent = data.title;
+        }
+        function switchTab(tabId, push=true) {
+            baseSwitchTab(tabId);
+            updateInfoSeoHeader(tabId);
+            const routeByTab = {home:'/', howto:'/como-usar', guide:'/guia-pdf', about:'/sobre-nosotros', contact:'/contacto', privacy:'/privacidad', terms:'/terminos', disclaimer:'/aviso-legal', cookies:'/cookies'};
+            const path = routeByTab[tabId] || '/';
+            const publicPath = localPath(path);
+            if (push && location.pathname !== publicPath) history.pushState({path: publicPath}, '', publicPath);
+            const page = LOCAL_SEO_PAGES[path] || LOCAL_SEO_PAGES['/'];
+            if (page) setPageMeta(page.title, page.desc, publicPath);
+        }
+        function openTool(toolType, push=true) {
+            baseOpenTool(toolType);
+            updateToolSeoHeader(toolType);
+            localizeDynamicToolUI(toolType);
+            const routeByTool = {merge:'/unir-pdf', compress:'/comprimir-pdf', jpg2pdf:'/jpg-a-pdf', pdf2jpg:'/pdf-a-jpg', delete:'/eliminar-paginas-pdf', txt2pdf:'/txt-a-pdf', split:'/dividir-pdf', rotate:'/girar-pdf'};
+            const path = routeByTool[toolType] || '/';
+            const publicPath = localPath(path);
+            if (push && location.pathname !== publicPath) history.pushState({path: publicPath}, '', publicPath);
+            const data = LOCAL_TOOL_ROUTES[publicPath] || LOCAL_TOOL_ROUTES[path];
+            if (data) setPageMeta(data.title, data.desc, publicPath);
+        }
+        function loadRoute(push=false) {
+            const path = getLocalRoute();
+            if (LOCAL_TOOL_ROUTES[path]) {
+                const tool = LOCAL_TOOL_ROUTES[path].tool;
+                baseSwitchTab('home');
+                baseOpenTool(tool);
+                updateToolSeoHeader(tool);
+                localizeDynamicToolUI(tool);
+                const data = LOCAL_TOOL_ROUTES[path];
+                setPageMeta(data.title, data.desc, localPath(path));
+                return;
+            }
+            const page = LOCAL_SEO_PAGES[path] || LOCAL_SEO_PAGES['/'];
+            baseSwitchTab(page.tab);
+            updateInfoSeoHeader(page.tab);
+            setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
+        }
+        window.addEventListener('popstate', () => loadRoute(false));
+        function initAiLovePDFRoute() {
+            try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAiLovePDFRoute, { once: true });
+        else initAiLovePDFRoute();
+
+
+        // Localized SPA navigation: keep all internal navigation in the current language without hard refreshes.
+        document.addEventListener('click', function (event) {
+            const a = event.target.closest && event.target.closest('a[href]');
+            if (!a || a.target === '_blank' || event.defaultPrevented) return;
+            const raw = a.getAttribute('href');
+            if (!raw || raw.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(raw)) return;
+            let url;
+            try { url = new URL(raw, location.origin); } catch (_) { return; }
+            if (url.origin !== location.origin) return;
+            const currentPrefix = SITE_ROUTE_PREFIX || '';
+            if (currentPrefix && !(url.pathname === currentPrefix || url.pathname.startsWith(currentPrefix + '/'))) return;
+            if (!currentPrefix && url.pathname !== '/' && url.pathname.startsWith('/' + ['es','fr','de','pt-br','ar'].find(x => url.pathname.startsWith('/'+x+'/')))) return;
+            event.preventDefault();
+            history.pushState({path:url.pathname}, '', url.pathname);
+            loadRoute(false);
+            window.scrollTo({top:0, behavior:'smooth'});
+        }, {capture:true});
+</script>
+<script>
+(function(){
+  const ROOT='https://www.ailovepdf.site';
+  const pageRoot=()=>document.getElementById('page-root');
+  const norm=(p)=>{const x=(p||'/').replace(/\/+$/,''); return x||'/';};
+  async function navigateTo(url, push=true){
+    const u=new URL(url,location.origin);
+    if(u.origin!==location.origin) return;
+    const currentPrefix=(typeof SITE_ROUTE_PREFIX!=='undefined'?SITE_ROUTE_PREFIX:'');
+    if(currentPrefix && !(u.pathname===currentPrefix || u.pathname.startsWith(currentPrefix+'/'))) return;
+    const current=pageRoot();
+    if(current && current.dataset.route===norm(u.pathname)){ if(push && location.pathname!==u.pathname) history.pushState({path:u.pathname},'',u.pathname); return; }
+    try{
+      const res=await fetch(u.pathname+(u.search||''),{headers:{'X-AiLovePDF-Navigation':'1'}});
+      if(!res.ok) throw new Error('navigation failed');
+      const html=await res.text();
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      const next=doc.getElementById('page-root');
+      if(!next) throw new Error('page root missing');
+      if(push) history.pushState({path:u.pathname},'',u.pathname);
+      const cur=pageRoot(); if(cur) cur.replaceWith(next);
+      const headTags=[['title',''],['meta','name=description'],['link','rel=canonical'],['meta','property=og:title'],['meta','property=og:description'],['meta','property=og:url'],['meta','property=og:image'],['meta','name=twitter:title'],['meta','name=twitter:description'],['meta','name=twitter:image']];
+      const sel=(t,k)=>k?document.head.querySelector(t+'['+k+']'):document.head.querySelector(t);
+      const set=(t,k,attrs)=>{let el=sel(t,k); const src=doc.head.querySelector(t+(k?'['+k+']':'')); if(!src)return; if(!el){el=document.createElement(t); document.head.appendChild(el);} for(const a of src.attributes) el.setAttribute(a.name,a.value); if(t==='title') el.textContent=src.textContent;};
+      set('title','',{}); set('meta','name="description"',{}); set('link','rel="canonical"',{}); set('meta','property="og:title"',{}); set('meta','property="og:description"',{}); set('meta','property="og:url"',{}); set('meta','property="og:image"',{}); set('meta','name="twitter:title"',{}); set('meta','name="twitter:description"',{}); set('meta','name="twitter:image"',{});
+      const tool=(typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)])?LOCAL_TOOL_ROUTES[norm(u.pathname)].tool:null;
+      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); }
+      window.scrollTo({top:0,behavior:'smooth'});
+    }catch(e){ window.location.href=u.href; }
+  }
+  window.__navigateAiLovePDF=navigateTo;
+  window.addEventListener('popstate',()=>navigateTo(location.href,false));
+  document.addEventListener('click',function(e){
+    const a=e.target.closest && e.target.closest('a[href]'); if(!a || a.target==='_blank' || e.defaultPrevented) return;
+    const raw=a.getAttribute('href'); if(!raw || raw[0]==='#' || /^(mailto:|tel:|javascript:)/i.test(raw)) return;
+    let u; try{u=new URL(raw,location.origin);}catch(_){return;}
+    if(u.origin!==location.origin) return;
+    const pref=(typeof SITE_ROUTE_PREFIX!=='undefined'?SITE_ROUTE_PREFIX:'');
+    if(pref && !(u.pathname===pref || u.pathname.startsWith(pref+'/'))) return;
+    e.preventDefault(); navigateTo(u.href,true);
+  },true);
+})();
+</script>
+</body>
+</html>
