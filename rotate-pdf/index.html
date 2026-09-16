@@ -148,10 +148,10 @@
 <div class="adsbygoogle-placeholder w-full h-[90px]">
 <span>Advertisement</span>
 </div>
-</div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/rotate-pdf" id="page-root"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
+</div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/rotate-pdf" id="page-root" data-tool="rotate"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
 <!-- Two-container tool layout: localized SEO intro + separate tool card -->
 <div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-left" id="tool-seo-header">
-<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/">Home</a> / Rotate PDF</div>
+<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/rotate-pdf/">Home</a> / Rotate PDF</div>
 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight" id="tool-seo-title">Rotate PDF Pages</h1>
 <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl" id="tool-seo-desc">Rotate PDF pages by 90, 180, or 270 degrees directly in your browser.</p>
 </div>
@@ -161,7 +161,7 @@
 <h2 class="text-3xl font-extrabold mb-3 text-slate-900" id="tool-title">PDF Tool</h2>
 <p class="text-slate-500 mb-8" id="tool-desc">Choose a PDF tool to get started.</p>
 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-dashed border-slate-300 mb-8 max-w-xl mx-auto">
-<div class="text-left space-y-4" id="tool-inputs"></div>
+<div class="text-left space-y-4" id="tool-inputs"><input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select></div>
 </div>
 <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">Execute <i class="fa-solid fa-arrow-right"></i></button>
 <div class="mt-6 font-bold text-lg min-h-[30px]" id="tool-status"></div>
@@ -174,14 +174,14 @@
 <p class="text-lg leading-relaxed mb-6">The listed PDF operations are implemented in your browser. This means the document-processing work is performed locally by the browser rather than by a dedicated PDF-processing server. Browser memory, file size and document complexity can affect performance.</p>
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Choose the right PDF tool</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/merge-pdf/" onclick="openTool('merge'); return false;"><strong>Merge PDF</strong><span class="block text-sm text-slate-500 mt-1">Combine multiple PDF files into one document.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/compress-pdf/" onclick="openTool('compress'); return false;"><strong>Compress PDF</strong><span class="block text-sm text-slate-500 mt-1">Reduce PDF size for easier sharing and storage.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/jpg-to-pdf/" onclick="openTool('jpg2pdf'); return false;"><strong>JPG to PDF</strong><span class="block text-sm text-slate-500 mt-1">Turn JPG and supported images into PDF files.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/pdf-to-jpg/" onclick="openTool('pdf2jpg'); return false;"><strong>PDF to JPG</strong><span class="block text-sm text-slate-500 mt-1">Render PDF pages as JPG images.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/delete-pdf-pages/" onclick="openTool('delete'); return false;"><strong>Delete PDF Pages</strong><span class="block text-sm text-slate-500 mt-1">Remove selected pages from a PDF.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/txt-to-pdf/" onclick="openTool('txt2pdf'); return false;"><strong>TXT to PDF</strong><span class="block text-sm text-slate-500 mt-1">Create a PDF from a plain text file.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/split-pdf/" onclick="openTool('split'); return false;"><strong>Split PDF</strong><span class="block text-sm text-slate-500 mt-1">Create a new PDF from selected pages.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/rotate-pdf/" onclick="openTool('rotate'); return false;"><strong>Rotate PDF</strong><span class="block text-sm text-slate-500 mt-1">Change the rotation of PDF pages.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/merge-pdf/"><strong>Merge PDF</strong><span class="block text-sm text-slate-500 mt-1">Combine multiple PDF files into one document.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/compress-pdf/"><strong>Compress PDF</strong><span class="block text-sm text-slate-500 mt-1">Reduce PDF size for easier sharing and storage.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/jpg-to-pdf/"><strong>JPG to PDF</strong><span class="block text-sm text-slate-500 mt-1">Turn JPG and supported images into PDF files.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/pdf-to-jpg/"><strong>PDF to JPG</strong><span class="block text-sm text-slate-500 mt-1">Render PDF pages as JPG images.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/delete-pdf-pages/"><strong>Delete PDF Pages</strong><span class="block text-sm text-slate-500 mt-1">Remove selected pages from a PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/txt-to-pdf/"><strong>TXT to PDF</strong><span class="block text-sm text-slate-500 mt-1">Create a PDF from a plain text file.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/split-pdf/"><strong>Split PDF</strong><span class="block text-sm text-slate-500 mt-1">Create a new PDF from selected pages.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/rotate-pdf/"><strong>Rotate PDF</strong><span class="block text-sm text-slate-500 mt-1">Change the rotation of PDF pages.</span></a>
 </div>
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Browser compatibility</h3>
 <p class="text-lg leading-relaxed">AiLovePDF is intended for modern browsers on Windows, macOS, Android and other supported devices. Processing speed depends on your browser, device memory, file size and document complexity.</p>
@@ -257,7 +257,7 @@
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Navigate</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/" onclick="switchTab('home'); return false;">Home</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/">Home</a></li>
 <li><a class="hover:text-blue-600 transition-colors" href="/how-to-use/">How to Use</a></li>
 <li><a class="hover:text-blue-600 transition-colors" href="/pdf-guide/">PDF Guide</a></li>
 <li><a class="hover:text-blue-600 transition-colors" href="/contact/">Contact</a></li>
@@ -267,34 +267,34 @@
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Tools</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">Merge PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Split PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Rotate PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/merge-pdf/">Merge PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/split-pdf/">Split PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/rotate-pdf/">Rotate PDF</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">Compress PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">Delete PDF Pages</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">TXT to PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/compress-pdf/">Compress PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/delete-pdf-pages/">Delete PDF Pages</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/txt-to-pdf/">TXT to PDF</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/">JPG to PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/">PDF to JPG</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/jpg-to-pdf/">JPG to PDF</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/pdf-to-jpg/">PDF to JPG</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto px-4 mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
-<a class="hover:text-blue-600" href="/about/" onclick="switchTab('about'); return false;">About</a>
-<a class="hover:text-blue-600" href="/contact/" onclick="switchTab('contact'); return false;">Contact</a>
-<a class="hover:text-blue-600" href="/privacy/" onclick="switchTab('privacy'); return false;">Privacy Policy</a>
-<a class="hover:text-blue-600" href="/terms/" onclick="switchTab('terms'); return false;">Terms</a>
-<a class="hover:text-blue-600" href="/disclaimer/" onclick="switchTab('disclaimer'); return false;">Disclaimer</a>
-<a class="hover:text-blue-600" href="/cookies/" onclick="switchTab('cookies'); return false;">Cookie Policy</a>
+<a class="hover:text-blue-600" href="/about/">About</a>
+<a class="hover:text-blue-600" href="/contact/">Contact</a>
+<a class="hover:text-blue-600" href="/privacy/">Privacy Policy</a>
+<a class="hover:text-blue-600" href="/terms/">Terms</a>
+<a class="hover:text-blue-600" href="/disclaimer/">Disclaimer</a>
+<a class="hover:text-blue-600" href="/cookies/">Cookie Policy</a>
 </div>
 <div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center">
 <div class="font-bold text-slate-700 mb-2 md:mb-0 flex items-center gap-2">
@@ -335,8 +335,14 @@
 
         // --- Navigation Logic ---
         function baseSwitchTab(tabId) {
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('view-active'));
-            document.getElementById(tabId).classList.add('view-active');
+            const targetView = document.getElementById(tabId);
+            const views = document.querySelectorAll('.view-section');
+            if (!targetView) {
+                // Tool pages intentionally contain only the tool workspace, not the homepage SPA views.
+                return false;
+            }
+            views.forEach(el => el.classList.remove('view-active'));
+            targetView.classList.add('view-active');
             
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('tab-active', 'text-slate-900');
@@ -358,12 +364,15 @@
             
             if(tabId === 'home') closeTool(); 
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Tool Display Logic ---
         function closeTool() {
-            document.getElementById('hero-section').classList.remove('hidden-tool');
-            document.getElementById('tool-workspace').classList.add('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (hero) hero.classList.remove('hidden-tool');
+            if (workspace) workspace.classList.add('hidden-tool');
         }
 
         const TOOL_SEO_CONTENT = {
@@ -387,8 +396,11 @@
         }
 
         function baseOpenTool(toolType) {
-            document.getElementById('hero-section').classList.add('hidden-tool');
-            document.getElementById('tool-workspace').classList.remove('hidden-tool');
+            const hero = document.getElementById('hero-section');
+            const workspace = document.getElementById('tool-workspace');
+            if (!workspace) return false;
+            if (hero) hero.classList.add('hidden-tool');
+            workspace.classList.remove('hidden-tool');
             updateToolSeoHeader(toolType);
             
             const title = document.getElementById('tool-title');
@@ -396,7 +408,8 @@
             const inputs = document.getElementById('tool-inputs');
             const btn = document.getElementById('tool-action-btn');
             
-            document.getElementById('tool-status').innerHTML = "";
+            const statusEl = document.getElementById('tool-status');
+            if (statusEl) statusEl.innerHTML = "";
             const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
 
             if (toolType === 'merge') {
@@ -460,6 +473,7 @@
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            return true;
         }
 
         // --- Helper: Download File ---
@@ -474,16 +488,50 @@
             return String(table[key] || TOOL_MESSAGES_I18N.en[key] || key).replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
         }
 
+        // Direct client-side download. Never opens the generated file in a new tab.
+        // Every output is normalized to the AiLovePDF_ naming convention.
         function downloadFile(blob, fileName) {
+            if (!(blob instanceof Blob)) throw new Error('The generated file is not available.');
+            const rawName = String(fileName || 'File');
+            const normalized = rawName.replace(/^AiLovePDF_/i, '');
+            const safeName = `AiLovePDF_${normalized.replace(/[\\/:*?"<>|\x00-\x1F]/g, '_').trim() || 'File'}`;
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = fileName;
+            link.setAttribute('download', safeName);
+            link.download = safeName;
+            link.target = '_self';
             link.rel = 'noopener';
+            link.style.position = 'fixed';
+            link.style.left = '-9999px';
+            link.style.width = '1px';
+            link.style.height = '1px';
+            link.style.opacity = '0';
+            link.setAttribute('aria-hidden', 'true');
             document.body.appendChild(link);
             link.click();
             link.remove();
-            setTimeout(() => URL.revokeObjectURL(url), 1500);
+            setTimeout(() => URL.revokeObjectURL(url), 5000);
+            return safeName;
+        }
+
+        async function downloadFiles(entries) {
+            for (const entry of entries) {
+                downloadFile(entry.blob, entry.name);
+                // Give the browser an opportunity to register each individual download.
+                await yieldToBrowser();
+            }
+        }
+
+        async function yieldToBrowser() {
+            if (typeof scheduler !== 'undefined' && scheduler.postTask) {
+                await scheduler.postTask(() => {}, { priority: 'user-visible' });
+                return;
+            }
+            await new Promise(resolve => {
+                if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => setTimeout(resolve, 0));
+                else setTimeout(resolve, 0);
+            });
         }
 
         function safeBaseName(fileName) {
@@ -500,69 +548,10 @@
             statusEl.innerHTML = `<div class="text-blue-600 font-medium">${safe}</div><div class="mt-2 h-2 w-full max-w-md mx-auto rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-blue-600 transition-all" style="width:${pct}%"></div></div>`;
         }
 
-        function crc32(bytes) {
-            let crc = 0xFFFFFFFF;
-            for (let i = 0; i < bytes.length; i++) {
-                crc ^= bytes[i];
-                for (let j = 0; j < 8; j++) crc = (crc >>> 1) ^ (0xEDB88320 & -(crc & 1));
-            }
-            return (crc ^ 0xFFFFFFFF) >>> 0;
-        }
-
-        // Create a standard ZIP using stored JPG entries. JPG is already compressed,
-        // so re-compressing it only wastes CPU and can increase memory use.
-        async function createStoredZip(entries) {
-            const parts = [];
-            const central = [];
-            const encoder = new TextEncoder();
-            let offset = 0;
-            for (const entry of entries) {
-                const nameBytes = encoder.encode(entry.name);
-                const data = new Uint8Array(await entry.blob.arrayBuffer());
-                const crc = crc32(data);
-                const local = new Uint8Array(30 + nameBytes.length);
-                const dv = new DataView(local.buffer);
-                dv.setUint32(0, 0x04034b50, true);
-                dv.setUint16(4, 20, true);
-                dv.setUint16(6, 0x0800, true);
-                dv.setUint32(14, crc, true);
-                dv.setUint32(18, data.byteLength, true);
-                dv.setUint32(22, data.byteLength, true);
-                dv.setUint16(26, nameBytes.length, true);
-                local.set(nameBytes, 30);
-                parts.push(local, data);
-
-                const cd = new Uint8Array(46 + nameBytes.length);
-                const cv = new DataView(cd.buffer);
-                cv.setUint32(0, 0x02014b50, true);
-                cv.setUint16(4, 20, true);
-                cv.setUint16(6, 20, true);
-                cv.setUint16(8, 0x0800, true);
-                cv.setUint32(16, crc, true);
-                cv.setUint32(20, data.byteLength, true);
-                cv.setUint32(24, data.byteLength, true);
-                cv.setUint16(28, nameBytes.length, true);
-                cv.setUint32(42, offset, true);
-                cd.set(nameBytes, 46);
-                central.push(cd);
-                offset += local.byteLength + data.byteLength;
-            }
-            const centralOffset = offset;
-            let centralSize = 0;
-            for (const cd of central) { parts.push(cd); centralSize += cd.byteLength; }
-            const end = new Uint8Array(22);
-            const ev = new DataView(end.buffer);
-            ev.setUint32(0, 0x06054b50, true);
-            ev.setUint16(8, entries.length, true);
-            ev.setUint16(10, entries.length, true);
-            ev.setUint32(12, centralSize, true);
-            ev.setUint32(16, centralOffset, true);
-            parts.push(end);
-            return new Blob(parts, { type: 'application/zip' });
-        }
-
-        // --- REUSABLE 5-SECOND COUNTDOWN & PROCESS WRAPPER ---
-        async function runWith5SecDelay(processCallback) {
+        // --- ASYNC PROCESS WRAPPER ---
+        // No artificial timer. Processing starts immediately and long loops yield back to
+        // the browser so the UI can repaint and remain responsive.
+        async function runProcessing(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -571,7 +560,7 @@
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
-                await new Promise(resolve => requestAnimationFrame(resolve));
+                await yieldToBrowser();
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -587,147 +576,145 @@
 
         // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
 
+        // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
+
         // 1. MERGE PDF
         function executeMerge() {
-            const files = document.getElementById('file-input').files;
+            const input = document.getElementById('file-input');
+            const files = input && input.files ? Array.from(input.files) : [];
             if (files.length < 2) return alert(t('merge'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
-                for (let file of files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    setProgress(t('processing'), (i / files.length) * 100);
                     const bytes = await file.arrayBuffer();
                     const pdf = await PDFDocument.load(bytes);
                     const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-                    copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    for (const page of copiedPages) mergedPdf.addPage(page);
+                    await yieldToBrowser();
                 }
                 const mergedBytes = await mergedPdf.save();
-                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_merged.pdf`);
+                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), 'AiLovePDF_Merged.pdf');
             });
         }
 
         // 2. SPLIT PDF
         function executeSplit() {
-            const file = document.getElementById('file-input').files[0];
-            const pagesStr = document.getElementById('pages-input').value;
+            const input = document.getElementById('file-input');
+            const pagesInput = document.getElementById('pages-input');
+            const file = input && input.files ? input.files[0] : null;
+            const pagesStr = pagesInput ? pagesInput.value : '';
             if (!file || !pagesStr) return alert(t('split'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const totalPages = pdf.getPageCount();
-                
                 const indices = pagesStr.split(',')
-                    .map(n => parseInt(n.trim()) - 1)
-                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages);
-
-                if (indices.length === 0) throw new Error("Invalid page numbers");
-
+                    .map(n => parseInt(n.trim(), 10) - 1)
+                    .filter(n => Number.isInteger(n) && n >= 0 && n < totalPages);
+                if (!indices.length) throw new Error('Invalid page numbers');
                 const newPdf = await PDFDocument.create();
                 const copiedPages = await newPdf.copyPages(pdf, indices);
-                copiedPages.forEach(p => newPdf.addPage(p));
-                
+                for (const page of copiedPages) {
+                    newPdf.addPage(page);
+                    if (newPdf.getPageCount() % 25 === 0) await yieldToBrowser();
+                }
                 const newBytes = await newPdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_split.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Split.pdf');
             });
         }
 
-        // 3. COMPRESS PDF (Client-Side Canvas Trick)
+        // 3. COMPRESS PDF (client-side image recompression)
         function executeCompress() {
-            const file = document.getElementById('file-input').files[0];
-            const quality = parseFloat(document.getElementById('quality-input').value);
+            const input = document.getElementById('file-input');
+            const qualityInput = document.getElementById('quality-input');
+            const file = input && input.files ? input.files[0] : null;
+            const quality = qualityInput ? parseFloat(qualityInput.value) : 0.5;
             if (!file) return alert(t('compress'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
-                const fileBytes = await file.arrayBuffer();
-                const typedarray = new Uint8Array(fileBytes);
-                const originalPdf = await pdfjsLib.getDocument(typedarray).promise;
+                const typedarray = new Uint8Array(await file.arrayBuffer());
+                const originalPdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
                 const newPdf = await PDFDocument.create();
-
                 for (let i = 1; i <= originalPdf.numPages; i++) {
                     const page = await originalPdf.getPage(i);
                     const viewport = page.getViewport({ scale: 1.2 });
-                    
                     const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-                    
-                    await page.render({ canvasContext: context, viewport: viewport }).promise;
-                    
-                    const imgDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    canvas.width = Math.ceil(viewport.width);
+                    canvas.height = Math.ceil(viewport.height);
+                    const context = canvas.getContext('2d', { alpha: false, willReadFrequently: false });
+                    await page.render({ canvasContext: context, viewport }).promise;
+                    const imgDataUrl = canvas.toDataURL('image/jpeg', Math.max(0.05, Math.min(1, quality)));
                     const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
-                    
                     const jpgImage = await newPdf.embedJpg(imgBytes);
                     const newPage = newPdf.addPage([jpgImage.width, jpgImage.height]);
                     newPage.drawImage(jpgImage, { x: 0, y: 0, width: jpgImage.width, height: jpgImage.height });
+                    canvas.width = 1; canvas.height = 1;
+                    if (page.cleanup) page.cleanup();
+                    setProgress(t('processing'), (i / originalPdf.numPages) * 100);
+                    await yieldToBrowser();
                 }
-
                 const pdfBytes = await newPdf.save();
-                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_compressed.pdf`);
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Compressed.pdf');
             });
         }
 
         // 4. JPG TO PDF
         function executeJpgToPdf() {
-            const files = document.getElementById('file-input').files;
-            if (files.length === 0) return alert(t('image'));
+            const input = document.getElementById('file-input');
+            const files = input && input.files ? Array.from(input.files) : [];
+            if (!files.length) return alert(t('image'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
-                for (let file of files) {
+                let added = 0;
+                for (const file of files) {
                     const imageBytes = await file.arrayBuffer();
                     let image;
-                    if (file.type === 'image/jpeg' || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')) {
-                        image = await pdfDoc.embedJpg(imageBytes);
-                    } else if (file.type === 'image/png' || file.name.endsWith('.png')) {
-                        image = await pdfDoc.embedPng(imageBytes);
-                    } else {
-                        continue;
-                    }
+                    const name = file.name.toLowerCase();
+                    if (file.type === 'image/jpeg' || name.endsWith('.jpg') || name.endsWith('.jpeg')) image = await pdfDoc.embedJpg(imageBytes);
+                    else if (file.type === 'image/png' || name.endsWith('.png')) image = await pdfDoc.embedPng(imageBytes);
+                    else continue;
                     const page = pdfDoc.addPage([image.width, image.height]);
                     page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
+                    added++;
+                    setProgress(t('processing'), (added / files.length) * 100);
+                    await yieldToBrowser();
                 }
+                if (!added) throw new Error(t('image'));
                 const pdfBytes = await pdfDoc.save();
-                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_images.pdf`);
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Images.pdf');
             });
         }
 
-        // 5. PDF TO JPG (All Pages / High Quality)
+        // 5. PDF TO JPG — all pages, individual direct downloads, no ZIP.
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
-            if (!file) return alert('Please upload a PDF file.');
+            if (!file) return alert(t('pdf'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
                 if (signature !== '%PDF-') throw new Error(t('invalidpdf'));
-
                 const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
                 const total = pdf.numPages;
                 if (!total) throw new Error(t('nopages'));
 
-                const base = safeBaseName(file.name);
-                const entries = [];
-                const targetScale = 3.0;
-                const maxCanvasDimension = 8192;
-                const maxCanvasPixels = 50000000;
                 const digits = String(total).length;
-
                 for (let i = 1; i <= total; i++) {
-                    setProgress(t('render', {i, total}), ((i - 1) / total) * 100);
+                    setProgress(t('render', { i, total }), ((i - 1) / total) * 100);
                     const page = await pdf.getPage(i);
-                    const natural = page.getViewport({ scale: targetScale });
-                    const dimensionScale = Math.min(1, maxCanvasDimension / Math.max(natural.width, natural.height));
-                    const pixelScale = Math.min(1, Math.sqrt(maxCanvasPixels / Math.max(1, natural.width * natural.height)));
-                    const renderScale = targetScale * Math.min(dimensionScale, pixelScale);
-                    const viewport = page.getViewport({ scale: renderScale });
+                    const viewport = page.getViewport({ scale: 3.0 });
                     const canvas = document.createElement('canvas');
                     canvas.width = Math.ceil(viewport.width);
                     canvas.height = Math.ceil(viewport.height);
@@ -735,112 +722,102 @@
                     context.fillStyle = '#ffffff';
                     context.fillRect(0, 0, canvas.width, canvas.height);
                     await page.render({ canvasContext: context, viewport, intent: 'print' }).promise;
-
                     const blob = await new Promise((resolve, reject) => {
-                        canvas.toBlob(b => b ? resolve(b) : reject(new Error(t('jpgpage', {i}))), 'image/jpeg', 1.0);
+                        canvas.toBlob(b => b ? resolve(b) : reject(new Error(t('jpgpage', { i }))), 'image/jpeg', 1.0);
                     });
-                    entries.push({ name: `${base}_page_${String(i).padStart(digits, '0')}.jpg`, blob });
-                    canvas.width = 1;
-                    canvas.height = 1;
+                    downloadFile(blob, `AiLovePDF_Page_${String(i).padStart(digits, '0')}.jpg`);
+                    canvas.width = 1; canvas.height = 1;
                     if (page.cleanup) page.cleanup();
-                    if (i % 3 === 0) await new Promise(resolve => requestAnimationFrame(resolve));
+                    await yieldToBrowser();
                 }
-
-                setProgress(t('zip'), 100);
-                const zipBlob = await createStoredZip(entries);
-                downloadFile(zipBlob, `${base}_JPG.zip`);
+                setProgress(t('done'), 100);
             });
         }
 
         // 6. DELETE PAGES
         function executeDelete() {
-            const file = document.getElementById('file-input').files[0];
-            const pagesStr = document.getElementById('pages-input').value;
+            const input = document.getElementById('file-input');
+            const pagesInput = document.getElementById('pages-input');
+            const file = input && input.files ? input.files[0] : null;
+            const pagesStr = pagesInput ? pagesInput.value : '';
             if (!file || !pagesStr) return alert(t('delete'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const totalPages = pdf.getPageCount();
-                
-                const toDelete = pagesStr.split(',')
-                    .map(n => parseInt(n.trim()) - 1)
-                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages)
-                    .sort((a, b) => b - a);
-
-                if (toDelete.length === 0) throw new Error("Invalid page numbers");
-
-                toDelete.forEach(idx => {
+                const toDelete = [...new Set(pagesStr.split(',')
+                    .map(n => parseInt(n.trim(), 10) - 1)
+                    .filter(n => Number.isInteger(n) && n >= 0 && n < totalPages))].sort((a, b) => b - a);
+                if (!toDelete.length) throw new Error('Invalid page numbers');
+                for (const idx of toDelete) {
                     pdf.removePage(idx);
-                });
-                
+                    await yieldToBrowser();
+                }
                 const newBytes = await pdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_pages_removed.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Pages_Removed.pdf');
             });
         }
 
-        // 7. TXT TO PDF
+        // 7. TXT TO PDF — full file, automatically creates as many pages as required.
         function executeTxtToPdf() {
-            const file = document.getElementById('file-input').files[0];
+            const input = document.getElementById('file-input');
+            const file = input && input.files ? input.files[0] : null;
             if (!file) return alert(t('txt'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
                 const doc = new jsPDF();
-
-                const marginLeft = 15;
-                const marginRight = 15;
-                const marginTop = 15;
-                const marginBottom = 15;
+                const marginLeft = 15, marginRight = 15, marginTop = 15, marginBottom = 15;
                 const pageWidth = doc.internal.pageSize.getWidth();
                 const pageHeight = doc.internal.pageSize.getHeight();
                 const usableWidth = pageWidth - marginLeft - marginRight;
                 const lineHeight = 6;
                 const maxY = pageHeight - marginBottom;
-
-                // Preserve paragraph/line breaks while wrapping long lines to the page width.
                 const sourceLines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
                 let y = marginTop;
-
+                let lineCounter = 0;
                 for (const sourceLine of sourceLines) {
                     const wrappedLines = doc.splitTextToSize(sourceLine || ' ', usableWidth);
-
                     for (const line of wrappedLines) {
-                        if (y + lineHeight > maxY) {
-                            doc.addPage();
-                            y = marginTop;
-                        }
+                        if (y + lineHeight > maxY) { doc.addPage(); y = marginTop; }
                         doc.text(String(line), marginLeft, y);
                         y += lineHeight;
+                        if (++lineCounter % 100 === 0) await yieldToBrowser();
                     }
                 }
-
-                doc.save(`${safeBaseName(file.name)}.pdf`);
+                const pdfBytes = doc.output('arraybuffer');
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Text.pdf');
             });
         }
 
         // 8. ROTATE PDF
         function executeRotate() {
-            const file = document.getElementById('file-input').files[0];
-            const angle = parseInt(document.getElementById('angle-input').value);
+            const input = document.getElementById('file-input');
+            const angleInput = document.getElementById('angle-input');
+            const file = input && input.files ? input.files[0] : null;
+            const angle = angleInput ? parseInt(angleInput.value, 10) : 90;
             if (!file) return alert(t('rotate'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const pages = pdf.getPages();
-                
-                pages.forEach(page => {
-                    const currentRotation = page.getRotation().angle;
+                for (let i = 0; i < pages.length; i++) {
+                    const page = pages[i];
+                    const currentRotation = page.getRotation().angle || 0;
                     page.setRotation(degrees(currentRotation + angle));
-                });
-                
+                    if ((i + 1) % 25 === 0) {
+                        setProgress(t('processing'), ((i + 1) / pages.length) * 100);
+                        await yieldToBrowser();
+                    }
+                }
                 const newBytes = await pdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_rotated.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Rotated.pdf');
             });
         }
     
@@ -905,7 +882,7 @@
         const SITE_ROUTE_PREFIX = "";
         const LOCAL_INFO_VISIBLE_SEO = {"home": {"title": "Free Online PDF Tools", "desc": "Merge, compress, split, rotate and convert PDF files in your browser."}, "howto": {"title": "How to Use AiLovePDF Tools", "desc": "Learn how to use AiLovePDF browser-based PDF tools step by step."}, "guide": {"title": "PDF Guide: Practical Tips for Common Document Tasks", "desc": "Practical guidance for working with PDF files using AiLovePDF tools."}, "about": {"title": "About AiLovePDF", "desc": "Learn about AiLovePDF and its browser-based PDF tools."}, "contact": {"title": "Contact AiLovePDF", "desc": "Get in touch with AiLovePDF for questions, feedback or support."}, "privacy": {"title": "Privacy Policy", "desc": "Read how AiLovePDF handles privacy and browser-based PDF processing."}, "terms": {"title": "Terms & Conditions", "desc": "Read the terms and conditions for using AiLovePDF."}, "disclaimer": {"title": "Disclaimer", "desc": "Read the AiLovePDF service disclaimer."}, "cookies": {"title": "Cookie Policy", "desc": "Read the AiLovePDF cookie policy."}};
         const LOCAL_TOOL_SEO = {"merge": {"title": "Merge PDF Online", "desc": "Combine multiple PDF files into one document directly in your browser.", "breadcrumb": "Home / Merge PDF"}, "compress": {"title": "Compress PDF Online", "desc": "Reduce PDF file size in your browser with a simple client-side PDF compressor.", "breadcrumb": "Home / Compress PDF"}, "jpg2pdf": {"title": "JPG to PDF Converter", "desc": "Convert JPG and PNG images into a PDF document directly in your browser.", "breadcrumb": "Home / JPG to PDF"}, "pdf2jpg": {"title": "PDF to JPG Converter", "desc": "Convert PDF pages into JPG images directly in your browser.", "breadcrumb": "Home / PDF to JPG"}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from a PDF document directly in your browser.", "breadcrumb": "Home / Delete PDF Pages"}, "txt2pdf": {"title": "TXT to PDF Converter", "desc": "Convert a plain text file into a PDF directly in your browser.", "breadcrumb": "Home / TXT to PDF"}, "split": {"title": "Split PDF Online", "desc": "Extract selected pages from a PDF and create a new document in your browser.", "breadcrumb": "Home / Split PDF"}, "rotate": {"title": "Rotate PDF Pages", "desc": "Rotate PDF pages by 90, 180, or 270 degrees directly in your browser.", "breadcrumb": "Home / Rotate PDF"}};
-        const LOCAL_TOOL_UI = {"merge": {"title": "Merge PDF Files", "desc": "Select multiple PDFs to combine them into one file."}, "split": {"title": "Split PDF", "desc": "Extract specific pages from your PDF document."}, "compress": {"title": "Compress PDF", "desc": "Reduce file size significantly."}, "jpg2pdf": {"title": "JPG to PDF", "desc": "Convert your images into a PDF document."}, "pdf2jpg": {"title": "PDF para JPG", "desc": "Converta todas as páginas do PDF em imagens JPG de alta qualidade e baixe todas as páginas em um único ZIP."}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from your document."}, "txt2pdf": {"title": "TXT to PDF", "desc": "Convert a plain text file into a PDF."}, "rotate": {"title": "Rotate PDF", "desc": "Rotate pages in your PDF document."}};
+        const LOCAL_TOOL_UI = {"merge": {"title": "Merge PDF Files", "desc": "Select multiple PDFs to combine them into one file."}, "split": {"title": "Split PDF", "desc": "Extract specific pages from your PDF document."}, "compress": {"title": "Compress PDF", "desc": "Reduce file size significantly."}, "jpg2pdf": {"title": "JPG to PDF", "desc": "Convert your images into a PDF document."}, "pdf2jpg": {"title": "PDF to JPG", "desc": "Convert every PDF page into a high-quality JPG image and download each page directly."}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from your document."}, "txt2pdf": {"title": "TXT to PDF", "desc": "Convert a plain text file into a PDF."}, "rotate": {"title": "Rotate PDF", "desc": "Rotate pages in your PDF document."}};
         const LOCAL_SEO_PAGES = {"/": {"tab": "home", "title": "AiLovePDF - Free Online PDF Tools | Merge, Compress & Convert", "desc": "Free browser-based PDF tools to merge, compress, split, rotate and convert PDF files. Simple client-side PDF tools from AiLovePDF."}, "/how-to-use": {"tab": "howto", "title": "How to Use AiLovePDF PDF Tools", "desc": "Learn how to use AiLovePDF browser-based PDF tools for merging, compression, conversion, splitting and rotation."}, "/pdf-guide": {"tab": "guide", "title": "PDF Guide | AiLovePDF", "desc": "Practical guidance for common PDF tasks using AiLovePDF browser-based tools."}, "/about": {"tab": "about", "title": "About AiLovePDF", "desc": "Learn about AiLovePDF and its browser-based PDF tools."}, "/contact": {"tab": "contact", "title": "Contact AiLovePDF", "desc": "Contact AiLovePDF with questions, feedback or support requests."}, "/privacy": {"tab": "privacy", "title": "Privacy Policy | AiLovePDF", "desc": "Read the AiLovePDF privacy policy and learn how browser-based PDF processing works."}, "/terms": {"tab": "terms", "title": "Terms & Conditions | AiLovePDF", "desc": "Read the terms and conditions for using AiLovePDF."}, "/disclaimer": {"tab": "disclaimer", "title": "Disclaimer | AiLovePDF", "desc": "Read the AiLovePDF service disclaimer."}, "/cookies": {"tab": "cookies", "title": "Cookie Policy | AiLovePDF", "desc": "Read the AiLovePDF cookie policy."}};
         const LOCAL_TOOL_ROUTES = {"/merge-pdf": {"tool": "merge", "title": "Merge PDF Online Free | AiLovePDF", "desc": "Merge multiple PDF files into one document directly in your browser."}, "/compress-pdf": {"tool": "compress", "title": "Compress PDF Online Free | AiLovePDF", "desc": "Reduce PDF file size in your browser with AiLovePDF."}, "/jpg-to-pdf": {"tool": "jpg2pdf", "title": "JPG to PDF Converter Online Free | AiLovePDF", "desc": "Convert JPG and supported images to PDF in your browser."}, "/pdf-to-jpg": {"tool": "pdf2jpg", "title": "PDF to JPG Converter Online Free | AiLovePDF", "desc": "Render PDF pages as JPG images in your browser."}, "/delete-pdf-pages": {"tool": "delete", "title": "Delete PDF Pages Online Free | AiLovePDF", "desc": "Remove selected pages from a PDF in your browser."}, "/txt-to-pdf": {"tool": "txt2pdf", "title": "TXT to PDF Converter Online Free | AiLovePDF", "desc": "Create a PDF from a plain text file in your browser."}, "/split-pdf": {"tool": "split", "title": "Split PDF Online Free | AiLovePDF", "desc": "Create a new PDF from selected pages in your browser."}, "/rotate-pdf": {"tool": "rotate", "title": "Rotate PDF Pages Online Free | AiLovePDF", "desc": "Rotate PDF pages directly in your browser."}};
 
@@ -973,6 +950,14 @@
             if (heading) heading.textContent = data.title;
         }
         function switchTab(tabId, push=true) {
+            const targetView = document.getElementById(tabId);
+            if (!targetView) {
+                const routeByTab = {home:'/', howto:'/how-to-use', guide:'/pdf-guide', about:'/about', contact:'/contact', privacy:'/privacy', terms:'/terms', disclaimer:'/disclaimer', cookies:'/cookies'};
+                const destination = localPath(routeByTab[tabId] || '/');
+                if (typeof window.__navigateAiLovePDF === 'function') window.__navigateAiLovePDF(destination, push);
+                else window.location.href = destination;
+                return;
+            }
             baseSwitchTab(tabId);
             updateInfoSeoHeader(tabId);
             const routeByTab = {home:'/', howto:'/how-to-use', guide:'/pdf-guide', about:'/about', contact:'/contact', privacy:'/privacy', terms:'/terms', disclaimer:'/disclaimer', cookies:'/cookies'};
@@ -983,12 +968,18 @@
             if (page) setPageMeta(page.title, page.desc, publicPath);
         }
         function openTool(toolType, push=true) {
-            baseOpenTool(toolType);
-            updateToolSeoHeader(toolType);
-            localizeDynamicToolUI(toolType);
             const routeByTool = {merge:'/merge-pdf', compress:'/compress-pdf', jpg2pdf:'/jpg-to-pdf', pdf2jpg:'/pdf-to-jpg', delete:'/delete-pdf-pages', txt2pdf:'/txt-to-pdf', split:'/split-pdf', rotate:'/rotate-pdf'};
             const path = routeByTool[toolType] || '/';
             const publicPath = localPath(path);
+            // One navigation system for every tool card/button/link.
+            // This prevents the URL from changing while the homepage stays visible.
+            if (push && typeof window.__navigateAiLovePDF === 'function') {
+                window.__navigateAiLovePDF(publicPath, true);
+                return;
+            }
+            baseOpenTool(toolType);
+            updateToolSeoHeader(toolType);
+            localizeDynamicToolUI(toolType);
             if (push && location.pathname !== publicPath) history.pushState({path: publicPath}, '', publicPath);
             const data = LOCAL_TOOL_ROUTES[publicPath] || LOCAL_TOOL_ROUTES[path];
             if (data) setPageMeta(data.title, data.desc, publicPath);
@@ -997,7 +988,7 @@
             const path = getLocalRoute();
             if (LOCAL_TOOL_ROUTES[path]) {
                 const tool = LOCAL_TOOL_ROUTES[path].tool;
-                baseSwitchTab('home');
+                // Native tool pages do not contain the homepage SPA views. Initialize only the tool workspace.
                 baseOpenTool(tool);
                 updateToolSeoHeader(tool);
                 localizeDynamicToolUI(tool);
@@ -1010,31 +1001,61 @@
             updateInfoSeoHeader(page.tab);
             setPageMeta(page.title, page.desc, localPath(LOCAL_SEO_PAGES[path] ? path : '/'));
         }
-        window.addEventListener('popstate', () => loadRoute(false));
         function initAiLovePDFRoute() {
-            try { loadRoute(false); } catch (error) { console.error('AiLovePDF route initialization failed:', error); }
+            try {
+                const root = document.getElementById('page-root');
+                const route = getLocalRoute();
+                const mapped = (typeof LOCAL_TOOL_ROUTES !== 'undefined' && LOCAL_TOOL_ROUTES[route]) ? LOCAL_TOOL_ROUTES[route].tool : '';
+                const directTool = (root && root.dataset && root.dataset.tool) || mapped || '';
+                if (directTool && typeof baseOpenTool === 'function') {
+                    baseOpenTool(directTool);
+                    updateToolSeoHeader(directTool);
+                    localizeDynamicToolUI(directTool);
+                    // Defensive second pass: if a tool page ever arrives with an empty
+                    // input container, initialize it again without changing the HTML shell.
+                    const inputs = document.getElementById('tool-inputs');
+                    if (inputs && !inputs.querySelector('input, select')) baseOpenTool(directTool);
+                    const data = (typeof LOCAL_TOOL_ROUTES !== 'undefined') ? LOCAL_TOOL_ROUTES[route] : null;
+                    if (data) setPageMeta(data.title, data.desc, localPath(route));
+                    return;
+                }
+                loadRoute(false);
+            } catch (error) {
+                console.error('AiLovePDF route initialization failed:', error);
+                try {
+                    const root = document.getElementById('page-root');
+                    const route = getLocalRoute();
+                    const mapped = (typeof LOCAL_TOOL_ROUTES !== 'undefined' && LOCAL_TOOL_ROUTES[route]) ? LOCAL_TOOL_ROUTES[route].tool : '';
+                    const directTool = (root && root.dataset && root.dataset.tool) || mapped || '';
+                    if (directTool && typeof baseOpenTool === 'function') baseOpenTool(directTool);
+                } catch (_) {}
+            }
+        }
+        function forceInitializeEnglishTool() {
+            try {
+                const root = document.getElementById('page-root');
+                const tool = root && root.dataset ? root.dataset.tool : '';
+                if (!tool || typeof baseOpenTool !== 'function') return false;
+                const inputs = document.getElementById('tool-inputs');
+                const fileInput = document.getElementById('file-input');
+                const title = document.getElementById('tool-title');
+                if (!fileInput || (title && title.textContent.trim() === 'PDF Tool')) {
+                    baseOpenTool(tool);
+                }
+                if (typeof updateToolSeoHeader === 'function') updateToolSeoHeader(tool);
+                if (typeof localizeDynamicToolUI === 'function') localizeDynamicToolUI(tool);
+                return !!document.getElementById('file-input');
+            } catch (error) {
+                console.error('AiLovePDF English tool initialization failed:', error);
+                return false;
+            }
         }
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAiLovePDFRoute, { once: true });
         else initAiLovePDFRoute();
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => { forceInitializeEnglishTool(); setTimeout(forceInitializeEnglishTool, 100); }, { once: true });
+        else { forceInitializeEnglishTool(); setTimeout(forceInitializeEnglishTool, 100); }
 
 
-        // Localized SPA navigation: keep all internal navigation in the current language without hard refreshes.
-        document.addEventListener('click', function (event) {
-            const a = event.target.closest && event.target.closest('a[href]');
-            if (!a || a.target === '_blank' || event.defaultPrevented) return;
-            const raw = a.getAttribute('href');
-            if (!raw || raw.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(raw)) return;
-            let url;
-            try { url = new URL(raw, location.origin); } catch (_) { return; }
-            if (url.origin !== location.origin) return;
-            const currentPrefix = SITE_ROUTE_PREFIX || '';
-            if (currentPrefix && !(url.pathname === currentPrefix || url.pathname.startsWith(currentPrefix + '/'))) return;
-            if (!currentPrefix && url.pathname !== '/' && url.pathname.startsWith('/' + ['es','fr','de','pt-br','ar'].find(x => url.pathname.startsWith('/'+x+'/')))) return;
-            event.preventDefault();
-            history.pushState({path:url.pathname}, '', url.pathname);
-            loadRoute(false);
-            window.scrollTo({top:0, behavior:'smooth'});
-        }, {capture:true});
 </script>
 <script>
 (function(){
@@ -1057,12 +1078,17 @@
       if(!next) throw new Error('page root missing');
       if(push) history.pushState({path:u.pathname},'',u.pathname);
       const cur=pageRoot(); if(cur) cur.replaceWith(next);
+      if(doc.documentElement){
+        if(doc.documentElement.lang) document.documentElement.lang = doc.documentElement.lang;
+        document.documentElement.dir = doc.documentElement.dir || '';
+      }
       const headTags=[['title',''],['meta','name=description'],['link','rel=canonical'],['meta','property=og:title'],['meta','property=og:description'],['meta','property=og:url'],['meta','property=og:image'],['meta','name=twitter:title'],['meta','name=twitter:description'],['meta','name=twitter:image']];
       const sel=(t,k)=>k?document.head.querySelector(t+'['+k+']'):document.head.querySelector(t);
       const set=(t,k,attrs)=>{let el=sel(t,k); const src=doc.head.querySelector(t+(k?'['+k+']':'')); if(!src)return; if(!el){el=document.createElement(t); document.head.appendChild(el);} for(const a of src.attributes) el.setAttribute(a.name,a.value); if(t==='title') el.textContent=src.textContent;};
       set('title','',{}); set('meta','name="description"',{}); set('link','rel="canonical"',{}); set('meta','property="og:title"',{}); set('meta','property="og:description"',{}); set('meta','property="og:url"',{}); set('meta','property="og:image"',{}); set('meta','name="twitter:title"',{}); set('meta','name="twitter:description"',{}); set('meta','name="twitter:image"',{});
-      const tool=(typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)])?LOCAL_TOOL_ROUTES[norm(u.pathname)].tool:null;
-      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); }
+      const fetchedTool=(next.dataset && next.dataset.tool) ? next.dataset.tool : null;
+      const tool=(fetchedTool || ((typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)]) ? LOCAL_TOOL_ROUTES[norm(u.pathname)].tool : null));
+      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); } if(typeof window.__AiLovePDFBootTool==='function') window.__AiLovePDFBootTool();
       window.scrollTo({top:0,behavior:'smooth'});
     }catch(e){ window.location.href=u.href; }
   }
@@ -1076,7 +1102,45 @@
     const pref=(typeof SITE_ROUTE_PREFIX!=='undefined'?SITE_ROUTE_PREFIX:'');
     if(pref && !(u.pathname===pref || u.pathname.startsWith(pref+'/'))) return;
     e.preventDefault(); navigateTo(u.href,true);
-  },true);
+  },false);
+})();
+setTimeout(()=>{ if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); }, 150);
+</script>
+<script>
+/* AiLovePDF emergency-safe tool bootstrap.
+   The tool page contains a real file input in HTML and this final bootstrap re-binds
+   the current tool after direct loads and SPA fetch navigation. It does not change URLs. */
+(function(){
+  const TOOL_DEFS = {
+    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeMerge'},
+    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
+    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
+    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeJpgToPdf'},
+    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executePdfToJpg'},
+    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
+    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeTxtToPdf'},
+    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
+  };
+  function bootTool(){
+    const root=document.getElementById('page-root');
+    const ws=document.getElementById('tool-workspace');
+    if(!root || !ws || !root.dataset.tool) return false;
+    const tool=root.dataset.tool;
+    const def=TOOL_DEFS[tool];
+    if(!def) return false;
+    ws.classList.remove('hidden-tool');
+    const inputs=document.getElementById('tool-inputs');
+    if(inputs && !inputs.querySelector('#file-input')) inputs.innerHTML=def.input;
+    const btn=document.getElementById('tool-action-btn');
+    if(btn && typeof window[def.handler]==='function') btn.onclick=window[def.handler];
+    if(typeof window.localizeDynamicToolUI==='function') window.localizeDynamicToolUI(tool);
+    if(typeof window.updateToolSeoHeader==='function') window.updateToolSeoHeader(tool);
+    return !!(inputs && inputs.querySelector('#file-input'));
+  }
+  window.__AiLovePDFBootTool=bootTool;
+  function schedule(){ bootTool(); setTimeout(bootTool,50); setTimeout(bootTool,250); setTimeout(bootTool,800); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',schedule,{once:true}); else schedule();
+  window.addEventListener('load',schedule);
 })();
 </script>
 </body>
