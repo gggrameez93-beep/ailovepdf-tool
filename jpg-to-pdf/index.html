@@ -408,7 +408,8 @@
             const inputs = document.getElementById('tool-inputs');
             const btn = document.getElementById('tool-action-btn');
             
-            document.getElementById('tool-status').innerHTML = "";
+            const statusEl = document.getElementById('tool-status');
+            if (statusEl) statusEl.innerHTML = "";
             const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
 
             if (toolType === 'merge') {
@@ -498,12 +499,16 @@
             const link = document.createElement('a');
             link.href = url;
             link.download = safeName;
-            link.rel = 'noopener';
-            link.style.display = 'none';
+            link.style.position = 'fixed';
+            link.style.left = '-9999px';
+            link.style.width = '1px';
+            link.style.height = '1px';
+            link.style.opacity = '0';
+            link.setAttribute('aria-hidden', 'true');
             document.body.appendChild(link);
             link.click();
             link.remove();
-            setTimeout(() => URL.revokeObjectURL(url), 2000);
+            setTimeout(() => URL.revokeObjectURL(url), 5000);
             return safeName;
         }
 
@@ -874,7 +879,7 @@
         const SITE_ROUTE_PREFIX = "";
         const LOCAL_INFO_VISIBLE_SEO = {"home": {"title": "Free Online PDF Tools", "desc": "Merge, compress, split, rotate and convert PDF files in your browser."}, "howto": {"title": "How to Use AiLovePDF Tools", "desc": "Learn how to use AiLovePDF browser-based PDF tools step by step."}, "guide": {"title": "PDF Guide: Practical Tips for Common Document Tasks", "desc": "Practical guidance for working with PDF files using AiLovePDF tools."}, "about": {"title": "About AiLovePDF", "desc": "Learn about AiLovePDF and its browser-based PDF tools."}, "contact": {"title": "Contact AiLovePDF", "desc": "Get in touch with AiLovePDF for questions, feedback or support."}, "privacy": {"title": "Privacy Policy", "desc": "Read how AiLovePDF handles privacy and browser-based PDF processing."}, "terms": {"title": "Terms & Conditions", "desc": "Read the terms and conditions for using AiLovePDF."}, "disclaimer": {"title": "Disclaimer", "desc": "Read the AiLovePDF service disclaimer."}, "cookies": {"title": "Cookie Policy", "desc": "Read the AiLovePDF cookie policy."}};
         const LOCAL_TOOL_SEO = {"merge": {"title": "Merge PDF Online", "desc": "Combine multiple PDF files into one document directly in your browser.", "breadcrumb": "Home / Merge PDF"}, "compress": {"title": "Compress PDF Online", "desc": "Reduce PDF file size in your browser with a simple client-side PDF compressor.", "breadcrumb": "Home / Compress PDF"}, "jpg2pdf": {"title": "JPG to PDF Converter", "desc": "Convert JPG and PNG images into a PDF document directly in your browser.", "breadcrumb": "Home / JPG to PDF"}, "pdf2jpg": {"title": "PDF to JPG Converter", "desc": "Convert PDF pages into JPG images directly in your browser.", "breadcrumb": "Home / PDF to JPG"}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from a PDF document directly in your browser.", "breadcrumb": "Home / Delete PDF Pages"}, "txt2pdf": {"title": "TXT to PDF Converter", "desc": "Convert a plain text file into a PDF directly in your browser.", "breadcrumb": "Home / TXT to PDF"}, "split": {"title": "Split PDF Online", "desc": "Extract selected pages from a PDF and create a new document in your browser.", "breadcrumb": "Home / Split PDF"}, "rotate": {"title": "Rotate PDF Pages", "desc": "Rotate PDF pages by 90, 180, or 270 degrees directly in your browser.", "breadcrumb": "Home / Rotate PDF"}};
-        const LOCAL_TOOL_UI = {"merge": {"title": "Merge PDF Files", "desc": "Select multiple PDFs to combine them into one file."}, "split": {"title": "Split PDF", "desc": "Extract specific pages from your PDF document."}, "compress": {"title": "Compress PDF", "desc": "Reduce file size significantly."}, "jpg2pdf": {"title": "JPG to PDF", "desc": "Convert your images into a PDF document."}, "pdf2jpg": {"title": "PDF to JPG", "desc": "Convert all PDF pages into high-quality JPG images and download all pages in a single ZIP file."}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from your document."}, "txt2pdf": {"title": "TXT to PDF", "desc": "Convert a plain text file into a PDF."}, "rotate": {"title": "Rotate PDF", "desc": "Rotate pages in your PDF document."}};
+        const LOCAL_TOOL_UI = {"merge": {"title": "Merge PDF Files", "desc": "Select multiple PDFs to combine them into one file."}, "split": {"title": "Split PDF", "desc": "Extract specific pages from your PDF document."}, "compress": {"title": "Compress PDF", "desc": "Reduce file size significantly."}, "jpg2pdf": {"title": "JPG to PDF", "desc": "Convert your images into a PDF document."}, "pdf2jpg": {"title": "PDF to JPG", "desc": "Convert every PDF page into a high-quality JPG image and download each page directly."}, "delete": {"title": "Delete PDF Pages", "desc": "Remove unwanted pages from your document."}, "txt2pdf": {"title": "TXT to PDF", "desc": "Convert a plain text file into a PDF."}, "rotate": {"title": "Rotate PDF", "desc": "Rotate pages in your PDF document."}};
         const LOCAL_SEO_PAGES = {"/": {"tab": "home", "title": "AiLovePDF - Free Online PDF Tools | Merge, Compress & Convert", "desc": "Free browser-based PDF tools to merge, compress, split, rotate and convert PDF files. Simple client-side PDF tools from AiLovePDF."}, "/how-to-use": {"tab": "howto", "title": "How to Use AiLovePDF PDF Tools", "desc": "Learn how to use AiLovePDF browser-based PDF tools for merging, compression, conversion, splitting and rotation."}, "/pdf-guide": {"tab": "guide", "title": "PDF Guide | AiLovePDF", "desc": "Practical guidance for common PDF tasks using AiLovePDF browser-based tools."}, "/about": {"tab": "about", "title": "About AiLovePDF", "desc": "Learn about AiLovePDF and its browser-based PDF tools."}, "/contact": {"tab": "contact", "title": "Contact AiLovePDF", "desc": "Contact AiLovePDF with questions, feedback or support requests."}, "/privacy": {"tab": "privacy", "title": "Privacy Policy | AiLovePDF", "desc": "Read the AiLovePDF privacy policy and learn how browser-based PDF processing works."}, "/terms": {"tab": "terms", "title": "Terms & Conditions | AiLovePDF", "desc": "Read the terms and conditions for using AiLovePDF."}, "/disclaimer": {"tab": "disclaimer", "title": "Disclaimer | AiLovePDF", "desc": "Read the AiLovePDF service disclaimer."}, "/cookies": {"tab": "cookies", "title": "Cookie Policy | AiLovePDF", "desc": "Read the AiLovePDF cookie policy."}};
         const LOCAL_TOOL_ROUTES = {"/merge-pdf": {"tool": "merge", "title": "Merge PDF Online Free | AiLovePDF", "desc": "Merge multiple PDF files into one document directly in your browser."}, "/compress-pdf": {"tool": "compress", "title": "Compress PDF Online Free | AiLovePDF", "desc": "Reduce PDF file size in your browser with AiLovePDF."}, "/jpg-to-pdf": {"tool": "jpg2pdf", "title": "JPG to PDF Converter Online Free | AiLovePDF", "desc": "Convert JPG and supported images to PDF in your browser."}, "/pdf-to-jpg": {"tool": "pdf2jpg", "title": "PDF to JPG Converter Online Free | AiLovePDF", "desc": "Render PDF pages as JPG images in your browser."}, "/delete-pdf-pages": {"tool": "delete", "title": "Delete PDF Pages Online Free | AiLovePDF", "desc": "Remove selected pages from a PDF in your browser."}, "/txt-to-pdf": {"tool": "txt2pdf", "title": "TXT to PDF Converter Online Free | AiLovePDF", "desc": "Create a PDF from a plain text file in your browser."}, "/split-pdf": {"tool": "split", "title": "Split PDF Online Free | AiLovePDF", "desc": "Create a new PDF from selected pages in your browser."}, "/rotate-pdf": {"tool": "rotate", "title": "Rotate PDF Pages Online Free | AiLovePDF", "desc": "Rotate PDF pages directly in your browser."}};
 
@@ -1023,8 +1028,29 @@
                 } catch (_) {}
             }
         }
+        function forceInitializeEnglishTool() {
+            try {
+                const root = document.getElementById('page-root');
+                const tool = root && root.dataset ? root.dataset.tool : '';
+                if (!tool || typeof baseOpenTool !== 'function') return false;
+                const inputs = document.getElementById('tool-inputs');
+                const fileInput = document.getElementById('file-input');
+                const title = document.getElementById('tool-title');
+                if (!fileInput || (title && title.textContent.trim() === 'PDF Tool')) {
+                    baseOpenTool(tool);
+                }
+                if (typeof updateToolSeoHeader === 'function') updateToolSeoHeader(tool);
+                if (typeof localizeDynamicToolUI === 'function') localizeDynamicToolUI(tool);
+                return !!document.getElementById('file-input');
+            } catch (error) {
+                console.error('AiLovePDF English tool initialization failed:', error);
+                return false;
+            }
+        }
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAiLovePDFRoute, { once: true });
         else initAiLovePDFRoute();
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => { forceInitializeEnglishTool(); setTimeout(forceInitializeEnglishTool, 100); }, { once: true });
+        else { forceInitializeEnglishTool(); setTimeout(forceInitializeEnglishTool, 100); }
 
 
 </script>
@@ -1059,7 +1085,7 @@
       set('title','',{}); set('meta','name="description"',{}); set('link','rel="canonical"',{}); set('meta','property="og:title"',{}); set('meta','property="og:description"',{}); set('meta','property="og:url"',{}); set('meta','property="og:image"',{}); set('meta','name="twitter:title"',{}); set('meta','name="twitter:description"',{}); set('meta','name="twitter:image"',{});
       const fetchedTool=(next.dataset && next.dataset.tool) ? next.dataset.tool : null;
       const tool=(fetchedTool || ((typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)]) ? LOCAL_TOOL_ROUTES[norm(u.pathname)].tool : null));
-      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); }
+      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); }
       window.scrollTo({top:0,behavior:'smooth'});
     }catch(e){ window.location.href=u.href; }
   }
@@ -1075,6 +1101,7 @@
     e.preventDefault(); navigateTo(u.href,true);
   },false);
 })();
+setTimeout(()=>{ if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); }, 150);
 </script>
 </body>
 </html>
