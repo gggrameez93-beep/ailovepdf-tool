@@ -488,30 +488,43 @@
             return String(table[key] || TOOL_MESSAGES_I18N.en[key] || key).replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
         }
 
-        // Direct client-side download. Never opens the generated file in a new tab.
-        // Every output is normalized to the AiLovePDF_ naming convention.
+        // ==========================================
+        // 🔥 BULLETPROOF DIRECT DOWNLOAD LOGIC 🔥
+        // ==========================================
         function downloadFile(blob, fileName) {
             if (!(blob instanceof Blob)) throw new Error('The generated file is not available.');
+            
+            // Name Formatting (Brand Logic)
             const rawName = String(fileName || 'File');
             const normalized = rawName.replace(/^AiLovePDF_/i, '');
             const safeName = `AiLovePDF_${normalized.replace(/[\\/:*?"<>|\x00-\x1F]/g, '_').trim() || 'File'}`;
-            const url = URL.createObjectURL(blob);
+            
+            // Fallback for older Edge/IE or tricky mobile browsers to force download
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                window.navigator.msSaveOrOpenBlob(blob, safeName);
+                return safeName;
+            }
+
+            // Standard invisible link trick
+            const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', safeName);
-            link.download = safeName;
-            link.target = '_self';
-            link.rel = 'noopener';
-            link.style.position = 'fixed';
-            link.style.left = '-9999px';
-            link.style.width = '1px';
-            link.style.height = '1px';
-            link.style.opacity = '0';
-            link.setAttribute('aria-hidden', 'true');
+            link.download = safeName; // Force Direct Download
+            link.target = '_blank';   // Safety net
+            
+            // Hide element from view completely
+            link.style.display = 'none';
             document.body.appendChild(link);
+            
+            // Trigger automatic click
             link.click();
-            link.remove();
-            setTimeout(() => URL.revokeObjectURL(url), 5000);
+            
+            // Cleanup memory instantly
+            setTimeout(() => {
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+            }, 200);
+            
             return safeName;
         }
 
@@ -573,8 +586,6 @@
                 btn.innerHTML = originalHTML;
             }
         }
-
-        // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
 
         // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
 
@@ -1058,6 +1069,7 @@
 
 </script>
 <script>
+// Cache Buster v1.2: Force Vercel to load fresh version
 (function(){
   const ROOT='https://www.ailovepdf.site';
   const pageRoot=()=>document.getElementById('page-root');
