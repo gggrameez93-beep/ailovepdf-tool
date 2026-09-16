@@ -161,7 +161,7 @@
 <h2 class="text-3xl font-extrabold mb-3 text-slate-900" id="tool-title">PDF Tool</h2>
 <p class="text-slate-500 mb-8" id="tool-desc">Choose a PDF tool to get started.</p>
 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-dashed border-slate-300 mb-8 max-w-xl mx-auto">
-<div class="text-left space-y-4" id="tool-inputs"></div>
+<div class="text-left space-y-4" id="tool-inputs"><input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"></div>
 </div>
 <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">Execute <i class="fa-solid fa-arrow-right"></i></button>
 <div class="mt-6 font-bold text-lg min-h-[30px]" id="tool-status"></div>
@@ -498,7 +498,10 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
+            link.setAttribute('download', safeName);
             link.download = safeName;
+            link.target = '_self';
+            link.rel = 'noopener';
             link.style.position = 'fixed';
             link.style.left = '-9999px';
             link.style.width = '1px';
@@ -1085,7 +1088,7 @@
       set('title','',{}); set('meta','name="description"',{}); set('link','rel="canonical"',{}); set('meta','property="og:title"',{}); set('meta','property="og:description"',{}); set('meta','property="og:url"',{}); set('meta','property="og:image"',{}); set('meta','name="twitter:title"',{}); set('meta','name="twitter:description"',{}); set('meta','name="twitter:image"',{});
       const fetchedTool=(next.dataset && next.dataset.tool) ? next.dataset.tool : null;
       const tool=(fetchedTool || ((typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)]) ? LOCAL_TOOL_ROUTES[norm(u.pathname)].tool : null));
-      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); }
+      if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); } if(typeof window.__AiLovePDFBootTool==='function') window.__AiLovePDFBootTool();
       window.scrollTo({top:0,behavior:'smooth'});
     }catch(e){ window.location.href=u.href; }
   }
@@ -1102,6 +1105,43 @@
   },false);
 })();
 setTimeout(()=>{ if(typeof forceInitializeEnglishTool==='function') forceInitializeEnglishTool(); }, 150);
+</script>
+<script>
+/* AiLovePDF emergency-safe tool bootstrap.
+   The tool page contains a real file input in HTML and this final bootstrap re-binds
+   the current tool after direct loads and SPA fetch navigation. It does not change URLs. */
+(function(){
+  const TOOL_DEFS = {
+    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeMerge'},
+    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
+    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
+    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeJpgToPdf'},
+    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executePdfToJpg'},
+    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
+    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeTxtToPdf'},
+    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
+  };
+  function bootTool(){
+    const root=document.getElementById('page-root');
+    const ws=document.getElementById('tool-workspace');
+    if(!root || !ws || !root.dataset.tool) return false;
+    const tool=root.dataset.tool;
+    const def=TOOL_DEFS[tool];
+    if(!def) return false;
+    ws.classList.remove('hidden-tool');
+    const inputs=document.getElementById('tool-inputs');
+    if(inputs && !inputs.querySelector('#file-input')) inputs.innerHTML=def.input;
+    const btn=document.getElementById('tool-action-btn');
+    if(btn && typeof window[def.handler]==='function') btn.onclick=window[def.handler];
+    if(typeof window.localizeDynamicToolUI==='function') window.localizeDynamicToolUI(tool);
+    if(typeof window.updateToolSeoHeader==='function') window.updateToolSeoHeader(tool);
+    return !!(inputs && inputs.querySelector('#file-input'));
+  }
+  window.__AiLovePDFBootTool=bootTool;
+  function schedule(){ bootTool(); setTimeout(bootTool,50); setTimeout(bootTool,250); setTimeout(bootTool,800); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',schedule,{once:true}); else schedule();
+  window.addEventListener('load',schedule);
+})();
 </script>
 </body>
 </html>

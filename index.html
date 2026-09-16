@@ -466,7 +466,10 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
+            link.setAttribute('download', safeName);
             link.download = safeName;
+            link.target = '_self';
+            link.rel = 'noopener';
             link.style.position = 'fixed';
             link.style.left = '-9999px';
             link.style.width = '1px';
