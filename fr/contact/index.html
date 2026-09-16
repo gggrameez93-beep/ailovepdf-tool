@@ -436,16 +436,43 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             return String(table[key] || TOOL_MESSAGES_I18N.en[key] || key).replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
         }
 
+        // Direct client-side download. Never opens the generated file in a new tab.
+        // Every output is normalized to the AiLovePDF_ naming convention.
         function downloadFile(blob, fileName) {
+            if (!(blob instanceof Blob)) throw new Error('The generated file is not available.');
+            const rawName = String(fileName || 'File');
+            const normalized = rawName.replace(/^AiLovePDF_/i, '');
+            const safeName = `AiLovePDF_${normalized.replace(/[\\/:*?"<>|\x00-\x1F]/g, '_').trim() || 'File'}`;
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = fileName;
+            link.download = safeName;
             link.rel = 'noopener';
+            link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
             link.remove();
-            setTimeout(() => URL.revokeObjectURL(url), 1500);
+            setTimeout(() => URL.revokeObjectURL(url), 2000);
+            return safeName;
+        }
+
+        async function downloadFiles(entries) {
+            for (const entry of entries) {
+                downloadFile(entry.blob, entry.name);
+                // Give the browser an opportunity to register each individual download.
+                await yieldToBrowser();
+            }
+        }
+
+        async function yieldToBrowser() {
+            if (typeof scheduler !== 'undefined' && scheduler.postTask) {
+                await scheduler.postTask(() => {}, { priority: 'user-visible' });
+                return;
+            }
+            await new Promise(resolve => {
+                if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => setTimeout(resolve, 0));
+                else setTimeout(resolve, 0);
+            });
         }
 
         function safeBaseName(fileName) {
@@ -462,69 +489,10 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             statusEl.innerHTML = `<div class="text-blue-600 font-medium">${safe}</div><div class="mt-2 h-2 w-full max-w-md mx-auto rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-blue-600 transition-all" style="width:${pct}%"></div></div>`;
         }
 
-        function crc32(bytes) {
-            let crc = 0xFFFFFFFF;
-            for (let i = 0; i < bytes.length; i++) {
-                crc ^= bytes[i];
-                for (let j = 0; j < 8; j++) crc = (crc >>> 1) ^ (0xEDB88320 & -(crc & 1));
-            }
-            return (crc ^ 0xFFFFFFFF) >>> 0;
-        }
-
-        // Create a standard ZIP using stored JPG entries. JPG is already compressed,
-        // so re-compressing it only wastes CPU and can increase memory use.
-        async function createStoredZip(entries) {
-            const parts = [];
-            const central = [];
-            const encoder = new TextEncoder();
-            let offset = 0;
-            for (const entry of entries) {
-                const nameBytes = encoder.encode(entry.name);
-                const data = new Uint8Array(await entry.blob.arrayBuffer());
-                const crc = crc32(data);
-                const local = new Uint8Array(30 + nameBytes.length);
-                const dv = new DataView(local.buffer);
-                dv.setUint32(0, 0x04034b50, true);
-                dv.setUint16(4, 20, true);
-                dv.setUint16(6, 0x0800, true);
-                dv.setUint32(14, crc, true);
-                dv.setUint32(18, data.byteLength, true);
-                dv.setUint32(22, data.byteLength, true);
-                dv.setUint16(26, nameBytes.length, true);
-                local.set(nameBytes, 30);
-                parts.push(local, data);
-
-                const cd = new Uint8Array(46 + nameBytes.length);
-                const cv = new DataView(cd.buffer);
-                cv.setUint32(0, 0x02014b50, true);
-                cv.setUint16(4, 20, true);
-                cv.setUint16(6, 20, true);
-                cv.setUint16(8, 0x0800, true);
-                cv.setUint32(16, crc, true);
-                cv.setUint32(20, data.byteLength, true);
-                cv.setUint32(24, data.byteLength, true);
-                cv.setUint16(28, nameBytes.length, true);
-                cv.setUint32(42, offset, true);
-                cd.set(nameBytes, 46);
-                central.push(cd);
-                offset += local.byteLength + data.byteLength;
-            }
-            const centralOffset = offset;
-            let centralSize = 0;
-            for (const cd of central) { parts.push(cd); centralSize += cd.byteLength; }
-            const end = new Uint8Array(22);
-            const ev = new DataView(end.buffer);
-            ev.setUint32(0, 0x06054b50, true);
-            ev.setUint16(8, entries.length, true);
-            ev.setUint16(10, entries.length, true);
-            ev.setUint32(12, centralSize, true);
-            ev.setUint32(16, centralOffset, true);
-            parts.push(end);
-            return new Blob(parts, { type: 'application/zip' });
-        }
-
-        // --- PROCESS WRAPPER ---
-        async function runWith5SecDelay(processCallback) {
+        // --- ASYNC PROCESS WRAPPER ---
+        // No artificial timer. Processing starts immediately and long loops yield back to
+        // the browser so the UI can repaint and remain responsive.
+        async function runProcessing(processCallback) {
             const btn = document.getElementById('tool-action-btn');
             const statusEl = document.getElementById('tool-status');
             if (!btn) return;
@@ -533,7 +501,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
-                await new Promise(resolve => requestAnimationFrame(resolve));
+                await yieldToBrowser();
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -549,143 +517,145 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 
         // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
 
+        // ==================== ALL 8 TOOLS ACTUAL WORKING LOGIC ====================
+
         // 1. MERGE PDF
         function executeMerge() {
-            const files = document.getElementById('file-input').files;
-            if (files.length < 2) return alert('Sélectionnez au moins 2 fichiers PDF à fusionner.');
+            const input = document.getElementById('file-input');
+            const files = input && input.files ? Array.from(input.files) : [];
+            if (files.length < 2) return alert(t('merge'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const mergedPdf = await PDFDocument.create();
-                for (let file of files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    setProgress(t('processing'), (i / files.length) * 100);
                     const bytes = await file.arrayBuffer();
                     const pdf = await PDFDocument.load(bytes);
                     const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-                    copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    for (const page of copiedPages) mergedPdf.addPage(page);
+                    await yieldToBrowser();
                 }
                 const mergedBytes = await mergedPdf.save();
-                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_merged.pdf`);
+                downloadFile(new Blob([mergedBytes], { type: 'application/pdf' }), 'AiLovePDF_Merged.pdf');
             });
         }
 
         // 2. SPLIT PDF
         function executeSplit() {
-            const file = document.getElementById('file-input').files[0];
-            const pagesStr = document.getElementById('pages-input').value;
-            if (!file || !pagesStr) return alert('Importez un PDF et saisissez les numéros de pages (par exemple 1, 3).');
+            const input = document.getElementById('file-input');
+            const pagesInput = document.getElementById('pages-input');
+            const file = input && input.files ? input.files[0] : null;
+            const pagesStr = pagesInput ? pagesInput.value : '';
+            if (!file || !pagesStr) return alert(t('split'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const totalPages = pdf.getPageCount();
-                
                 const indices = pagesStr.split(',')
-                    .map(n => parseInt(n.trim()) - 1)
-                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages);
-
-                if (indices.length === 0) throw new Error("Invalid page numbers");
-
+                    .map(n => parseInt(n.trim(), 10) - 1)
+                    .filter(n => Number.isInteger(n) && n >= 0 && n < totalPages);
+                if (!indices.length) throw new Error('Invalid page numbers');
                 const newPdf = await PDFDocument.create();
                 const copiedPages = await newPdf.copyPages(pdf, indices);
-                copiedPages.forEach(p => newPdf.addPage(p));
-                
+                for (const page of copiedPages) {
+                    newPdf.addPage(page);
+                    if (newPdf.getPageCount() % 25 === 0) await yieldToBrowser();
+                }
                 const newBytes = await newPdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_split.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Split.pdf');
             });
         }
 
-        // 3. COMPRESS PDF (Client-Side Canvas Trick)
+        // 3. COMPRESS PDF (client-side image recompression)
         function executeCompress() {
-            const file = document.getElementById('file-input').files[0];
-            const quality = parseFloat(document.getElementById('quality-input').value);
-            if (!file) return alert('Importez un fichier PDF à compresser.');
+            const input = document.getElementById('file-input');
+            const qualityInput = document.getElementById('quality-input');
+            const file = input && input.files ? input.files[0] : null;
+            const quality = qualityInput ? parseFloat(qualityInput.value) : 0.5;
+            if (!file) return alert(t('compress'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 ensurePdfJs();
-                const fileBytes = await file.arrayBuffer();
-                const typedarray = new Uint8Array(fileBytes);
-                const originalPdf = await pdfjsLib.getDocument(typedarray).promise;
+                const typedarray = new Uint8Array(await file.arrayBuffer());
+                const originalPdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
                 const newPdf = await PDFDocument.create();
-
                 for (let i = 1; i <= originalPdf.numPages; i++) {
                     const page = await originalPdf.getPage(i);
                     const viewport = page.getViewport({ scale: 1.2 });
-                    
                     const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-                    
-                    await page.render({ canvasContext: context, viewport: viewport }).promise;
-                    
-                    const imgDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    canvas.width = Math.ceil(viewport.width);
+                    canvas.height = Math.ceil(viewport.height);
+                    const context = canvas.getContext('2d', { alpha: false, willReadFrequently: false });
+                    await page.render({ canvasContext: context, viewport }).promise;
+                    const imgDataUrl = canvas.toDataURL('image/jpeg', Math.max(0.05, Math.min(1, quality)));
                     const imgBytes = await fetch(imgDataUrl).then(res => res.arrayBuffer());
-                    
                     const jpgImage = await newPdf.embedJpg(imgBytes);
                     const newPage = newPdf.addPage([jpgImage.width, jpgImage.height]);
                     newPage.drawImage(jpgImage, { x: 0, y: 0, width: jpgImage.width, height: jpgImage.height });
+                    canvas.width = 1; canvas.height = 1;
+                    if (page.cleanup) page.cleanup();
+                    setProgress(t('processing'), (i / originalPdf.numPages) * 100);
+                    await yieldToBrowser();
                 }
-
                 const pdfBytes = await newPdf.save();
-                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_compressed.pdf`);
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Compressed.pdf');
             });
         }
 
         // 4. JPG TO PDF
         function executeJpgToPdf() {
-            const files = document.getElementById('file-input').files;
-            if (files.length === 0) return alert('Sélectionnez au moins une image.');
+            const input = document.getElementById('file-input');
+            const files = input && input.files ? Array.from(input.files) : [];
+            if (!files.length) return alert(t('image'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const pdfDoc = await PDFDocument.create();
-                for (let file of files) {
+                let added = 0;
+                for (const file of files) {
                     const imageBytes = await file.arrayBuffer();
                     let image;
-                    if (file.type === 'image/jpeg' || file.name.endsWith('.jpg') || file.name.endsWith('.jpeg')) {
-                        image = await pdfDoc.embedJpg(imageBytes);
-                    } else if (file.type === 'image/png' || file.name.endsWith('.png')) {
-                        image = await pdfDoc.embedPng(imageBytes);
-                    } else {
-                        continue;
-                    }
+                    const name = file.name.toLowerCase();
+                    if (file.type === 'image/jpeg' || name.endsWith('.jpg') || name.endsWith('.jpeg')) image = await pdfDoc.embedJpg(imageBytes);
+                    else if (file.type === 'image/png' || name.endsWith('.png')) image = await pdfDoc.embedPng(imageBytes);
+                    else continue;
                     const page = pdfDoc.addPage([image.width, image.height]);
                     page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
+                    added++;
+                    setProgress(t('processing'), (added / files.length) * 100);
+                    await yieldToBrowser();
                 }
+                if (!added) throw new Error(t('image'));
                 const pdfBytes = await pdfDoc.save();
-                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), `${safeBaseName(files[0].name)}_images.pdf`);
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Images.pdf');
             });
         }
 
-        // 5. PDF TO JPG (All Pages / High Quality)
+        // 5. PDF TO JPG — all pages, individual direct downloads, no ZIP.
         function executePdfToJpg() {
             const input = document.getElementById('file-input');
             const file = input && input.files ? input.files[0] : null;
             if (!file) return alert(t('pdf'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfJs();
                 const bytes = new Uint8Array(await file.arrayBuffer());
                 const signature = new TextDecoder().decode(bytes.subarray(0, 5));
                 if (signature !== '%PDF-') throw new Error(t('invalidpdf'));
-
                 const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
                 const total = pdf.numPages;
                 if (!total) throw new Error(t('nopages'));
 
-                const base = safeBaseName(file.name);
-                const entries = [];
-                const targetScale = 3.0;
                 const digits = String(total).length;
-
                 for (let i = 1; i <= total; i++) {
-                    setProgress(t('render', {i, total}), ((i - 1) / total) * 100);
+                    setProgress(t('render', { i, total }), ((i - 1) / total) * 100);
                     const page = await pdf.getPage(i);
-                    const natural = page.getViewport({ scale: targetScale });
-                    const renderScale = targetScale;
-                    const viewport = page.getViewport({ scale: renderScale });
+                    const viewport = page.getViewport({ scale: 3.0 });
                     const canvas = document.createElement('canvas');
                     canvas.width = Math.ceil(viewport.width);
                     canvas.height = Math.ceil(viewport.height);
@@ -693,112 +663,102 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
                     context.fillStyle = '#ffffff';
                     context.fillRect(0, 0, canvas.width, canvas.height);
                     await page.render({ canvasContext: context, viewport, intent: 'print' }).promise;
-
                     const blob = await new Promise((resolve, reject) => {
-                        canvas.toBlob(b => b ? resolve(b) : reject(new Error(t('jpgpage', {i}))), 'image/jpeg', 1.0);
+                        canvas.toBlob(b => b ? resolve(b) : reject(new Error(t('jpgpage', { i }))), 'image/jpeg', 1.0);
                     });
-                    entries.push({ name: `${base}_page_${String(i).padStart(digits, '0')}.jpg`, blob });
-                    canvas.width = 1;
-                    canvas.height = 1;
+                    downloadFile(blob, `AiLovePDF_Page_${String(i).padStart(digits, '0')}.jpg`);
+                    canvas.width = 1; canvas.height = 1;
                     if (page.cleanup) page.cleanup();
-                    if (i % 3 === 0) await new Promise(resolve => requestAnimationFrame(resolve));
+                    await yieldToBrowser();
                 }
-
-                setProgress(t('zip'), 100);
-                const zipBlob = await createStoredZip(entries);
-                downloadFile(zipBlob, `${base}_JPG.zip`);
+                setProgress(t('done'), 100);
             });
         }
 
         // 6. DELETE PAGES
         function executeDelete() {
-            const file = document.getElementById('file-input').files[0];
-            const pagesStr = document.getElementById('pages-input').value;
-            if (!file || !pagesStr) return alert('Importez un PDF et saisissez les numéros des pages à supprimer.');
+            const input = document.getElementById('file-input');
+            const pagesInput = document.getElementById('pages-input');
+            const file = input && input.files ? input.files[0] : null;
+            const pagesStr = pagesInput ? pagesInput.value : '';
+            if (!file || !pagesStr) return alert(t('delete'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const totalPages = pdf.getPageCount();
-                
-                const toDelete = pagesStr.split(',')
-                    .map(n => parseInt(n.trim()) - 1)
-                    .filter(n => !isNaN(n) && n >= 0 && n < totalPages)
-                    .sort((a, b) => b - a);
-
-                if (toDelete.length === 0) throw new Error("Invalid page numbers");
-
-                toDelete.forEach(idx => {
+                const toDelete = [...new Set(pagesStr.split(',')
+                    .map(n => parseInt(n.trim(), 10) - 1)
+                    .filter(n => Number.isInteger(n) && n >= 0 && n < totalPages))].sort((a, b) => b - a);
+                if (!toDelete.length) throw new Error('Invalid page numbers');
+                for (const idx of toDelete) {
                     pdf.removePage(idx);
-                });
-                
+                    await yieldToBrowser();
+                }
                 const newBytes = await pdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_pages_removed.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Pages_Removed.pdf');
             });
         }
 
-        // 7. TXT TO PDF
+        // 7. TXT TO PDF — full file, automatically creates as many pages as required.
         function executeTxtToPdf() {
-            const file = document.getElementById('file-input').files[0];
-            if (!file) return alert('Sélectionnez un fichier texte (.txt).');
+            const input = document.getElementById('file-input');
+            const file = input && input.files ? input.files[0] : null;
+            if (!file) return alert(t('txt'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensureJspdf();
                 const text = await file.text();
                 const { jsPDF } = window.jspdf;
                 const doc = new jsPDF();
-
-                const marginLeft = 15;
-                const marginRight = 15;
-                const marginTop = 15;
-                const marginBottom = 15;
+                const marginLeft = 15, marginRight = 15, marginTop = 15, marginBottom = 15;
                 const pageWidth = doc.internal.pageSize.getWidth();
                 const pageHeight = doc.internal.pageSize.getHeight();
                 const usableWidth = pageWidth - marginLeft - marginRight;
                 const lineHeight = 6;
                 const maxY = pageHeight - marginBottom;
-
-                // Preserve paragraph/line breaks while wrapping long lines to the page width.
                 const sourceLines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
                 let y = marginTop;
-
+                let lineCounter = 0;
                 for (const sourceLine of sourceLines) {
                     const wrappedLines = doc.splitTextToSize(sourceLine || ' ', usableWidth);
-
                     for (const line of wrappedLines) {
-                        if (y + lineHeight > maxY) {
-                            doc.addPage();
-                            y = marginTop;
-                        }
+                        if (y + lineHeight > maxY) { doc.addPage(); y = marginTop; }
                         doc.text(String(line), marginLeft, y);
                         y += lineHeight;
+                        if (++lineCounter % 100 === 0) await yieldToBrowser();
                     }
                 }
-
-                doc.save(`${safeBaseName(file.name)}.pdf`);
+                const pdfBytes = doc.output('arraybuffer');
+                downloadFile(new Blob([pdfBytes], { type: 'application/pdf' }), 'AiLovePDF_Text.pdf');
             });
         }
 
         // 8. ROTATE PDF
         function executeRotate() {
-            const file = document.getElementById('file-input').files[0];
-            const angle = parseInt(document.getElementById('angle-input').value);
-            if (!file) return alert('Importez un PDF à faire pivoter.');
+            const input = document.getElementById('file-input');
+            const angleInput = document.getElementById('angle-input');
+            const file = input && input.files ? input.files[0] : null;
+            const angle = angleInput ? parseInt(angleInput.value, 10) : 90;
+            if (!file) return alert(t('rotate'));
 
-            runWith5SecDelay(async () => {
+            runProcessing(async () => {
                 ensurePdfLib();
                 const bytes = await file.arrayBuffer();
                 const pdf = await PDFDocument.load(bytes);
                 const pages = pdf.getPages();
-                
-                pages.forEach(page => {
-                    const currentRotation = page.getRotation().angle;
+                for (let i = 0; i < pages.length; i++) {
+                    const page = pages[i];
+                    const currentRotation = page.getRotation().angle || 0;
                     page.setRotation(degrees(currentRotation + angle));
-                });
-                
+                    if ((i + 1) % 25 === 0) {
+                        setProgress(t('processing'), ((i + 1) / pages.length) * 100);
+                        await yieldToBrowser();
+                    }
+                }
                 const newBytes = await pdf.save();
-                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), `${safeBaseName(file.name)}_rotated.pdf`);
+                downloadFile(new Blob([newBytes], { type: 'application/pdf' }), 'AiLovePDF_Rotated.pdf');
             });
         }
     
@@ -985,23 +945,31 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         function initAiLovePDFRoute() {
             try {
                 const root = document.getElementById('page-root');
-                const directTool = root && root.dataset ? root.dataset.tool : '';
+                const route = getLocalRoute();
+                const mapped = (typeof LOCAL_TOOL_ROUTES !== 'undefined' && LOCAL_TOOL_ROUTES[route]) ? LOCAL_TOOL_ROUTES[route].tool : '';
+                const directTool = (root && root.dataset && root.dataset.tool) || mapped || '';
                 if (directTool && typeof baseOpenTool === 'function') {
                     baseOpenTool(directTool);
                     updateToolSeoHeader(directTool);
                     localizeDynamicToolUI(directTool);
-                    const data = (typeof LOCAL_TOOL_ROUTES !== 'undefined') ? LOCAL_TOOL_ROUTES[getLocalRoute()] : null;
-                    if (data) setPageMeta(data.title, data.desc, localPath(getLocalRoute()));
+                    // Defensive second pass: if a tool page ever arrives with an empty
+                    // input container, initialize it again without changing the HTML shell.
+                    const inputs = document.getElementById('tool-inputs');
+                    if (inputs && !inputs.querySelector('input, select')) baseOpenTool(directTool);
+                    const data = (typeof LOCAL_TOOL_ROUTES !== 'undefined') ? LOCAL_TOOL_ROUTES[route] : null;
+                    if (data) setPageMeta(data.title, data.desc, localPath(route));
                     return;
                 }
                 loadRoute(false);
             } catch (error) {
                 console.error('AiLovePDF route initialization failed:', error);
-                const root = document.getElementById('page-root');
-                const directTool = root && root.dataset ? root.dataset.tool : '';
-                if (directTool && typeof baseOpenTool === 'function') {
-                    try { baseOpenTool(directTool); localizeDynamicToolUI(directTool); } catch (_) {}
-                }
+                try {
+                    const root = document.getElementById('page-root');
+                    const route = getLocalRoute();
+                    const mapped = (typeof LOCAL_TOOL_ROUTES !== 'undefined' && LOCAL_TOOL_ROUTES[route]) ? LOCAL_TOOL_ROUTES[route].tool : '';
+                    const directTool = (root && root.dataset && root.dataset.tool) || mapped || '';
+                    if (directTool && typeof baseOpenTool === 'function') baseOpenTool(directTool);
+                } catch (_) {}
             }
         }
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAiLovePDFRoute, { once: true });
