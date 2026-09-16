@@ -2,6 +2,8 @@
 // This file only handles automatic localization of the English root (/).
 // Existing pages, tools, JavaScript logic, navigation, footer and hrefs are untouched.
 
+export const config = { runtime: 'nodejs' };
+
 const COUNTRY_TO_PATH = {
   // Arabic-speaking Middle East
   SA: "/ar/", // Saudi Arabia
