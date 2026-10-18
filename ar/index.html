@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8"/><link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="" href="https://unpkg.com" rel="preconnect"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AiLovePDF - أدوات PDF مجانية عبر الإنترنت | دمج وضغط وتحويل</title>
 <meta content="أدوات PDF مجانية تعمل في المتصفح لدمج ملفات PDF وضغطها وتقسيمها وتدويرها وتحويلها." name="description"/>
@@ -28,12 +27,12 @@
 <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <!-- Tailwind CSS & FontAwesome -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
-<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
 <style>
         body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
         .view-section { display: none; }
@@ -138,27 +137,544 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 </script>
 <script defer="" src="/_vercel/insights/script.js"></script>
 <script defer="" src="/_vercel/speed-insights/script.js"></script>
-</head>
+<style id="ailovepdf-instant-css">
+/* ==================== AILOVEPDF INSTANT-RENDER CORE & ENTERPRISE UI ==================== */
+*, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e2e8f0; }
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+body { margin: 0; background-color: #f8fafc; background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%); color: #1e293b; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 3rem; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img, svg, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: inherit; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; line-height: inherit; color: inherit; margin: 0; }
+button, select { text-transform: none; }
+button, [type='button'], [type='submit'] { -webkit-appearance: button; background-color: transparent; background-image: none; cursor: pointer; }
+h1, h2, h3, h4, p, ul, ol { margin: 0; }
+ul, ol { list-style: none; padding: 0; }
+
+/* Pre-compiled Tailwind Utility Classes for Zero-FOUC Instant Mobile Rendering */
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+.block { display: block; }
+.flex-col { flex-direction: column; }
+.flex-grow { flex-grow: 1; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.gap-12 { gap: 3rem; }
+.gap-x-6 { column-gap: 1.5rem; }
+.gap-y-3 { row-gap: 0.75rem; }
+.space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.5rem; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+.space-y-12 > :not([hidden]) ~ :not([hidden]) { margin-top: 3rem; }
+
+.w-full { width: 100%; }
+.w-10 { width: 2.5rem; }
+.h-10 { height: 2.5rem; }
+.h-2 { height: 0.5rem; }
+.h-full { height: 100%; }
+.h-\[90px\] { height: 90px; }
+.h-\[250px\] { height: 250px; }
+.min-h-screen { min-height: 100vh; }
+.min-h-\[30px\] { min-height: 30px; }
+.max-w-md { max-width: 28rem; }
+.max-w-xl { max-width: 36rem; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-3xl { max-width: 48rem; }
+.max-w-4xl { max-width: 56rem; }
+.max-w-5xl { max-width: 64rem; }
+.max-w-7xl { max-width: 80rem; }
+.max-w-none { max-width: none; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-10 { margin-top: 2.5rem; margin-bottom: 2.5rem; }
+.mt-auto { margin-top: auto; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-10 { margin-top: 2.5rem; }
+.mt-12 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-14 { margin-bottom: 3.5rem; }
+.mr-1 { margin-right: 0.25rem; }
+.mr-3 { margin-right: 0.75rem; }
+.mr-4 { margin-right: 1rem; }
+
+.p-5 { padding: 1.25rem; }
+.p-6 { padding: 1.5rem; }
+.p-7 { padding: 1.75rem; }
+.p-8 { padding: 2rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-12 { padding-left: 3rem; padding-right: 3rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.pt-4 { padding-top: 1rem; }
+.pt-8 { padding-top: 2rem; }
+.pt-12 { padding-top: 3rem; }
+.pt-16 { padding-top: 4rem; }
+.pb-1 { padding-bottom: 0.25rem; }
+.pb-4 { padding-bottom: 1rem; }
+.pb-6 { padding-bottom: 1.5rem; }
+.pb-8 { padding-bottom: 2rem; }
+.pb-20 { padding-bottom: 5rem; }
+.pl-6 { padding-left: 1.5rem; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.sticky { position: sticky; }
+.top-0 { top: 0px; }
+.top-4 { top: 1rem; }
+.top-full { top: 100%; }
+.left-0 { left: 0px; }
+.right-4 { right: 1rem; }
+.-left-\[9999px\] { left: -9999px; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-6xl { font-size: 3.75rem; line-height: 1; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.tracking-tight { letter-spacing: -0.025em; }
+.leading-tight { line-height: 1.25; }
+.leading-relaxed { line-height: 1.625; }
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.text-white { color: #ffffff; }
+.text-slate-400 { color: #94a3b8; }
+.text-slate-500 { color: #64748b; }
+.text-slate-600 { color: #475569; }
+.text-slate-700 { color: #334155; }
+.text-slate-800 { color: #1e293b; }
+.text-slate-900 { color: #0f172a; }
+.text-blue-100 { color: #dbeafe; }
+.text-blue-500 { color: #3b82f6; }
+.text-blue-600 { color: #2563eb; }
+.text-red-500 { color: #ef4444; }
+.text-red-600 { color: #dc2626; }
+.text-green-100 { color: #dcfce7; }
+.text-green-600 { color: #16a34a; }
+.text-purple-100 { color: #f3e8ff; }
+.text-purple-600 { color: #9333ea; }
+.text-pink-100 { color: #fce7f3; }
+.text-pink-600 { color: #db2777; }
+.text-yellow-100 { color: #fef9c3; }
+.text-teal-100 { color: #ccfbf1; }
+.text-teal-600 { color: #0d9488; }
+.text-rose-100 { color: #ffe4e6; }
+.text-orange-100 { color: #ffedd5; }
+.text-orange-500 { color: #f97316; }
+
+.bg-white { background-color: #ffffff; }
+.bg-white\/20 { background-color: rgba(255, 255, 255, 0.22); }
+.bg-slate-50 { background-color: #f8fafc; }
+.bg-slate-100 { background-color: #f1f5f9; }
+.bg-blue-50\/70 { background-color: rgba(239, 246, 255, 0.8); }
+.bg-blue-600 { background-color: #2563eb; }
+.bg-purple-600 { background-color: #7c3aed; }
+.bg-pink-600 { background-color: #db2777; }
+.bg-yellow-500 { background-color: #d97706; }
+.bg-green-500 { background-color: #059669; }
+.bg-teal-600 { background-color: #0d9488; }
+.bg-rose-500 { background-color: #e11d48; }
+.bg-orange-500 { background-color: #ea580c; }
+
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-t { border-top-width: 1px; }
+.border-b { border-bottom-width: 1px; }
+.border-dashed { border-style: dashed; }
+.border-slate-50 { border-color: #f8fafc; }
+.border-slate-100 { border-color: #f1f5f9; }
+.border-slate-200 { border-color: #e2e8f0; }
+.border-slate-300 { border-color: #cbd5e1; }
+.border-blue-100 { border-color: #dbeafe; }
+
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-3xl { border-radius: 1.5rem; }
+.rounded-full { border-radius: 9999px; }
+.shadow-sm { box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.04); }
+.shadow-lg { box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06); }
+.object-contain { object-fit: contain; }
+.overflow-hidden { overflow: hidden; }
+.opacity-0 { opacity: 0; }
+.opacity-90 { opacity: 0.92; }
+.outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+.resize-none { resize: none; }
+.cursor-pointer { cursor: pointer; }
+.list-decimal { list-style-type: decimal; }
+.list-disc { list-style-type: disc; }
+.transition { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+.transition-all { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+.transition-colors { transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease; }
+
+.hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+.hover\:text-blue-600:hover { color: #2563eb; }
+.hover\:text-slate-800:hover { color: #1e293b; }
+.hover\:border-blue-400:hover { border-color: #60a5fa; }
+.hover\:shadow-sm:hover { box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08); }
+.hover\:underline:hover { text-decoration: underline; }
+.focus\:border-blue-500:focus { border-color: #3b82f6; }
+.focus\:outline-none:focus { outline: 2px solid transparent; }
+.focus\:ring-2:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+
+@media (min-width: 768px) {
+    .md\:flex { display: flex; }
+    .md\:block { display: block; }
+    .md\:hidden { display: none; }
+    .md\:flex-row { flex-direction: row; }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .md\:w-1\/3 { width: 33.333333%; }
+    .md\:w-2\/3 { width: 66.666667%; }
+    .md\:p-8 { padding: 2rem; }
+    .md\:p-12 { padding: 3rem; }
+    .md\:p-16 { padding: 4rem; }
+    .md\:pt-10 { padding-top: 2.5rem; }
+    .md\:mb-0 { margin-bottom: 0px; }
+    .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .md\:text-5xl { font-size: 3rem; line-height: 1.12; }
+    .md\:text-6xl { font-size: 3.75rem; line-height: 1.08; }
+}
+@media (min-width: 1024px) {
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ==================== ENTERPRISE SAAS VISUAL POLISH & UX ==================== */
+nav.bg-white {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03) !important;
+}
+.nav-btn {
+    position: relative;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s ease;
+}
+.nav-btn:hover {
+    color: #0f172a;
+    background-color: #f1f5f9;
+}
+.nav-btn.tab-active {
+    color: #2563eb !important;
+    background-color: rgba(37, 99, 235, 0.08);
+    border-bottom: none !important;
+    font-weight: 700;
+}
+.nav-btn.tab-active::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 2px;
+    height: 2.5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+}
+
+/* Enterprise Tool Cards with High-Contrast Gradients & Micro-Interactions */
+.tool-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 1.25rem;
+    padding: 1.65rem 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 4px 10px -4px rgba(15, 23, 42, 0.06);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 162px;
+}
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -25%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.35s ease;
+}
+.tool-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 35px -8px rgba(15, 23, 42, 0.2), 0 8px 16px -6px rgba(15, 23, 42, 0.1);
+}
+.tool-card:hover::before {
+    transform: scale(1.25);
+}
+.tool-card.bg-purple-600 { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); }
+.tool-card.bg-pink-600   { background: linear-gradient(135deg, #db2777 0%, #9d174d 100%); }
+.tool-card.bg-yellow-500 { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); }
+.tool-card.bg-green-500  { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+.tool-card.bg-teal-600   { background: linear-gradient(135deg, #0d9488 0%, #115e59 100%); }
+.tool-card.bg-rose-500   { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); }
+.tool-card.bg-orange-500 { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+.tool-card.bg-blue-600   { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+
+.tool-card i {
+    width: 3.1rem;
+    height: 3.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.9rem;
+    font-size: 1.45rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+.tool-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #ffffff !important;
+}
+.tool-card p {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* RTL Badge & Alignment Fixes */
+html[dir="rtl"] .tool-card .absolute.right-4 {
+    right: auto !important;
+    left: 1rem !important;
+}
+html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0.75rem;
+    margin-left: 0;
+}
+
+/* Tool Workspace & Modern File Input Styling */
+#tool-seo-header {
+    background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(224, 231, 255, 0.55) 100%);
+    border: 1px solid #bfdbfe;
+    box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.07);
+}
+[data-tool-workspace-card="true"] {
+    box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+}
+#tool-inputs input[type="file"] {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+#tool-inputs input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.6rem 1.1rem;
+    margin-right: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+html[dir="rtl"] #tool-inputs input[type="file"]::file-selector-button {
+    margin-right: 0;
+    margin-left: 0.9rem;
+}
+#tool-inputs input[type="file"]::file-selector-button:hover {
+    opacity: 0.94;
+}
+#tool-action-btn {
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#tool-action-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -6px rgba(37, 99, 235, 0.55);
+}
+#tool-action-btn:active {
+    transform: translateY(0);
+}
+
+/* Language Switcher & Social Media Components */
+.lang-switcher-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.lang-select-pill {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 9999px;
+    padding: 0.38rem 2rem 0.38rem 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.65rem center;
+}
+html[dir="rtl"] .lang-select-pill {
+    padding: 0.38rem 0.85rem 0.38rem 2rem;
+    background-position: left 0.65rem center;
+}
+.lang-select-pill:hover, .lang-select-pill:focus {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    outline: none;
+}
+
+.social-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+.social-icon-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.social-icon-btn:hover {
+    transform: translateY(-3px);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 8px 16px -4px rgba(15, 23, 42, 0.18);
+}
+.social-icon-btn[data-social="facebook"]:hover { background-color: #1877F2; }
+.social-icon-btn[data-social="x"]:hover { background-color: #0f172a; }
+.social-icon-btn[data-social="youtube"]:hover { background-color: #FF0000; }
+.social-icon-btn[data-social="tiktok"]:hover { background-color: #000000; }
+.social-icon-btn[data-social="instagram"]:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-icon-btn[data-social="linkedin"]:hover { background-color: #0A66C2; }
+
+.social-list-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #475569;
+    font-weight: 500;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+.social-list-link:hover {
+    color: #2563eb;
+    transform: translateX(2px);
+}
+html[dir="rtl"] .social-list-link:hover {
+    transform: translateX(-2px);
+}
+
+/* Mobile Responsiveness Refinements */
+@media (max-width: 767px) {
+    #hero-section h1 {
+        font-size: clamp(1.85rem, 7vw, 2.5rem) !important;
+        line-height: 1.18 !important;
+    }
+    #tool-seo-header {
+        padding: 1.25rem 1.15rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    #tool-seo-title {
+        font-size: clamp(1.65rem, 6.5vw, 2.25rem) !important;
+    }
+    [data-tool-workspace-card="true"] {
+        padding: 1.35rem 1rem !important;
+        border-radius: 1.25rem !important;
+    }
+    #tool-action-btn {
+        font-size: 1.05rem !important;
+        padding: 0.9rem 1.5rem !important;
+    }
+    #seo-articles, .final-content-card {
+        padding: 1.5rem 1.15rem !important;
+        border-radius: 1.25rem !important;
+    }
+    .adsbygoogle-placeholder.h-\[90px\] {
+        height: 70px !important;
+    }
+    html[dir="rtl"] .tool-card {
+        text-align: right !important;
+    }
+}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AiLovePDF", "url": "https://www.ailovepdf.site/", "logo": "https://www.ailovepdf.site/logo.png", "sameAs": ["https://web.facebook.com/ailovepdfsite", "https://x.com/ailovepdfsite", "https://www.youtube.com/@Ailovepdfsite", "https://www.tiktok.com/@ailovepdfsite", "https://www.instagram.com/ailovepdfsite/", "https://www.linkedin.com/company/ailovepdfsite"]}</script></head>
 <body class="text-slate-800 flex flex-col min-h-screen pb-20">
 <!-- Navigation -->
 <nav class="bg-white shadow-sm sticky top-0 z-50 relative">
 <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
 <!-- Brand Logo -->
-<div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('home')">
+<a aria-label="AiLovePDF الرئيسية" class="flex items-center gap-2 cursor-pointer" href="/ar/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.png"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
 <span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
-</div>
+</a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
-<a class="nav-btn tab-active pb-1 text-base font-semibold transition-colors" href="/ar/">الأدوات</a>
-<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a>
-<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/ar/daleel-pdf/">دليل PDF</a>
-<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/ar/man-nahnu/">من نحن</a>
-<a class="nav-btn text-slate-600 pb-1 text-base font-semibold transition-colors" href="/ar/ittisal/">اتصل بنا</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors tab-active text-slate-900" href="/ar/">الأدوات</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/daleel-pdf/">دليل PDF</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/man-nahnu/">من نحن</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/ittisal/">اتصل بنا</a>
 <!-- External Blog Link -->
 <a class="text-slate-600 hover:text-blue-600 pb-1 text-base font-semibold transition-colors flex items-center gap-1" href="https://ar.blog.ailovepdf.site" target="_blank">المدونة <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-</div>
+<div class="lang-switcher-wrap"><select aria-label="Language" class="lang-select-pill" onchange="if(this.value){try{sessionStorage.setItem('ailovepdf_manual_lang',this.options[this.selectedIndex].dataset.lang||'en');}catch(e){}window.location.href=this.value;}"><option data-lang="en" value="/">EN — English</option><option data-lang="es" value="/es/">ES — Español</option><option data-lang="fr" value="/fr/">FR — Français</option><option data-lang="de" value="/de/">DE — Deutsch</option><option data-lang="pt-br" value="/pt-br/">PT — Português</option><option data-lang="ar" selected="selected" value="/ar/">AR — العربية</option></select></div></div>
 <!-- Mobile Menu Toggle Button (3 lines) -->
 <button class="md:hidden text-slate-700 text-2xl focus:outline-none" onclick="toggleMobileMenu()">
 <i class="fa-solid fa-bars"></i>
@@ -172,7 +688,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 <a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/man-nahnu/">من نحن</a>
 <a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/ittisal/">اتصل بنا</a>
 <a class="text-right px-6 py-4 font-semibold text-slate-600 flex items-center gap-2" href="https://ar.blog.ailovepdf.site" target="_blank">المدونة <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
-</div>
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-col gap-4" id="mobile-menu-extras"><div class="flex items-center justify-between gap-3"><span class="text-xs font-bold uppercase tracking-wider text-slate-400">Language</span><div class="lang-switcher-wrap"><select aria-label="Language" class="lang-select-pill" onchange="if(this.value){try{sessionStorage.setItem('ailovepdf_manual_lang',this.options[this.selectedIndex].dataset.lang||'en');}catch(e){}window.location.href=this.value;}"><option data-lang="en" value="/">EN — English</option><option data-lang="es" value="/es/">ES — Español</option><option data-lang="fr" value="/fr/">FR — Français</option><option data-lang="de" value="/de/">DE — Deutsch</option><option data-lang="pt-br" value="/pt-br/">PT — Português</option><option data-lang="ar" selected="selected" value="/ar/">AR — العربية</option></select></div></div><div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-200/70"><span class="text-xs font-bold text-slate-500">تابعنا</span><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div></div></div></div>
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
@@ -237,35 +753,21 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">التنقل</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
 <li><a class="hover:text-blue-600 transition-colors" href="/ar/">الرئيسية</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a></li>
+<li><a class="hover:text-blue-600 transition-colors" href="/ar/man-nahnu/">من نحن</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a></li>
 <li><a class="hover:text-blue-600 transition-colors" href="/ar/daleel-pdf/">دليل PDF</a></li>
 <li><a class="hover:text-blue-600 transition-colors" href="/ar/ittisal/">اتصل بنا</a></li>
 <li><a class="hover:text-blue-600 transition-colors font-bold text-blue-500" href="/ar/khosousiya/">سياسة الخصوصية</a></li>
-</ul>
+<li><a class="hover:text-blue-600 transition-colors inline-flex items-center gap-1" href="https://ar.blog.ailovepdf.site" rel="noopener" target="_blank">المدونة <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a></li></ul>
 </div>
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">الأدوات</h4>
-<ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">دمج PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">تقسيم PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">تدوير PDF</a></li>
-</ul>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-blue-600 transition-colors" href="/ar/damj-pdf/">دمج PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/taqseem-pdf/">تقسيم PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/tadweer-pdf/">تدوير PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/daght-pdf/">ضغط PDF</a></li></ul>
 </div>
 <div>
-<h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
-<ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">ضغط PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">حذف الصفحات</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">TXT إلى PDF</a></li>
-</ul>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">تحويل وتعديل</h4>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-blue-600 transition-colors" href="/ar/hadhf-safahat-pdf/">حذف الصفحات</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/txt-ila-pdf/">TXT إلى PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/jpg-ila-pdf/">JPG إلى PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/ar/pdf-ila-jpg/">PDF إلى JPG</a></li></ul>
 </div>
-<div>
-<h4 class="font-extrabold text-white text-lg mb-6 hidden md:block">.</h4>
-<ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">JPG إلى PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/ar/">PDF إلى JPG</a></li>
-</ul>
-</div>
+<div><h4 class="font-extrabold text-slate-900 text-lg mb-6">تابعنا</h4><ul class="space-y-3 text-slate-600 text-sm"><li><a aria-label="AiLovePDF Facebook" class="social-list-link" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></span><span>Facebook</span></a></li><li><a aria-label="AiLovePDF X (Twitter)" class="social-list-link" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></span><span>X (Twitter)</span></a></li><li><a aria-label="AiLovePDF YouTube" class="social-list-link" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span><span>YouTube</span></a></li><li><a aria-label="AiLovePDF TikTok" class="social-list-link" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></span><span>TikTok</span></a></li><li><a aria-label="AiLovePDF Instagram" class="social-list-link" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></span><span>Instagram</span></a></li><li><a aria-label="AiLovePDF LinkedIn" class="social-list-link" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span><span>LinkedIn</span></a></li></ul></div>
 </div>
 <div class="max-w-7xl mx-auto px-4 mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
 <a class="hover:text-blue-600" href="/ar/man-nahnu/">من نحن</a>
@@ -275,16 +777,11 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 <a class="hover:text-blue-600" href="/ar/ikhlaa-masouliya/">إخلاء المسؤولية</a>
 <a class="hover:text-blue-600" href="/ar/cookies/">سياسة ملفات تعريف الارتباط</a>
 </div>
-<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center">
-<div class="font-bold text-slate-700 mb-2 md:mb-0 flex items-center gap-2">
-<i class="fa-solid fa-file-pdf text-red-500"></i> AiLovePDF family
-            </div>
-<div class="text-slate-500 text-sm font-medium">@ 2026 AiLovePDF. جميع الحقوق محفوظة.</div>
-</div>
+<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col gap-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><a class="font-bold text-slate-800 flex items-center gap-2 hover:text-blue-600 transition-colors" href="/ar/"><i class="fa-solid fa-file-pdf text-red-500 text-xl"></i> <span>عائلة AiLovePDF</span></a><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div><div class="text-slate-500 text-sm font-medium">© 2026 AiLovePDF. جميع الحقوق محفوظة.</div></div><div class="flex justify-center md:justify-between items-center flex-wrap gap-4 pt-4 border-t border-slate-100/80"><div class="flex flex-wrap items-center gap-x-4 gap-y-2" id="footer-lang-links"><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="en" href="/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','en');}catch(e){}">English</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="es" href="/es/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','es');}catch(e){}">Español</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="fr" href="/fr/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','fr');}catch(e){}">Français</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="de" href="/de/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','de');}catch(e){}">Deutsch</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="pt-br" href="/pt-br/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','pt-br');}catch(e){}">Português (BR)</a><a class="text-xs text-blue-600 font-bold transition-colors" data-lang-switch="ar" href="/ar/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','ar');}catch(e){}">العربية</a></div></div></div>
 </footer>
 <!-- STICKY ANCHOR AD -->
 <!-- 100% COMPLETE & WORKING JAVASCRIPT LOGIC -->
-<script>
+<script defer="" src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script><script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script><script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script>
         // PDF libraries are loaded from CDN, so do not reference them at parse time.
         // This keeps direct tool pages usable even if a CDN is temporarily unavailable;
         // the actual operation will report a clear error when the user starts processing.
@@ -371,7 +868,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (!data || !header) return;
             document.getElementById('tool-seo-title').textContent = data.title;
             document.getElementById('tool-seo-desc').textContent = data.desc;
-            document.getElementById('tool-breadcrumb').textContent = data.breadcrumb;
+            const bcEl = document.getElementById('tool-breadcrumb'); if (bcEl) { const parts = String(data.breadcrumb || '').split('/'); const hTxt = (parts[0] || 'Home').trim(); const tTxt = parts.slice(1).join('/').trim(); const hHref = (typeof localPath === 'function') ? localPath('/') : '/'; bcEl.innerHTML = `<a class="hover:underline" href="${hHref}">${hTxt}</a>` + (tTxt ? ` / ${tTxt}` : ''); }
         }
 
         function baseOpenTool(toolType) {
@@ -532,6 +1029,10 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
                 await yieldToBrowser();
+                for (let _w = 0; _w < 40; _w++) {
+                    if (window.PDFLib && window.pdfjsLib && window.jspdf) break;
+                    await new Promise(r => setTimeout(r, 100));
+                }
                 await processCallback();
                 if (statusEl) statusEl.innerHTML = `<span class="text-green-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> ${t('done')}</span>`;
             } catch (error) {
@@ -910,7 +1411,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
             if (!data || !header) return;
             document.getElementById('tool-seo-title').textContent = data.title;
             document.getElementById('tool-seo-desc').textContent = data.desc;
-            document.getElementById('tool-breadcrumb').textContent = data.breadcrumb;
+            const bcEl = document.getElementById('tool-breadcrumb'); if (bcEl) { const parts = String(data.breadcrumb || '').split('/'); const hTxt = (parts[0] || 'Home').trim(); const tTxt = parts.slice(1).join('/').trim(); const hHref = (typeof localPath === 'function') ? localPath('/') : '/'; bcEl.innerHTML = `<a class="hover:underline" href="${hHref}">${hTxt}</a>` + (tTxt ? ` / ${tTxt}` : ''); }
         }
         function updateInfoSeoHeader(tabId) {
             const data = LOCAL_INFO_VISIBLE_SEO[tabId];
@@ -923,7 +1424,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         function switchTab(tabId, push=true) {
             const targetView = document.getElementById(tabId);
             if (!targetView) {
-                const routeByTab = {home:'/', howto:'/how-to-use', guide:'/pdf-guide', about:'/about', contact:'/contact', privacy:'/privacy', terms:'/terms', disclaimer:'/disclaimer', cookies:'/cookies'};
+                const routeByTab = {"home": "/", "howto": "/kayfiyat-istikhdam", "guide": "/daleel-pdf", "about": "/man-nahnu", "contact": "/ittisal", "privacy": "/khosousiya", "terms": "/shoroot", "disclaimer": "/ikhlaa-masouliya", "cookies": "/cookies"};
                 const destination = localPath(routeByTab[tabId] || '/');
                 if (typeof window.__navigateAiLovePDF === 'function') window.__navigateAiLovePDF(destination, push);
                 else window.location.href = destination;
@@ -1006,6 +1507,32 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
         else initAiLovePDFRoute();
 
 
+
+
+        function syncActiveNavLinks() {
+            const curPath = (location.pathname || '/').replace(/\/+$/, '') || '/';
+            const homePath = ((typeof SITE_ROUTE_PREFIX !== 'undefined' && SITE_ROUTE_PREFIX) ? SITE_ROUTE_PREFIX : '').replace(/\/+$/, '') || '/';
+            const rootEl = document.getElementById('page-root');
+            const isTool = !!(rootEl && rootEl.dataset && rootEl.dataset.tool);
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                const bh = (btn.getAttribute('href') || '').replace(/\/+$/, '') || '/';
+                const active = (bh === curPath) || (isTool && bh === homePath);
+                btn.classList.toggle('tab-active', active);
+                btn.classList.toggle('text-slate-900', active);
+                btn.classList.toggle('text-slate-600', !active);
+            });
+            document.querySelectorAll('.nav-btn-mob').forEach(btn => {
+                const bh = (btn.getAttribute('href') || '').replace(/\/+$/, '') || '/';
+                const active = (bh === curPath) || (isTool && bh === homePath);
+                btn.classList.toggle('font-bold', active);
+                btn.classList.toggle('text-blue-600', active);
+                btn.classList.toggle('font-semibold', !active);
+                btn.classList.toggle('text-slate-600', !active);
+            });
+            const mobMenu = document.getElementById('mobile-menu');
+            if (mobMenu && !mobMenu.classList.contains('hidden')) mobMenu.classList.add('hidden');
+        }
+        window.__syncAiLovePDFNav = syncActiveNavLinks;
 </script>
 <script>
 (function(){
@@ -1039,6 +1566,18 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
       const fetchedTool=(next.dataset && next.dataset.tool) ? next.dataset.tool : null;
       const tool=(fetchedTool || ((typeof LOCAL_TOOL_ROUTES!=='undefined' && LOCAL_TOOL_ROUTES[norm(u.pathname)]) ? LOCAL_TOOL_ROUTES[norm(u.pathname)].tool : null));
       if(tool && typeof baseOpenTool==='function'){ baseOpenTool(tool); if(typeof localizeDynamicToolUI==='function') localizeDynamicToolUI(tool); }
+      
+      // Sync hreflang links and language switcher URLs for the new route
+      doc.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(srcLink => {
+        const hl = srcLink.getAttribute('hreflang');
+        const dstLink = document.head.querySelector(`link[rel="alternate"][hreflang="${hl}"]`);
+        if (dstLink) dstLink.setAttribute('href', srcLink.getAttribute('href'));
+        const code = String(hl || '').toLowerCase();
+        const relHref = (srcLink.getAttribute('href') || '').replace('https://www.ailovepdf.site', '') || '/';
+        document.querySelectorAll(`.lang-select-pill option[data-lang="${code}"]`).forEach(opt => { opt.value = relHref; });
+        document.querySelectorAll(`#footer-lang-links a[data-lang-switch="${code}"]`).forEach(a => { a.setAttribute('href', relHref); });
+      });
+      if (typeof window.__syncAiLovePDFNav === 'function') window.__syncAiLovePDFNav();
       window.scrollTo({top:0,behavior:'smooth'});
     }catch(e){ window.location.href=u.href; }
   }
