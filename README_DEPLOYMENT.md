@@ -72,3 +72,12 @@ SEO/GEO architecture finalized:
   - Added Header, Mobile Menu, and Footer Language Switchers linking every page to its exact equivalent across all 6 languages (`en`, `es`, `fr`, `de`, `pt-br`, `ar`).
   - Added contextual tool links and quick-access tool cards on Guide, How-to-Use, and About pages without altering any existing article content.
   - Upgraded `sitemap.xml` with full `xhtml:link rel="alternate" hreflang="..."` annotations for all 102 indexable URLs.
+
+
+## SEO/GEO preservation upgrade
+- Existing PDF application logic and visible UI are unchanged.
+- Existing six-language routing, localized slugs, language switchers and hreflang structure are preserved.
+- Added non-visual WebSite/Organization identity markup on the English homepage.
+- Improved WebApplication structured data descriptions/offers and cleaned FAQ schema question labels.
+- Added `llms.txt` for AI/GEO discovery and `.well-known/security.txt`.
+- Added non-visual social-preview metadata (`og:image:alt`, `twitter:image:alt`) and theme-color metadata.

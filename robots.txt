@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.ailovepdf.site/sitemap.xml
+
+# AI/GEO discovery
+# https://www.ailovepdf.site/llms.txt
