@@ -1,0 +1,3 @@
+Contact: https://www.ailovepdf.site/contact/
+Policy: https://www.ailovepdf.site/privacy/
+Canonical: https://www.ailovepdf.site/.well-known/security.txt
