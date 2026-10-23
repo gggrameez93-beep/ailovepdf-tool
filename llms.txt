@@ -1,0 +1,45 @@
+# AiLovePDF
+
+> Browser-based PDF tools for merging, compressing, splitting, rotating and converting PDF files.
+
+Canonical website: https://www.ailovepdf.site/
+
+## Core tools
+
+- Merge PDF: https://www.ailovepdf.site/merge-pdf/
+- Compress PDF: https://www.ailovepdf.site/compress-pdf/
+- Split PDF: https://www.ailovepdf.site/split-pdf/
+- Rotate PDF: https://www.ailovepdf.site/rotate-pdf/
+- JPG to PDF: https://www.ailovepdf.site/jpg-to-pdf/
+- PDF to JPG: https://www.ailovepdf.site/pdf-to-jpg/
+- Delete PDF Pages: https://www.ailovepdf.site/delete-pdf-pages/
+- TXT to PDF: https://www.ailovepdf.site/txt-to-pdf/
+
+## Guides and information
+
+- PDF Guide: https://www.ailovepdf.site/pdf-guide/
+- About: https://www.ailovepdf.site/about/
+- Privacy: https://www.ailovepdf.site/privacy/
+- Terms: https://www.ailovepdf.site/terms/
+- Cookies: https://www.ailovepdf.site/cookies/
+- Contact: https://www.ailovepdf.site/contact/
+
+## Supported languages
+
+- English: https://www.ailovepdf.site/
+- Spanish: https://www.ailovepdf.site/es/
+- French: https://www.ailovepdf.site/fr/
+- German: https://www.ailovepdf.site/de/
+- Brazilian Portuguese: https://www.ailovepdf.site/pt-br/
+- Arabic: https://www.ailovepdf.site/ar/
+
+## Product positioning
+
+AiLovePDF provides browser-based PDF utilities. The listed PDF-processing tools are designed to process documents client-side in the browser rather than requiring a dedicated PDF-processing backend.
+
+For current tool availability, supported file types, limits and privacy details, use the individual tool pages and the site's Privacy/Terms pages as the authoritative sources.
+
+## Crawl
+
+- Robots: https://www.ailovepdf.site/robots.txt
+- Sitemap: https://www.ailovepdf.site/sitemap.xml
