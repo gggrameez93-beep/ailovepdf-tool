@@ -25,7 +25,7 @@
 <meta content="Convertisseur TXT en PDF en ligne gratuit | AiLovePDF" name="twitter:title"/>
 <meta content="TXT en PDF en ligne gratuit : convertissez vos fichiers texte brut en un PDF propre et paginé dans le navigateur. Gratuit, sans inscription ni envoi de fichier." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <!-- Tailwind CSS & FontAwesome -->
 <script defer="" src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,7 @@
         .view-active { display: block; animation: fadeIn 0.4s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         
-        .tab-active { border-bottom: 3px solid #3b82f6; color: #0f172a; font-weight: 700; }
+        .tab-active { border-bottom: 3px solid #14b8a6; color: #0f172a; font-weight: 700; }
         .tool-card { transition: all 0.3s ease; }
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
@@ -110,7 +110,7 @@
 .contact-form-wrap h2{margin-top:0}
 .contact-form-wrap form{display:grid;gap:10px}
 .contact-form-wrap input,.contact-form-wrap textarea{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px;font:inherit;background:#fff}
-.contact-form-wrap button{border:0;border-radius:999px;padding:14px 24px;background:#2563eb;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.contact-form-wrap button{border:0;border-radius:999px;padding:14px 24px;background:#0d9488;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
 html[dir="rtl"] .final-content-card{text-align:right}
 html[dir="rtl"] .final-content-card h1,html[dir="rtl"] .final-content-card h2{text-align:right}
 html[dir="rtl"] .final-content-card .guide-intro{text-align:center}
@@ -129,7 +129,7 @@ html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
 /* ==================== AILOVEPDF INSTANT-RENDER CORE & ENTERPRISE UI ==================== */
 *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e2e8f0; }
 html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-body { margin: 0; background-color: #f8fafc; background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%); color: #1e293b; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 3rem; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background-color: #f8fafc; background-image: radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%); color: #1e293b; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 3rem; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img, svg, video, canvas { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: inherit; }
 button, input, select, textarea { font-family: inherit; font-size: 100%; line-height: inherit; color: inherit; margin: 0; }
@@ -270,9 +270,9 @@ ul, ol { list-style: none; padding: 0; }
 .text-slate-700 { color: #334155; }
 .text-slate-800 { color: #1e293b; }
 .text-slate-900 { color: #0f172a; }
-.text-blue-100 { color: #dbeafe; }
-.text-blue-500 { color: #3b82f6; }
-.text-blue-600 { color: #2563eb; }
+.text-teal-100 { color: #ccfbf1; }
+.text-teal-500 { color: #14b8a6; }
+.text-teal-600 { color: #0d9488; }
 .text-red-500 { color: #ef4444; }
 .text-red-600 { color: #dc2626; }
 .text-green-100 { color: #dcfce7; }
@@ -292,8 +292,8 @@ ul, ol { list-style: none; padding: 0; }
 .bg-white\/20 { background-color: rgba(255, 255, 255, 0.22); }
 .bg-slate-50 { background-color: #f8fafc; }
 .bg-slate-100 { background-color: #f1f5f9; }
-.bg-blue-50\/70 { background-color: rgba(239, 246, 255, 0.8); }
-.bg-blue-600 { background-color: #2563eb; }
+.bg-teal-50\/70 { background-color: rgba(239, 246, 255, 0.8); }
+.bg-teal-600 { background-color: #0d9488; }
 .bg-purple-600 { background-color: #7c3aed; }
 .bg-pink-600 { background-color: #db2777; }
 .bg-yellow-500 { background-color: #d97706; }
@@ -311,7 +311,7 @@ ul, ol { list-style: none; padding: 0; }
 .border-slate-100 { border-color: #f1f5f9; }
 .border-slate-200 { border-color: #e2e8f0; }
 .border-slate-300 { border-color: #cbd5e1; }
-.border-blue-100 { border-color: #dbeafe; }
+.border-teal-100 { border-color: #ccfbf1; }
 
 .rounded-xl { border-radius: 0.75rem; }
 .rounded-2xl { border-radius: 1rem; }
@@ -332,15 +332,15 @@ ul, ol { list-style: none; padding: 0; }
 .transition-all { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
 .transition-colors { transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease; }
 
-.hover\:bg-blue-700:hover { background-color: #1d4ed8; }
-.hover\:text-blue-600:hover { color: #2563eb; }
+.hover\:bg-teal-700:hover { background-color: #0f766e; }
+.hover\:text-teal-600:hover { color: #0d9488; }
 .hover\:text-slate-800:hover { color: #1e293b; }
-.hover\:border-blue-400:hover { border-color: #60a5fa; }
-.hover\:shadow-sm:hover { box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08); }
+.hover\:border-teal-400:hover { border-color: #2dd4bf; }
+.hover\:shadow-sm:hover { box-shadow: 0 4px 12px rgba(13, 148, 136, 0.08); }
 .hover\:underline:hover { text-decoration: underline; }
-.focus\:border-blue-500:focus { border-color: #3b82f6; }
+.focus\:border-teal-500:focus { border-color: #14b8a6; }
 .focus\:outline-none:focus { outline: 2px solid transparent; }
-.focus\:ring-2:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+.focus\:ring-2:focus { box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2); }
 
 @media (min-width: 768px) {
     .md\:flex { display: flex; }
@@ -386,8 +386,8 @@ nav.bg-white {
     background-color: #f1f5f9;
 }
 .nav-btn.tab-active {
-    color: #2563eb !important;
-    background-color: rgba(37, 99, 235, 0.08);
+    color: #0d9488 !important;
+    background-color: rgba(13, 148, 136, 0.08);
     border-bottom: none !important;
     font-weight: 700;
 }
@@ -399,7 +399,7 @@ nav.bg-white {
     bottom: 2px;
     height: 2.5px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #2563eb, #4f46e5);
+    background: linear-gradient(90deg, #0d9488, #4f46e5);
 }
 
 /* Enterprise Tool Cards with High-Contrast Gradients & Micro-Interactions */
@@ -442,7 +442,7 @@ nav.bg-white {
 .tool-card.bg-teal-600   { background: linear-gradient(135deg, #0d9488 0%, #115e59 100%); }
 .tool-card.bg-rose-500   { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); }
 .tool-card.bg-orange-500 { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
-.tool-card.bg-blue-600   { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+.tool-card.bg-teal-600   { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); }
 
 .tool-card i {
     width: 3.1rem;
@@ -482,8 +482,8 @@ html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
 /* Tool Workspace & Modern File Input Styling */
 #tool-seo-header {
     background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(224, 231, 255, 0.55) 100%);
-    border: 1px solid #bfdbfe;
-    box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.07);
+    border: 1px solid #99f6e4;
+    box-shadow: 0 8px 24px -6px rgba(13, 148, 136, 0.07);
 }
 [data-tool-workspace-card="true"] {
     box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
@@ -498,7 +498,7 @@ html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 #tool-inputs input[type="file"]::file-selector-button {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     color: #ffffff;
     font-weight: 700;
     font-size: 0.875rem;
@@ -517,14 +517,14 @@ html[dir="rtl"] #tool-inputs input[type="file"]::file-selector-button {
     opacity: 0.94;
 }
 #tool-action-btn {
-    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-    box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.45);
+    background: linear-gradient(135deg, #0d9488 0%, #4f46e5 100%);
+    box-shadow: 0 12px 28px -6px rgba(13, 148, 136, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 #tool-action-btn:hover {
-    background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+    background: linear-gradient(135deg, #0f766e 0%, #4338ca 100%);
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px -6px rgba(37, 99, 235, 0.55);
+    box-shadow: 0 16px 32px -6px rgba(13, 148, 136, 0.55);
 }
 #tool-action-btn:active {
     transform: translateY(0);
@@ -557,9 +557,9 @@ html[dir="rtl"] .lang-select-pill {
     background-position: left 0.65rem center;
 }
 .lang-select-pill:hover, .lang-select-pill:focus {
-    border-color: #3b82f6;
-    background-color: #eff6ff;
-    color: #1d4ed8;
+    border-color: #14b8a6;
+    background-color: #f0fdfa;
+    color: #0f766e;
     outline: none;
 }
 
@@ -603,7 +603,7 @@ html[dir="rtl"] .lang-select-pill {
     transition: color 0.18s ease, transform 0.18s ease;
 }
 .social-list-link:hover {
-    color: #2563eb;
+    color: #0d9488;
     transform: translateX(2px);
 }
 html[dir="rtl"] .social-list-link:hover {
@@ -649,7 +649,7 @@ html[dir="rtl"] .social-list-link:hover {
 <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
 <!-- Brand Logo -->
 <a aria-label="AiLovePDF Accueil" class="flex items-center gap-2 cursor-pointer" href="/fr/">
-<img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.png"/>
+<img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
 <span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
 </a>
@@ -661,7 +661,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/fr/a-propos/">À propos</a>
 <a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/fr/contact/">Contact</a>
 <!-- External Blog Link -->
-<a class="text-slate-600 hover:text-blue-600 pb-1 text-base font-semibold transition-colors flex items-center gap-1" href="/fr/blog/">Blog <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+<a class="text-slate-600 hover:text-teal-600 pb-1 text-base font-semibold transition-colors flex items-center gap-1" href="/fr/blog/">Blog <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
 <div class="lang-switcher-wrap"><select aria-label="Language" class="lang-select-pill" onchange="if(this.value){try{sessionStorage.setItem('ailovepdf_manual_lang',this.options[this.selectedIndex].dataset.lang||'en');}catch(e){}window.location.href=this.value;}"><option data-lang="en" value="/txt-to-pdf/">EN — English</option><option data-lang="es" value="/es/txt-a-pdf/">ES — Español</option><option data-lang="fr" selected="selected" value="/fr/txt-en-pdf/">FR — Français</option><option data-lang="de" value="/de/txt-zu-pdf/">DE — Deutsch</option><option data-lang="pt-br" value="/pt-br/txt-para-pdf/">PT — Português</option><option data-lang="ar" value="/ar/txt-ila-pdf/">AR — العربية</option></select></div></div>
 <!-- Mobile Menu Toggle Button (3 lines) -->
 <button class="md:hidden text-slate-700 text-2xl focus:outline-none" onclick="toggleMobileMenu()">
@@ -670,7 +670,7 @@ html[dir="rtl"] .social-list-link:hover {
 </div>
 <!-- Mobile Dropdown Menu -->
 <div class="hidden md:hidden bg-white border-t border-slate-100 flex flex-col absolute w-full left-0 top-full shadow-lg z-40" id="mobile-menu">
-<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-bold text-blue-600" href="/fr/">Outils</a>
+<a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-bold text-teal-600" href="/fr/">Outils</a>
 <a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/fr/comment-utiliser/">Comment utiliser</a>
 <a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/fr/guide-pdf/">Guide PDF</a>
 <a class="nav-btn-mob text-left px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/fr/a-propos/">À propos</a>
@@ -685,8 +685,8 @@ html[dir="rtl"] .social-list-link:hover {
 </div>
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/fr/txt-en-pdf" data-tool="txt2pdf" id="page-root"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
 <!-- Two-container tool layout: localized SEO intro + separate tool card -->
-<div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-left" id="tool-seo-header">
-<div class="text-sm font-medium text-blue-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/fr/">Accueil</a> / TXT en PDF</div>
+<div class="bg-teal-50/70 border border-teal-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-left" id="tool-seo-header">
+<div class="text-sm font-medium text-teal-600 mb-3" id="tool-breadcrumb"><a class="hover:underline" href="/fr/">Accueil</a> / TXT en PDF</div>
 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight" id="tool-seo-title">Convertisseur TXT en PDF en ligne gratuit</h1>
 <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl" id="tool-seo-desc">Créez un PDF à partir d’un fichier texte directement dans votre navigateur.</p>
 </div>
@@ -696,9 +696,9 @@ html[dir="rtl"] .social-list-link:hover {
 <h2 class="text-3xl font-extrabold mb-3 text-slate-900" id="tool-title">TXT en PDF</h2>
 <p class="text-slate-500 mb-8" id="tool-desc">Convertissez un fichier texte brut en PDF.</p>
 <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-dashed border-slate-300 mb-8 max-w-xl mx-auto">
-<div class="text-left space-y-4" id="tool-inputs"><input accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700" id="file-input" type="file"/></div>
+<div class="text-left space-y-4" id="tool-inputs"><input accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700" id="file-input" type="file"/></div>
 </div>
-<button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">Exécuter <i class="fa-solid fa-arrow-right"></i></button>
+<button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">Exécuter <i class="fa-solid fa-arrow-right"></i></button>
 <div class="mt-6 font-bold text-lg min-h-[30px]" id="tool-status"></div>
 <div class="adsbygoogle-placeholder w-full h-[250px] mt-10"><span>Publicité</span></div>
 </div>
@@ -709,18 +709,24 @@ html[dir="rtl"] .social-list-link:hover {
 <p class="text-lg leading-relaxed mb-6">Les opérations PDF disponibles sont exécutées dans votre navigateur. Le traitement s’effectue localement sur votre appareil et non sur un serveur dédié. La mémoire du navigateur, la taille du fichier et sa complexité peuvent affecter les performances.</p>
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Choisissez le bon outil PDF</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/fusionner-pdf/"><strong>Fusionner PDF</strong><span class="block text-sm text-slate-500 mt-1">Combinez plusieurs fichiers PDF en un seul document.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/compresser-pdf/"><strong>Compresser PDF</strong><span class="block text-sm text-slate-500 mt-1">Réduisez la taille du PDF pour faciliter le partage et le stockage.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/jpg-en-pdf/"><strong>JPG en PDF</strong><span class="block text-sm text-slate-500 mt-1">Convertissez les images JPG et compatibles en fichiers PDF.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/pdf-en-jpg/"><strong>PDF en JPG</strong><span class="block text-sm text-slate-500 mt-1">Transformez les pages PDF en images JPG.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/supprimer-pages-pdf/"><strong>Supprimer des pages</strong><span class="block text-sm text-slate-500 mt-1">Supprimez les pages sélectionnées d’un PDF.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/txt-en-pdf/"><strong>TXT en PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un PDF à partir d’un fichier texte.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/diviser-pdf/"><strong>Diviser PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un nouveau PDF à partir des pages sélectionnées.</span></a>
-<a class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-sm transition" href="/fr/faire-pivoter-pdf/"><strong>Faire pivoter PDF</strong><span class="block text-sm text-slate-500 mt-1">Modifiez la rotation des pages PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/fusionner-pdf/"><strong>Fusionner PDF</strong><span class="block text-sm text-slate-500 mt-1">Combinez plusieurs fichiers PDF en un seul document.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/compresser-pdf/"><strong>Compresser PDF</strong><span class="block text-sm text-slate-500 mt-1">Réduisez la taille du PDF pour faciliter le partage et le stockage.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/jpg-en-pdf/"><strong>JPG en PDF</strong><span class="block text-sm text-slate-500 mt-1">Convertissez les images JPG et compatibles en fichiers PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/pdf-en-jpg/"><strong>PDF en JPG</strong><span class="block text-sm text-slate-500 mt-1">Transformez les pages PDF en images JPG.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/supprimer-pages-pdf/"><strong>Supprimer des pages</strong><span class="block text-sm text-slate-500 mt-1">Supprimez les pages sélectionnées d’un PDF.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/txt-en-pdf/"><strong>TXT en PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un PDF à partir d’un fichier texte.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/diviser-pdf/"><strong>Diviser PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un nouveau PDF à partir des pages sélectionnées.</span></a>
+<a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition" href="/fr/faire-pivoter-pdf/"><strong>Faire pivoter PDF</strong><span class="block text-sm text-slate-500 mt-1">Modifiez la rotation des pages PDF.</span></a>
 </div>
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Compatibilité du navigateur</h3>
 <p class="text-lg leading-relaxed">AiLovePDF est conçu pour les navigateurs modernes sur Windows, macOS, Android et autres appareils compatibles. La vitesse dépend du navigateur, de la mémoire de l’appareil, de la taille du fichier et de sa complexité.</p>
-</article><div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 mt-12" data-unique-tool-content="txt2pdf">
+</article><div class="flex flex-wrap items-center justify-center gap-2.5 my-6" data-brand-badges>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-shield-halved"></i>Fichiers jamais envoyés</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-gift"></i>Gratuit pour toujours</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-user-slash"></i>Sans inscription</span>
+  <a href="/fr/pourquoi-ailovepdf/" class="text-[13px] font-semibold text-teal-700 underline underline-offset-2">Pourquoi AiLovePDF est différent →</a>
+</div>
+<div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 mt-12" data-unique-tool-content="txt2pdf">
 <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Convertissez un fichier TXT en un PDF propre et paginé</h2>
 <p class="text-slate-600 leading-relaxed mb-6">Les fichiers texte brut sont faciles à écrire mais pénibles à partager : ils se déforment sur chaque écran, s&#x27;impriment n&#x27;importe comment et paraissent inachevés. Ce convertisseur TXT en PDF transforme un fichier .txt en un document PDF correctement paginé dans votre navigateur, en renvoyant les longues lignes automatiquement et en poursuivant le texte sur de nouvelles pages dès qu&#x27;une page se remplit. Les auteurs s&#x27;en servent pour remettre des brouillons, les développeurs pour archiver notes et journaux, et les étudiants pour rendre des travaux rédigés dans des éditeurs simples. Votre texte est traité localement sur votre appareil et n&#x27;est jamais envoyé sur un serveur, ce qui compte pour des notes privées ou des œuvres non publiées. Le convertisseur est gratuit, sans compte, et le PDF obtenu a la même allure partout.</p>
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Comment convertir un TXT en PDF en quatre étapes</h3>
@@ -778,32 +784,32 @@ html[dir="rtl"] .social-list-link:hover {
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Navigation</h4>
 <ul class="space-y-4 text-slate-600 text-sm">
-<li><a class="hover:text-blue-600 transition-colors" href="/fr/">Accueil</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/fr/a-propos/">À propos</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/comment-utiliser/">Comment utiliser</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/fr/guide-pdf/">Guide PDF</a></li>
-<li><a class="hover:text-blue-600 transition-colors" href="/fr/contact/">Contact</a></li>
-<li><a class="hover:text-blue-600 transition-colors font-bold text-blue-500" href="/fr/confidentialite/">Politique de confidentialité</a></li>
-<li><a class="hover:text-blue-600 transition-colors inline-flex items-center gap-1" href="/fr/blog/">Blog <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a></li></ul>
+<li><a class="hover:text-teal-600 transition-colors" href="/fr/">Accueil</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/fr/a-propos/">À propos</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/comment-utiliser/">Comment utiliser</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/fr/guide-pdf/">Guide PDF</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/fr/contact/">Contact</a></li>
+<li><a class="hover:text-teal-600 transition-colors font-bold text-teal-500" href="/fr/confidentialite/">Politique de confidentialité</a></li>
+<li><a class="hover:text-teal-600 transition-colors inline-flex items-center gap-1" href="/fr/blog/">Blog <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a></li></ul>
 </div>
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Outils</h4>
-<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-blue-600 transition-colors" href="/fr/fusionner-pdf/">Fusionner PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/diviser-pdf/">Diviser PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/faire-pivoter-pdf/">Faire pivoter PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/compresser-pdf/">Compresser PDF</a></li></ul>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-teal-600 transition-colors" href="/fr/fusionner-pdf/">Fusionner PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/diviser-pdf/">Diviser PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/faire-pivoter-pdf/">Faire pivoter PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/compresser-pdf/">Compresser PDF</a></li></ul>
 </div>
 <div>
 <h4 class="font-extrabold text-slate-900 text-lg mb-6">Convertir et éditer</h4>
-<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-blue-600 transition-colors" href="/fr/supprimer-pages-pdf/">Supprimer des pages</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/txt-en-pdf/">TXT en PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/jpg-en-pdf/">JPG en PDF</a></li><li><a class="hover:text-blue-600 transition-colors" href="/fr/pdf-en-jpg/">PDF en JPG</a></li></ul>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-teal-600 transition-colors" href="/fr/supprimer-pages-pdf/">Supprimer des pages</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/txt-en-pdf/">TXT en PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/jpg-en-pdf/">JPG en PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/fr/pdf-en-jpg/">PDF en JPG</a></li></ul>
 </div>
 <div><h4 class="font-extrabold text-slate-900 text-lg mb-6">Suivez-nous</h4><ul class="space-y-3 text-slate-600 text-sm"><li><a aria-label="AiLovePDF Facebook" class="social-list-link" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></span><span>Facebook</span></a></li><li><a aria-label="AiLovePDF X (Twitter)" class="social-list-link" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></span><span>X (Twitter)</span></a></li><li><a aria-label="AiLovePDF YouTube" class="social-list-link" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span><span>YouTube</span></a></li><li><a aria-label="AiLovePDF TikTok" class="social-list-link" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></span><span>TikTok</span></a></li><li><a aria-label="AiLovePDF Instagram" class="social-list-link" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></span><span>Instagram</span></a></li><li><a aria-label="AiLovePDF LinkedIn" class="social-list-link" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span><span>LinkedIn</span></a></li></ul></div>
 </div>
 <div class="max-w-7xl mx-auto px-4 mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
-<a class="hover:text-blue-600" href="/fr/a-propos/">À propos</a>
-<a class="hover:text-blue-600" href="/fr/contact/">Contact</a>
-<a class="hover:text-blue-600" href="/fr/confidentialite/">Politique de confidentialité</a>
-<a class="hover:text-blue-600" href="/fr/conditions/">Conditions</a>
-<a class="hover:text-blue-600" href="/fr/avertissement/">Avertissement</a>
-<a class="hover:text-blue-600" href="/fr/cookies/">Politique des cookies</a>
+<a class="hover:text-teal-600" href="/fr/a-propos/">À propos</a>
+<a class="hover:text-teal-600" href="/fr/contact/">Contact</a>
+<a class="hover:text-teal-600" href="/fr/confidentialite/">Politique de confidentialité</a>
+<a class="hover:text-teal-600" href="/fr/conditions/">Conditions</a>
+<a class="hover:text-teal-600" href="/fr/avertissement/">Avertissement</a>
+<a class="hover:text-teal-600" href="/fr/cookies/">Politique des cookies</a>
 </div>
-<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col gap-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><a class="font-bold text-slate-800 flex items-center gap-2 hover:text-blue-600 transition-colors" href="/fr/"><i class="fa-solid fa-file-pdf text-red-500 text-xl"></i> <span>Famille AiLovePDF</span></a><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div><div class="text-slate-500 text-sm font-medium">© 2026 AiLovePDF. Tous droits réservés.</div></div><div class="flex justify-center md:justify-between items-center flex-wrap gap-4 pt-4 border-t border-slate-100/80"><div class="flex flex-wrap items-center gap-x-4 gap-y-2" id="footer-lang-links"><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="en" href="/txt-to-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','en');}catch(e){}">English</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="es" href="/es/txt-a-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','es');}catch(e){}">Español</a><a class="text-xs text-blue-600 font-bold transition-colors" data-lang-switch="fr" href="/fr/txt-en-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','fr');}catch(e){}">Français</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="de" href="/de/txt-zu-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','de');}catch(e){}">Deutsch</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="pt-br" href="/pt-br/txt-para-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','pt-br');}catch(e){}">Português (BR)</a><a class="text-xs text-slate-500 hover:text-blue-600 transition-colors" data-lang-switch="ar" href="/ar/txt-ila-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','ar');}catch(e){}">العربية</a></div></div></div>
+<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col gap-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><a class="font-bold text-slate-800 flex items-center gap-2 hover:text-teal-600 transition-colors" href="/fr/"><i class="fa-solid fa-file-pdf text-red-500 text-xl"></i> <span>Famille AiLovePDF</span></a><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div><div class="text-slate-500 text-sm font-medium">© 2026 AiLovePDF. Tous droits réservés.</div></div><div class="flex justify-center md:justify-between items-center flex-wrap gap-4 pt-4 border-t border-slate-100/80"><div class="flex flex-wrap items-center gap-x-4 gap-y-2" id="footer-lang-links"><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="en" href="/txt-to-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','en');}catch(e){}">English</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="es" href="/es/txt-a-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','es');}catch(e){}">Español</a><a class="text-xs text-teal-600 font-bold transition-colors" data-lang-switch="fr" href="/fr/txt-en-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','fr');}catch(e){}">Français</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="de" href="/de/txt-zu-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','de');}catch(e){}">Deutsch</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="pt-br" href="/pt-br/txt-para-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','pt-br');}catch(e){}">Português (BR)</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="ar" href="/ar/txt-ila-pdf/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','ar');}catch(e){}">العربية</a></div></div></div>
 </footer>
 <!-- STICKY ANCHOR AD -->
 <!-- 100% COMPLETE & WORKING JAVASCRIPT LOGIC -->
@@ -856,10 +862,10 @@ html[dir="rtl"] .social-list-link:hover {
             });
 
             document.querySelectorAll('.nav-btn-mob').forEach(btn => {
-                btn.classList.remove('font-bold', 'text-blue-600');
+                btn.classList.remove('font-bold', 'text-teal-600');
                 btn.classList.add('font-semibold', 'text-slate-600');
                 if(btn.innerText.toLowerCase().replace(/\s/g, '') === tabId || (tabId === 'home' && btn.innerText.includes('Tools')) || (tabId === 'howto' && btn.innerText.includes('How')) || (tabId === 'guide' && btn.innerText.includes('Guide'))){
-                    btn.classList.add('font-bold', 'text-blue-600');
+                    btn.classList.add('font-bold', 'text-teal-600');
                     btn.classList.remove('font-semibold', 'text-slate-600');
                 }
             });
@@ -911,7 +917,7 @@ html[dir="rtl"] .social-list-link:hover {
             const btn = document.getElementById('tool-action-btn');
             
             document.getElementById('tool-status').innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
 
             if (toolType === 'merge') {
                 title.innerText = "Fusionner des PDF"; desc.innerText = "Sélectionnez plusieurs PDF pour les réunir en un seul fichier.";
@@ -1039,7 +1045,7 @@ html[dir="rtl"] .social-list-link:hover {
             if (!statusEl) return;
             const safe = String(message || '').replace(/[<>]/g, '');
             const pct = Math.max(0, Math.min(100, Number(percent) || 0));
-            statusEl.innerHTML = `<div class="text-blue-600 font-medium">${safe}</div><div class="mt-2 h-2 w-full max-w-md mx-auto rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-blue-600 transition-all" style="width:${pct}%"></div></div>`;
+            statusEl.innerHTML = `<div class="text-teal-600 font-medium">${safe}</div><div class="mt-2 h-2 w-full max-w-md mx-auto rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-teal-600 transition-all" style="width:${pct}%"></div></div>`;
         }
 
         // --- ASYNC PROCESS WRAPPER ---
@@ -1052,7 +1058,7 @@ html[dir="rtl"] .social-list-link:hover {
             const originalHTML = btn.innerHTML;
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
-            if (statusEl) statusEl.innerHTML = `<span class="text-blue-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
+            if (statusEl) statusEl.innerHTML = `<span class="text-teal-600 font-medium"><i class="fa-solid fa-spinner fa-spin mr-1"></i> ${t('processing')}</span>`;
             try {
                 await yieldToBrowser();
                 for (let _w = 0; _w < 40; _w++) {
@@ -1551,7 +1557,7 @@ html[dir="rtl"] .social-list-link:hover {
                 const bh = (btn.getAttribute('href') || '').replace(/\/+$/, '') || '/';
                 const active = (bh === curPath) || (isTool && bh === homePath);
                 btn.classList.toggle('font-bold', active);
-                btn.classList.toggle('text-blue-600', active);
+                btn.classList.toggle('text-teal-600', active);
                 btn.classList.toggle('font-semibold', !active);
                 btn.classList.toggle('text-slate-600', !active);
             });
@@ -1626,14 +1632,14 @@ html[dir="rtl"] .social-list-link:hover {
    the current tool after direct loads and SPA fetch navigation. It does not change URLs. */
 (function(){
   const TOOL_DEFS = {
-    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeMerge'},
-    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
-    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
-    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeJpgToPdf'},
-    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executePdfToJpg'},
-    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
-    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeTxtToPdf'},
-    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-blue-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
+    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeMerge'},
+    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
+    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
+    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeJpgToPdf'},
+    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executePdfToJpg'},
+    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
+    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeTxtToPdf'},
+    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
   };
   function bootTool(){
     const root=document.getElementById('page-root');
