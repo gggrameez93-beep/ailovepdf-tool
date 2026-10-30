@@ -25,10 +25,10 @@
 <meta content="تحويل TXT إلى PDF مجانًا عبر الإنترنت | AiLovePDF" name="twitter:title"/>
 <meta content="تحويل TXT إلى PDF مجانًا: حوّل ملفات النص العادي إلى ملف PDF نظيف ومصفّح الصفحات داخل متصفحك. بدون تسجيل وبدون رفع — خصوصية كاملة ويعمل على أي جهاز." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
 <!-- Tailwind CSS & FontAwesome -->
-<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
 <style>
@@ -42,11 +42,6 @@
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
 
-        .adsbygoogle-placeholder {
-            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
-            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
-            text-align: center; border-radius: 8px;
-        }
     </style>
 <style>
         .faq-item {
@@ -110,7 +105,6 @@
 .final-content-card .guide-intro{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;text-align:center;margin:0 auto 38px;max-width:1050px;color:#334155}
 .final-content-card h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.25;font-weight:800;color:#0f172a;margin:48px 0 18px}
 .final-content-card p{font-size:1.08rem;line-height:1.85;margin:0 0 22px}
-.final-content-card .adsbygoogle-placeholder{border-radius:10px;background:#f1f5f9;border:2px dashed #cbd5e1;min-height:250px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
 .howto-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:26px 30px;margin:24px 0}
 .howto-step h2{margin:0 0 14px;font-size:1.55rem}
 .howto-step ol{margin:0;padding-left:1.5rem;line-height:1.8;font-size:1.05rem}
@@ -645,9 +639,6 @@ html[dir="rtl"] .social-list-link:hover {
         padding: 1.5rem 1.15rem !important;
         border-radius: 1.25rem !important;
     }
-    .adsbygoogle-placeholder.h-\[90px\] {
-        height: 70px !important;
-    }
     html[dir="rtl"] .tool-card {
         text-align: right !important;
     }
@@ -661,7 +652,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a aria-label="AiLovePDF الرئيسية" class="flex items-center gap-2 cursor-pointer" href="/ar/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
-<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
 </a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
@@ -690,9 +681,7 @@ html[dir="rtl"] .social-list-link:hover {
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
-<div class="adsbygoogle-placeholder w-full h-[90px]">
-<span>إعلان</span>
-</div>
+
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/ar/txt-ila-pdf" data-tool="txt2pdf" id="page-root"><div class="max-w-5xl mx-auto mb-12" id="tool-workspace">
 <!-- Two-container tool layout: localized SEO intro + separate tool card -->
 <div class="bg-teal-50/70 border border-teal-100 rounded-2xl p-7 md:p-8 max-w-4xl mx-auto mb-14 shadow-sm text-right" id="tool-seo-header">
@@ -710,7 +699,7 @@ html[dir="rtl"] .social-list-link:hover {
 </div>
 <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl w-full max-w-md mx-auto flex items-center justify-center gap-3" id="tool-action-btn">تنفيذ <i class="fa-solid fa-arrow-right"></i></button>
 <div class="mt-6 font-bold text-lg min-h-[30px]" id="tool-status"></div>
-<div class="adsbygoogle-placeholder w-full h-[250px] mt-10"><span>إعلان</span></div>
+
 </div>
 </div>
 </div><article class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 mt-12 prose max-w-none text-slate-600" id="seo-articles">
@@ -731,10 +720,10 @@ html[dir="rtl"] .social-list-link:hover {
 <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-4">توافق المتصفح</h3>
 <p class="text-lg leading-relaxed">صُمم AiLovePDF للعمل مع المتصفحات الحديثة على Windows وmacOS وAndroid والأجهزة المدعومة الأخرى. تعتمد السرعة على المتصفح وذاكرة الجهاز وحجم الملف وتعقيده.</p>
 </article><div class="flex flex-wrap items-center justify-center gap-2.5 my-6" data-brand-badges>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-shield-halved"></i>لا تُرفع الملفات أبدًا</span>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-gift"></i>مجاني للأبد</span>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-user-slash"></i>بدون تسجيل</span>
-  <a href="/ar/limadha-ailovepdf/" class="text-[13px] font-semibold text-teal-700 underline underline-offset-2">لماذا AiLovePDF مختلف →</a>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-shield-halved"></i>لا تُرفع الملفات أبدًا</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-gift"></i>مجاني للأبد</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-user-slash"></i>بدون تسجيل</span>
+  <a href="/ar/limadha-ailovepdf/" class="text-sm font-extrabold text-teal-700 underline underline-offset-2">لماذا AiLovePDF مختلف →</a>
 </div>
 <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 mt-12" data-unique-tool-content="txt2pdf">
 <h2 class="text-3xl font-extrabold text-slate-900 mb-6">حوّل ملف TXT عاديًا إلى ملف PDF نظيف ومصفّح الصفحات</h2>
@@ -927,7 +916,7 @@ html[dir="rtl"] .social-list-link:hover {
             const btn = document.getElementById('tool-action-btn');
             
             document.getElementById('tool-status').innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700";
 
             if (toolType === 'merge') {
                 title.innerText = "دمج ملفات PDF"; desc.innerText = "حدد عدة ملفات PDF لدمجها في ملف واحد.";
@@ -1642,14 +1631,14 @@ html[dir="rtl"] .social-list-link:hover {
    the current tool after direct loads and SPA fetch navigation. It does not change URLs. */
 (function(){
   const TOOL_DEFS = {
-    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeMerge'},
-    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
-    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
-    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeJpgToPdf'},
-    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executePdfToJpg'},
-    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
-    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeTxtToPdf'},
-    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
+    merge:{input:`<input type="file" id="file-input" accept="application/pdf" multiple class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700">`, handler:'executeMerge'},
+    split:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700"><input type="text" id="pages-input" placeholder="Enter page numbers (e.g. 1, 3, 5)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeSplit'},
+    compress:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700"><select id="quality-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="0.5">Medium Quality (Good Size)</option><option value="0.2">Low Quality (Smallest Size)</option></select>`, handler:'executeCompress'},
+    jpg2pdf:{input:`<input type="file" id="file-input" accept="image/jpeg, image/png" multiple class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700">`, handler:'executeJpgToPdf'},
+    pdf2jpg:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700">`, handler:'executePdfToJpg'},
+    delete:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700"><input type="text" id="pages-input" placeholder="Pages to delete (e.g. 2, 4)" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700">`, handler:'executeDelete'},
+    txt2pdf:{input:`<input type="file" id="file-input" accept=".txt, text/plain" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700">`, handler:'executeTxtToPdf'},
+    rotate:{input:`<input type="file" id="file-input" accept="application/pdf" class="w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700"><select id="angle-input" class="w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700"><option value="90">90 Degrees (Clockwise)</option><option value="180">180 Degrees</option><option value="270">270 Degrees (Counter-Clockwise)</option></select>`, handler:'executeRotate'}
   };
   function bootTool(){
     const root=document.getElementById('page-root');
