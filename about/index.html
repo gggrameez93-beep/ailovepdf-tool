@@ -25,10 +25,10 @@
 <meta content="AiLovePDF - Free Online PDF Tools" name="twitter:title"/>
 <meta content="Free browser-based PDF tools from AiLovePDF." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
 <!-- Tailwind CSS & FontAwesome -->
-<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
 <style>
@@ -42,11 +42,6 @@
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
 
-        .adsbygoogle-placeholder {
-            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
-            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
-            text-align: center; border-radius: 8px;
-        }
     </style>
 <style>
         .faq-item {
@@ -614,9 +609,6 @@ html[dir="rtl"] .social-list-link:hover {
         padding: 1.5rem 1.15rem !important;
         border-radius: 1.25rem !important;
     }
-    .adsbygoogle-placeholder.h-\[90px\] {
-        height: 70px !important;
-    }
     html[dir="rtl"] .tool-card {
         text-align: right !important;
     }
@@ -630,7 +622,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a aria-label="AiLovePDF Home" class="flex items-center gap-2 cursor-pointer" href="/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
-<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
 </a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
@@ -659,9 +651,7 @@ html[dir="rtl"] .social-list-link:hover {
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
-<div class="adsbygoogle-placeholder w-full h-[90px]">
-<span>Advertisement</span>
-</div>
+
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/about" id="page-root"><div class="view-active" id="about">
 <div class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-4xl mx-auto prose text-slate-600">
 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 border-b pb-4">About Us</h1>
@@ -810,7 +800,7 @@ html[dir="rtl"] .social-list-link:hover {
             const btn = document.getElementById('tool-action-btn');
             
             document.getElementById('tool-status').innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700";
 
             if (toolType === 'merge') {
                 title.innerText = "Merge PDF Files"; desc.innerText = "Select multiple PDFs to combine them into one file.";
