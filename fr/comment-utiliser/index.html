@@ -25,10 +25,10 @@
 <meta content="Comment utiliser les outils PDF AiLovePDF" name="twitter:title"/>
 <meta content="Fusionnez, compressez, divisez, faites pivoter et convertissez vos fichiers PDF directement dans votre navigateur. AiLovePDF propose des outils documentaires simples, sans compte pour les outils disponibles." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
 <!-- Tailwind CSS & FontAwesome -->
-<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
 <style>
@@ -42,11 +42,6 @@
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
 
-        .adsbygoogle-placeholder {
-            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
-            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
-            text-align: center; border-radius: 8px;
-        }
     </style>
 <style>
         .faq-item {
@@ -100,7 +95,6 @@
 .final-content-card .guide-intro{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;text-align:center;margin:0 auto 38px;max-width:1050px;color:#334155}
 .final-content-card h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.25;font-weight:800;color:#0f172a;margin:48px 0 18px}
 .final-content-card p{font-size:1.08rem;line-height:1.85;margin:0 0 22px}
-.final-content-card .adsbygoogle-placeholder{border-radius:10px;background:#f1f5f9;border:2px dashed #cbd5e1;min-height:250px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
 .howto-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:26px 30px;margin:24px 0}
 .howto-step h2{margin:0 0 14px;font-size:1.55rem}
 .howto-step ol{margin:0;padding-left:1.5rem;line-height:1.8;font-size:1.05rem}
@@ -635,9 +629,6 @@ html[dir="rtl"] .social-list-link:hover {
         padding: 1.5rem 1.15rem !important;
         border-radius: 1.25rem !important;
     }
-    .adsbygoogle-placeholder.h-\[90px\] {
-        height: 70px !important;
-    }
     html[dir="rtl"] .tool-card {
         text-align: right !important;
     }
@@ -651,7 +642,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a aria-label="AiLovePDF Accueil" class="flex items-center gap-2 cursor-pointer" href="/fr/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
-<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
 </a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
@@ -680,9 +671,7 @@ html[dir="rtl"] .social-list-link:hover {
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
-<div class="adsbygoogle-placeholder w-full h-[90px]">
-<span>Publicité</span>
-</div>
+
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/fr/comment-utiliser" id="page-root"><div class="view-active" id="howto"><article class="final-content-card prose max-w-none text-slate-700"><h1>Comment utiliser les outils AiLovePDF</h1><p class="guide-intro">Notre plateforme est conçue pour être simple. Le traitement des documents s’effectue sur votre appareil, afin que les étapes restent rapides et directes.</p><div class="howto-step"><h2><a class="hover:text-teal-600 transition-colors" href="/fr/fusionner-pdf/">Comment fusionner des PDF</a></h2><ol><li>Ouvrez Fusionner PDF.</li><li>Cliquez sur « Choisir les fichiers » et sélectionnez au moins deux PDF.</li><li>Cliquez sur « Exécuter » pour créer et télécharger le document fusionné.</li></ol></div><div class="howto-step"><h2><a class="hover:text-teal-600 transition-colors" href="/fr/compresser-pdf/">Comment compresser un PDF</a></h2><ol><li>Ouvrez Compresser PDF et sélectionnez le fichier.</li><li>Choisissez le niveau de qualité souhaité.</li><li>Cliquez sur « Exécuter » et laissez le navigateur créer le fichier optimisé.</li></ol></div><div class="howto-step"><h2><a class="hover:text-teal-600 transition-colors" href="/fr/diviser-pdf/">Comment diviser un PDF</a></h2><ol><li>Ouvrez Diviser PDF et sélectionnez votre document.</li><li>Saisissez les numéros de pages à extraire, séparés par des virgules.</li><li>Cliquez sur « Exécuter » pour créer le nouveau PDF.</li></ol></div><div class="howto-step"><h2><a class="hover:text-teal-600 transition-colors" href="/fr/supprimer-pages-pdf/">Comment supprimer des pages PDF</a></h2><ol><li>Ouvrez Supprimer des pages et sélectionnez le document.</li><li>Saisissez les pages à supprimer.</li><li>Cliquez sur « Exécuter » pour télécharger la nouvelle copie.</li></ol></div><div class="howto-step"><h2>Comment utiliser les convertisseurs</h2><ol><li>JPG en PDF : sélectionnez une ou plusieurs images JPG ou PNG pour créer un PDF.</li><li>PDF en JPG : sélectionnez un PDF pour convertir ses pages en images JPG.</li><li>TXT en PDF : sélectionnez un fichier .txt pour créer un PDF multipage.</li></ol></div></article></div><section class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 mt-10 max-w-5xl mx-auto" id="quick-tools-interlink"><h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">Découvrez tous les outils PDF gratuits</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose"><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/fusionner-pdf/"><strong class="text-slate-900 font-bold">Fusionner PDF</strong><span class="block text-sm text-slate-500 mt-1">Combinez plusieurs fichiers PDF en un seul document.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/compresser-pdf/"><strong class="text-slate-900 font-bold">Compresser PDF</strong><span class="block text-sm text-slate-500 mt-1">Réduisez la taille d’un PDF pour le partage et le stockage.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/jpg-en-pdf/"><strong class="text-slate-900 font-bold">JPG en PDF</strong><span class="block text-sm text-slate-500 mt-1">Convertissez les images JPG et compatibles en PDF.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/pdf-en-jpg/"><strong class="text-slate-900 font-bold">PDF en JPG</strong><span class="block text-sm text-slate-500 mt-1">Transformez les pages d’un PDF en images JPG.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/supprimer-pages-pdf/"><strong class="text-slate-900 font-bold">Supprimer des pages</strong><span class="block text-sm text-slate-500 mt-1">Supprimez les pages sélectionnées d’un PDF.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/txt-en-pdf/"><strong class="text-slate-900 font-bold">TXT en PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un PDF à partir d’un fichier texte.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/diviser-pdf/"><strong class="text-slate-900 font-bold">Diviser PDF</strong><span class="block text-sm text-slate-500 mt-1">Créez un nouveau PDF à partir de pages choisies.</span></a><a class="p-5 rounded-2xl border border-slate-200 hover:border-teal-400 hover:shadow-sm transition bg-white block" href="/fr/faire-pivoter-pdf/"><strong class="text-slate-900 font-bold">Faire pivoter PDF</strong><span class="block text-sm text-slate-500 mt-1">Modifiez l’orientation des pages PDF.</span></a></div></section></main>
 <!-- MAIN CONTENT AREA -->
 <!-- FOOTER DESIGN -->
@@ -824,7 +813,7 @@ html[dir="rtl"] .social-list-link:hover {
             const btn = document.getElementById('tool-action-btn');
             
             document.getElementById('tool-status').innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700";
 
             if (toolType === 'merge') {
                 title.innerText = "Fusionner des PDF"; desc.innerText = "Sélectionnez plusieurs PDF pour les réunir en un seul fichier.";

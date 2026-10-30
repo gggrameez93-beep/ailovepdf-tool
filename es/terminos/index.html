@@ -25,10 +25,10 @@
 <meta content="Términos y condiciones | AiLovePDF" name="twitter:title"/>
 <meta content="Combina, comprime, divide, gira y convierte archivos PDF directamente en tu navegador. AiLovePDF es un conjunto sencillo de herramientas para documentos, sin necesidad de crear una cuenta para las herramientas disponibles." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
 <!-- Tailwind CSS & FontAwesome -->
-<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
 <style>
@@ -42,11 +42,6 @@
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
 
-        .adsbygoogle-placeholder {
-            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
-            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
-            text-align: center; border-radius: 8px;
-        }
     </style>
 <style>
         .faq-item {
@@ -100,7 +95,6 @@
 .final-content-card .guide-intro{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;text-align:center;margin:0 auto 38px;max-width:1050px;color:#334155}
 .final-content-card h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.25;font-weight:800;color:#0f172a;margin:48px 0 18px}
 .final-content-card p{font-size:1.08rem;line-height:1.85;margin:0 0 22px}
-.final-content-card .adsbygoogle-placeholder{border-radius:10px;background:#f1f5f9;border:2px dashed #cbd5e1;min-height:250px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
 .howto-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:26px 30px;margin:24px 0}
 .howto-step h2{margin:0 0 14px;font-size:1.55rem}
 .howto-step ol{margin:0;padding-left:1.5rem;line-height:1.8;font-size:1.05rem}
@@ -635,9 +629,6 @@ html[dir="rtl"] .social-list-link:hover {
         padding: 1.5rem 1.15rem !important;
         border-radius: 1.25rem !important;
     }
-    .adsbygoogle-placeholder.h-\[90px\] {
-        height: 70px !important;
-    }
     html[dir="rtl"] .tool-card {
         text-align: right !important;
     }
@@ -651,7 +642,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a aria-label="AiLovePDF Inicio" class="flex items-center gap-2 cursor-pointer" href="/es/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
-<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
 </a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
@@ -680,9 +671,7 @@ html[dir="rtl"] .social-list-link:hover {
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
-<div class="adsbygoogle-placeholder w-full h-[90px]">
-<span>Publicidad</span>
-</div>
+
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/es/terminos" id="page-root"><div class="view-active" id="terms"><article class="final-content-card prose max-w-none text-slate-700"><h1>Términos y condiciones</h1><p>Al utilizar AiLovePDF, aceptas usar el servicio de forma legal y responsable. Eres responsable de los documentos que procesas y de conservar copias de seguridad de los archivos importantes.</p><p>Las herramientas se proporcionan para tareas generales de procesamiento documental. La disponibilidad, velocidad y resultados pueden variar según el navegador, el dispositivo y las características del documento.</p><p>No utilices el sitio para actividades ilegales, abusos, ataques automatizados, cargas maliciosas o intentos de interferir con el servicio.</p><p>El sitio puede utilizar servicios de terceros para alojamiento, formularios, CAPTCHA, analítica o publicidad. Sus propios términos y políticas de privacidad pueden aplicarse.</p><p>Las funciones y estos términos pueden actualizarse a medida que evoluciona el sitio.</p></article></div></main>
 <!-- MAIN CONTENT AREA -->
 <!-- FOOTER DESIGN -->
@@ -824,7 +813,7 @@ html[dir="rtl"] .social-list-link:hover {
             const btn = document.getElementById('tool-action-btn');
             
             document.getElementById('tool-status').innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700";
 
             if (toolType === 'merge') {
                 title.innerText = "Unir archivos PDF"; desc.innerText = "Selecciona varios PDF para combinarlos en un solo archivo.";
