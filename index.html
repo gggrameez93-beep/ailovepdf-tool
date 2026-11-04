@@ -45,10 +45,10 @@
 <meta content="AiLovePDF - Free Online PDF Tools" name="twitter:title"/>
 <meta content="Free online PDF tools to merge, compress, split, rotate and convert PDF files. No sign-up, no uploads — files are processed privately in your browser." name="twitter:description"/>
 <!-- Favicon -->
-<link href="/logo.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
 <!-- Tailwind CSS & FontAwesome -->
-<script defer="" src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
 <!-- PDF Libraries -->
 <style>
@@ -62,11 +62,6 @@
         .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .hidden-tool { display: none !important; }
 
-        .adsbygoogle-placeholder {
-            background-color: #f1f5f9; border: 2px dashed #cbd5e1; display: flex; align-items: center;
-            justify-content: center; color: #94a3b8; font-size: 0.875rem; font-weight: bold; margin: 1rem auto;
-            text-align: center; border-radius: 8px;
-        }
     </style>
 <style>
         .faq-item {
@@ -124,7 +119,7 @@
 </script>
 <script defer="" src="/_vercel/insights/script.js"></script>
 <script defer="" src="/_vercel/speed-insights/script.js"></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AiLovePDF", "url": "https://www.ailovepdf.site/", "logo": "https://www.ailovepdf.site/logo.png", "sameAs": ["https://web.facebook.com/ailovepdfsite", "https://x.com/ailovepdfsite", "https://www.youtube.com/@Ailovepdfsite", "https://www.tiktok.com/@ailovepdfsite", "https://www.instagram.com/ailovepdfsite/", "https://www.linkedin.com/company/ailovepdfsite"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AiLovePDF", "url": "https://www.ailovepdf.site/", "description": "AiLovePDF offers free online PDF tools — merge, compress, split, rotate and convert. Files are processed locally in your browser and are never uploaded to a server.", "logo": "https://www.ailovepdf.site/logo.svg", "sameAs": ["https://web.facebook.com/ailovepdfsite", "https://x.com/ailovepdfsite", "https://www.youtube.com/@Ailovepdfsite", "https://www.tiktok.com/@ailovepdfsite", "https://www.instagram.com/ailovepdfsite/", "https://www.linkedin.com/company/ailovepdfsite"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AiLovePDF","url":"https://www.ailovepdf.site/","inLanguage":"en"}</script>
 <style id="ailovepdf-instant-css">
 /* ==================== AILOVEPDF INSTANT-RENDER CORE & ENTERPRISE UI ==================== */
@@ -636,9 +631,6 @@ html[dir="rtl"] .social-list-link:hover {
         padding: 1.5rem 1.15rem !important;
         border-radius: 1.25rem !important;
     }
-    .adsbygoogle-placeholder.h-\[90px\] {
-        height: 70px !important;
-    }
     html[dir="rtl"] .tool-card {
         text-align: right !important;
     }
@@ -652,7 +644,7 @@ html[dir="rtl"] .social-list-link:hover {
 <a aria-label="AiLovePDF Home" class="flex items-center gap-2 cursor-pointer" href="/">
 <img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
 <i class="fa-solid fa-file-pdf text-red-500 text-4xl" style="display: none;"></i>
-<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-red-500">PDF</span></span>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
 </a>
 <!-- Desktop Menu -->
 <div class="hidden md:flex space-x-6 items-center">
@@ -681,19 +673,17 @@ html[dir="rtl"] .social-list-link:hover {
 </nav>
 <!-- Top AdSense Banner -->
 <div class="max-w-7xl mx-auto w-full px-4 mt-6">
-<div class="adsbygoogle-placeholder w-full h-[90px]">
-<span>Advertisement</span>
-</div>
+
 </div><main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/" id="page-root"><div class="text-center mb-12 pt-4 view-active" id="hero-section">
 <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 tracking-tight">
                     Free Online PDF Tools
                 </h1>
 <p class="brand-tagline text-xl md:text-2xl font-semibold text-teal-700 text-center max-w-2xl mx-auto mb-4">100% Free. Truly Private. Your files never leave your device.</p>
 <div class="flex flex-wrap items-center justify-center gap-2.5 my-6" data-brand-badges>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-shield-halved"></i>Files never uploaded</span>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-gift"></i>Free forever</span>
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[13px] font-semibold px-3.5 py-1.5"><i class="fa-solid fa-user-slash"></i>No sign-up</span>
-  <a href="/why-ailovepdf/" class="text-[13px] font-semibold text-teal-700 underline underline-offset-2">Why AiLovePDF is different →</a>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-shield-halved"></i>Files never uploaded</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-gift"></i>Free forever</span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 border border-teal-300 text-teal-800 text-sm font-extrabold px-4 py-2 shadow-sm"><i class="fa-solid fa-user-slash"></i>No sign-up</span>
+  <a href="/why-ailovepdf/" class="text-sm font-extrabold text-teal-700 underline underline-offset-2">Why AiLovePDF is different →</a>
 </div>
 <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-12">Merge, compress, split, rotate and convert PDF files in your browser. AiLovePDF is a simple client-side document toolkit with no account required for the listed tools.</p>
 <!-- Tools Grid -->
@@ -882,7 +872,7 @@ html[dir="rtl"] .social-list-link:hover {
             
             const statusEl = document.getElementById('tool-status');
             if (statusEl) statusEl.innerHTML = "";
-            const inputClass = "w-full border-2 border-slate-200 rounded-xl px-5 py-4 outline-none focus:border-teal-500 mb-4 bg-white shadow-sm text-lg font-medium text-slate-700";
+            const inputClass = "w-full border-[3px] border-dashed border-teal-400 rounded-3xl px-6 py-10 outline-none focus:border-teal-600 mb-4 bg-gradient-to-b from-teal-50 to-white shadow-md hover:shadow-lg hover:border-teal-500 transition cursor-pointer text-lg font-semibold text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-teal-600 file:px-5 file:py-2.5 file:text-white file:font-bold hover:file:bg-teal-700";
 
             if (toolType === 'merge') {
                 title.innerText = "Merge PDF Files"; desc.innerText = "Select multiple PDFs to combine them into one file.";

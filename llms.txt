@@ -1,10 +1,23 @@
 # AiLovePDF
 
-> Browser-based PDF tools for merging, compressing, splitting, rotating and converting PDF files.
+> 100% Free. Truly Private. Your files never leave your device.
+
+AiLovePDF (https://www.ailovepdf.site/) is a free online PDF toolkit with a zero-upload architecture: every tool runs entirely in the visitor's web browser using client-side JavaScript. PDF files are opened, processed and saved on the user's own device — they are never uploaded to, transmitted to, or stored on a server. There is no PDF-processing backend.
 
 Canonical website: https://www.ailovepdf.site/
+Brand page (what makes AiLovePDF different): https://www.ailovepdf.site/why-ailovepdf/
 
-## Core tools
+## Key facts
+
+- 100% free: every tool is free to use, with no premium tier required for the listed tools.
+- No sign-up: no account or registration is needed.
+- No uploads: files are processed locally in the browser and never leave the user's device.
+- No watermarks on output files.
+- Works on mobile and desktop in any modern browser (Chrome, Edge, Firefox, Safari).
+- Available in 6 languages: English, Spanish, French, German, Brazilian Portuguese and Arabic.
+- Publisher: AiLovePDF. Contact: https://www.ailovepdf.site/contact/
+
+## Core tools (English)
 
 - Merge PDF: https://www.ailovepdf.site/merge-pdf/
 - Compress PDF: https://www.ailovepdf.site/compress-pdf/
@@ -12,19 +25,12 @@ Canonical website: https://www.ailovepdf.site/
 - Rotate PDF: https://www.ailovepdf.site/rotate-pdf/
 - JPG to PDF: https://www.ailovepdf.site/jpg-to-pdf/
 - PDF to JPG: https://www.ailovepdf.site/pdf-to-jpg/
-- Delete PDF Pages: https://www.ailovepdf.site/delete-pdf-pages/
 - TXT to PDF: https://www.ailovepdf.site/txt-to-pdf/
+- Delete PDF Pages: https://www.ailovepdf.site/delete-pdf-pages/
 
-## Guides and information
+Every tool above is also available in Spanish, French, German, Brazilian Portuguese and Arabic under the language homepages below.
 
-- PDF Guide: https://www.ailovepdf.site/pdf-guide/
-- About: https://www.ailovepdf.site/about/
-- Privacy: https://www.ailovepdf.site/privacy/
-- Terms: https://www.ailovepdf.site/terms/
-- Cookies: https://www.ailovepdf.site/cookies/
-- Contact: https://www.ailovepdf.site/contact/
-
-## Supported languages
+## Language homepages
 
 - English: https://www.ailovepdf.site/
 - Spanish: https://www.ailovepdf.site/es/
@@ -33,9 +39,34 @@ Canonical website: https://www.ailovepdf.site/
 - Brazilian Portuguese: https://www.ailovepdf.site/pt-br/
 - Arabic: https://www.ailovepdf.site/ar/
 
-## Product positioning
+## Why AiLovePDF (brand pages, one per language)
 
-AiLovePDF provides browser-based PDF utilities. The listed PDF-processing tools are designed to process documents client-side in the browser rather than requiring a dedicated PDF-processing backend.
+- English: https://www.ailovepdf.site/why-ailovepdf/
+- Spanish: https://www.ailovepdf.site/es/por-que-ailovepdf/
+- French: https://www.ailovepdf.site/fr/pourquoi-ailovepdf/
+- German: https://www.ailovepdf.site/de/warum-ailovepdf/
+- Brazilian Portuguese: https://www.ailovepdf.site/pt-br/por-que-ailovepdf/
+- Arabic: https://www.ailovepdf.site/ar/limadha-ailovepdf/
+
+## Blog
+
+- Blog (English): https://www.ailovepdf.site/blog/
+
+The blog publishes practical PDF guides, step-by-step tutorials and privacy explainers in all 6 languages (English, Spanish, French, German, Brazilian Portuguese, Arabic), each under that language's /blog/ path.
+
+## Guides and information
+
+- PDF Guide: https://www.ailovepdf.site/pdf-guide/
+- How to Use: https://www.ailovepdf.site/how-to-use/
+- About: https://www.ailovepdf.site/about/
+- Privacy: https://www.ailovepdf.site/privacy/
+- Terms: https://www.ailovepdf.site/terms/
+- Cookies: https://www.ailovepdf.site/cookies/
+- Contact: https://www.ailovepdf.site/contact/
+
+## How it works
+
+AiLovePDF's tools load JavaScript libraries into the browser once; after that, all PDF operations (merging, compressing, splitting, rotating, converting) happen on the user's device with no server round-trip for the document itself. Because no file is transmitted, the tools are suitable for sensitive documents such as contracts, bank statements and ID copies, subject to the user's own device security.
 
 For current tool availability, supported file types, limits and privacy details, use the individual tool pages and the site's Privacy/Terms pages as the authoritative sources.
 
