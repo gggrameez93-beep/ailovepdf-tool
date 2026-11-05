@@ -27,6 +27,25 @@ Brand page (what makes AiLovePDF different): https://www.ailovepdf.site/why-ailo
 - PDF to JPG: https://www.ailovepdf.site/pdf-to-jpg/
 - TXT to PDF: https://www.ailovepdf.site/txt-to-pdf/
 - Delete PDF Pages: https://www.ailovepdf.site/delete-pdf-pages/
+- Crop PDF: https://www.ailovepdf.site/crop-pdf/
+- Fill PDF Form: https://www.ailovepdf.site/fill-pdf-form/
+- Sign PDF: https://www.ailovepdf.site/sign-pdf/
+- Compare PDF: https://www.ailovepdf.site/compare-pdf/
+- PDF to Markdown: https://www.ailovepdf.site/pdf-to-markdown/
+- HTML to PDF: https://www.ailovepdf.site/html-to-pdf/
+- OCR PDF: https://www.ailovepdf.site/ocr-pdf/
+- Protect PDF: https://www.ailovepdf.site/protect-pdf/
+- Unlock PDF: https://www.ailovepdf.site/unlock-pdf/
+- Redact PDF: https://www.ailovepdf.site/redact-pdf/
+- Repair PDF: https://www.ailovepdf.site/repair-pdf/
+- Excel to PDF: https://www.ailovepdf.site/excel-to-pdf/
+- PDF to Excel: https://www.ailovepdf.site/pdf-to-excel/
+- PNG to PDF: https://www.ailovepdf.site/png-to-pdf/
+- PDF to PNG: https://www.ailovepdf.site/pdf-to-png/
+- Extract PDF Pages: https://www.ailovepdf.site/extract-pdf-pages/
+- Organize PDF: https://www.ailovepdf.site/organize-pdf/
+- Add Page Numbers: https://www.ailovepdf.site/add-page-numbers/
+- Add Watermark: https://www.ailovepdf.site/add-watermark/
 
 Every tool above is also available in Spanish, French, German, Brazilian Portuguese and Arabic under the language homepages below.
 
