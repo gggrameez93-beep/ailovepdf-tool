@@ -2,10 +2,10 @@
 
 > 100% Free. Truly Private. Your files never leave your device.
 
-AiLovePDF (https://www.ailovepdf.site/) is a free online PDF toolkit with a zero-upload architecture: every tool runs entirely in the visitor's web browser using client-side JavaScript. PDF files are opened, processed and saved on the user's own device — they are never uploaded to, transmitted to, or stored on a server. There is no PDF-processing backend.
+[AiLovePDF](https://www.ailovepdf.site/) is a free online PDF toolkit with a zero-upload architecture: every tool runs entirely in the visitor's web browser using client-side JavaScript. PDF files are opened, processed and saved on the user's own device — they are never uploaded to, transmitted to, or stored on a server. There is no PDF-processing backend.
 
-Canonical website: https://www.ailovepdf.site/
-Brand page (what makes AiLovePDF different): https://www.ailovepdf.site/why-ailovepdf/
+Canonical website: [https://www.ailovepdf.site/](https://www.ailovepdf.site/)
+Brand page (what makes AiLovePDF different): [Why AiLovePDF](https://www.ailovepdf.site/why-ailovepdf/)
 
 ## Key facts
 
@@ -15,73 +15,73 @@ Brand page (what makes AiLovePDF different): https://www.ailovepdf.site/why-ailo
 - No watermarks on output files.
 - Works on mobile and desktop in any modern browser (Chrome, Edge, Firefox, Safari).
 - Available in 6 languages: English, Spanish, French, German, Brazilian Portuguese and Arabic.
-- Publisher: AiLovePDF. Contact: https://www.ailovepdf.site/contact/
+- Publisher: AiLovePDF. Contact: [Contact AiLovePDF](https://www.ailovepdf.site/contact/)
 
 ## Core tools (English)
 
-- Merge PDF: https://www.ailovepdf.site/merge-pdf/
-- Compress PDF: https://www.ailovepdf.site/compress-pdf/
-- Split PDF: https://www.ailovepdf.site/split-pdf/
-- Rotate PDF: https://www.ailovepdf.site/rotate-pdf/
-- JPG to PDF: https://www.ailovepdf.site/jpg-to-pdf/
-- PDF to JPG: https://www.ailovepdf.site/pdf-to-jpg/
-- TXT to PDF: https://www.ailovepdf.site/txt-to-pdf/
-- Delete PDF Pages: https://www.ailovepdf.site/delete-pdf-pages/
-- Crop PDF: https://www.ailovepdf.site/crop-pdf/
-- Fill PDF Form: https://www.ailovepdf.site/fill-pdf-form/
-- Sign PDF: https://www.ailovepdf.site/sign-pdf/
-- Compare PDF: https://www.ailovepdf.site/compare-pdf/
-- PDF to Markdown: https://www.ailovepdf.site/pdf-to-markdown/
-- HTML to PDF: https://www.ailovepdf.site/html-to-pdf/
-- OCR PDF: https://www.ailovepdf.site/ocr-pdf/
-- Protect PDF: https://www.ailovepdf.site/protect-pdf/
-- Unlock PDF: https://www.ailovepdf.site/unlock-pdf/
-- Redact PDF: https://www.ailovepdf.site/redact-pdf/
-- Repair PDF: https://www.ailovepdf.site/repair-pdf/
-- Excel to PDF: https://www.ailovepdf.site/excel-to-pdf/
-- PDF to Excel: https://www.ailovepdf.site/pdf-to-excel/
-- PNG to PDF: https://www.ailovepdf.site/png-to-pdf/
-- PDF to PNG: https://www.ailovepdf.site/pdf-to-png/
-- Extract PDF Pages: https://www.ailovepdf.site/extract-pdf-pages/
-- Organize PDF: https://www.ailovepdf.site/organize-pdf/
-- Add Page Numbers: https://www.ailovepdf.site/add-page-numbers/
-- Add Watermark: https://www.ailovepdf.site/add-watermark/
+- [Merge PDF](https://www.ailovepdf.site/merge-pdf/)
+- [Compress PDF](https://www.ailovepdf.site/compress-pdf/)
+- [Split PDF](https://www.ailovepdf.site/split-pdf/)
+- [Rotate PDF](https://www.ailovepdf.site/rotate-pdf/)
+- [JPG to PDF](https://www.ailovepdf.site/jpg-to-pdf/)
+- [PDF to JPG](https://www.ailovepdf.site/pdf-to-jpg/)
+- [TXT to PDF](https://www.ailovepdf.site/txt-to-pdf/)
+- [Delete PDF Pages](https://www.ailovepdf.site/delete-pdf-pages/)
+- [Crop PDF](https://www.ailovepdf.site/crop-pdf/)
+- [Fill PDF Form](https://www.ailovepdf.site/fill-pdf-form/)
+- [Sign PDF](https://www.ailovepdf.site/sign-pdf/)
+- [Compare PDF](https://www.ailovepdf.site/compare-pdf/)
+- [PDF to Markdown](https://www.ailovepdf.site/pdf-to-markdown/)
+- [HTML to PDF](https://www.ailovepdf.site/html-to-pdf/)
+- [OCR PDF](https://www.ailovepdf.site/ocr-pdf/)
+- [Protect PDF](https://www.ailovepdf.site/protect-pdf/)
+- [Unlock PDF](https://www.ailovepdf.site/unlock-pdf/)
+- [Redact PDF](https://www.ailovepdf.site/redact-pdf/)
+- [Repair PDF](https://www.ailovepdf.site/repair-pdf/)
+- [Excel to PDF](https://www.ailovepdf.site/excel-to-pdf/)
+- [PDF to Excel](https://www.ailovepdf.site/pdf-to-excel/)
+- [PNG to PDF](https://www.ailovepdf.site/png-to-pdf/)
+- [PDF to PNG](https://www.ailovepdf.site/pdf-to-png/)
+- [Extract PDF Pages](https://www.ailovepdf.site/extract-pdf-pages/)
+- [Organize PDF](https://www.ailovepdf.site/organize-pdf/)
+- [Add Page Numbers](https://www.ailovepdf.site/add-page-numbers/)
+- [Add Watermark](https://www.ailovepdf.site/add-watermark/)
 
 Every tool above is also available in Spanish, French, German, Brazilian Portuguese and Arabic under the language homepages below.
 
 ## Language homepages
 
-- English: https://www.ailovepdf.site/
-- Spanish: https://www.ailovepdf.site/es/
-- French: https://www.ailovepdf.site/fr/
-- German: https://www.ailovepdf.site/de/
-- Brazilian Portuguese: https://www.ailovepdf.site/pt-br/
-- Arabic: https://www.ailovepdf.site/ar/
+- [English](https://www.ailovepdf.site/)
+- [Spanish](https://www.ailovepdf.site/es/)
+- [French](https://www.ailovepdf.site/fr/)
+- [German](https://www.ailovepdf.site/de/)
+- [Brazilian Portuguese](https://www.ailovepdf.site/pt-br/)
+- [Arabic](https://www.ailovepdf.site/ar/)
 
 ## Why AiLovePDF (brand pages, one per language)
 
-- English: https://www.ailovepdf.site/why-ailovepdf/
-- Spanish: https://www.ailovepdf.site/es/por-que-ailovepdf/
-- French: https://www.ailovepdf.site/fr/pourquoi-ailovepdf/
-- German: https://www.ailovepdf.site/de/warum-ailovepdf/
-- Brazilian Portuguese: https://www.ailovepdf.site/pt-br/por-que-ailovepdf/
-- Arabic: https://www.ailovepdf.site/ar/limadha-ailovepdf/
+- [English](https://www.ailovepdf.site/why-ailovepdf/)
+- [Spanish](https://www.ailovepdf.site/es/por-que-ailovepdf/)
+- [French](https://www.ailovepdf.site/fr/pourquoi-ailovepdf/)
+- [German](https://www.ailovepdf.site/de/warum-ailovepdf/)
+- [Brazilian Portuguese](https://www.ailovepdf.site/pt-br/por-que-ailovepdf/)
+- [Arabic](https://www.ailovepdf.site/ar/limadha-ailovepdf/)
 
 ## Blog
 
-- Blog (English): https://www.ailovepdf.site/blog/
+- [Blog (English)](https://www.ailovepdf.site/blog/)
 
 The blog publishes practical PDF guides, step-by-step tutorials and privacy explainers in all 6 languages (English, Spanish, French, German, Brazilian Portuguese, Arabic), each under that language's /blog/ path.
 
 ## Guides and information
 
-- PDF Guide: https://www.ailovepdf.site/pdf-guide/
-- How to Use: https://www.ailovepdf.site/how-to-use/
-- About: https://www.ailovepdf.site/about/
-- Privacy: https://www.ailovepdf.site/privacy/
-- Terms: https://www.ailovepdf.site/terms/
-- Cookies: https://www.ailovepdf.site/cookies/
-- Contact: https://www.ailovepdf.site/contact/
+- [PDF Guide](https://www.ailovepdf.site/pdf-guide/)
+- [How to Use](https://www.ailovepdf.site/how-to-use/)
+- [About](https://www.ailovepdf.site/about/)
+- [Privacy](https://www.ailovepdf.site/privacy/)
+- [Terms](https://www.ailovepdf.site/terms/)
+- [Cookies](https://www.ailovepdf.site/cookies/)
+- [Contact](https://www.ailovepdf.site/contact/)
 
 ## How it works
 
@@ -91,5 +91,5 @@ For current tool availability, supported file types, limits and privacy details,
 
 ## Crawl
 
-- Robots: https://www.ailovepdf.site/robots.txt
-- Sitemap: https://www.ailovepdf.site/sitemap.xml
+- [Robots](https://www.ailovepdf.site/robots.txt)
+- [Sitemap](https://www.ailovepdf.site/sitemap.xml)
