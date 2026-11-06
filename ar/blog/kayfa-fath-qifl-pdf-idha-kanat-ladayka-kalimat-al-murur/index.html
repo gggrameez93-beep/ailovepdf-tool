@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/><link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="" href="https://unpkg.com" rel="preconnect"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>كيفية فتح قفل PDF إذا كانت لديك كلمة المرور (استخدام مشروع فقط)</title>
+<meta content="تعلّم كيفية فتح قفل PDF إذا كانت لديك كلمة المرور: أزل الحماية عن ملفاتك أنت لتسهيل العمل عليها. مجانًا، في متصفحك، وبدون رفع الملفات." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="AiLovePDF" name="author"/>
+<link href="https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/" rel="canonical"/>
+<link href="https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/" hreflang="ar" rel="alternate"/>
+<link href="https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="AiLovePDF" property="og:site_name"/>
+<meta content="كيفية فتح قفل PDF إذا كانت لديك كلمة المرور (استخدام مشروع فقط)" property="og:title"/>
+<meta content="تعلّم كيفية فتح قفل PDF إذا كانت لديك كلمة المرور: أزل الحماية عن ملفاتك أنت لتسهيل العمل عليها. مجانًا، في متصفحك، وبدون رفع الملفات." property="og:description"/>
+<meta content="https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/" property="og:url"/>
+<meta content="https://www.ailovepdf.site/assets/og/ailovepdf-pdf-tools.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="كيفية فتح قفل PDF إذا كانت لديك كلمة المرور (استخدام مشروع فقط)" name="twitter:title"/>
+<meta content="تعلّم كيفية فتح قفل PDF إذا كانت لديك كلمة المرور: أزل الحماية عن ملفاتك أنت لتسهيل العمل عليها. مجانًا، في متصفحك، وبدون رفع الملفات." name="twitter:description"/>
+<meta content="https://www.ailovepdf.site/assets/og/ailovepdf-pdf-tools.png" name="twitter:image"/>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+
+<link rel="stylesheet" href="/assets/tailwind.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></noscript>
+
+<style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .view-section { display: none; }
+        .view-active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-active { border-bottom: 3px solid #14b8a6; color: #0f172a; font-weight: 700; }
+        .tool-card { transition: all 0.3s ease; }
+        .tool-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .hidden-tool { display: none !important; }
+
+    </style>
+<style>
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.9rem;
+            background: #fff;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-arrow {
+            flex: 0 0 auto;
+            font-size: 1.15rem;
+            transition: transform .2s ease;
+        }
+        .faq-item[open] .faq-arrow { transform: rotate(180deg); }
+        .faq-item > p {
+            margin: 0;
+            padding: 0 1.15rem 1.1rem;
+            line-height: 1.65;
+        }
+        @media (max-width: 640px) {
+            .faq-item summary { padding: .9rem; font-size: .95rem; }
+            .faq-item > p { padding: 0 .9rem 1rem; font-size: .9rem; }
+        }
+    </style>
+<style>
+            html[dir="rtl"] body { direction: rtl; }
+            html[dir="rtl"] .text-left { text-align: right; }
+            html[dir="rtl"] .text-right { text-align: left; }
+            html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+            html[dir="rtl"] .faq-item summary { flex-direction: row-reverse; }
+            @media (max-width: 768px) {
+                html[dir="rtl"] .tool-card, html[dir="rtl"] #tool-workspace { text-align: center; }
+            }
+        </style>
+<style>
+    /* Tool page layout refinements */
+    #tool-workspace .tool-back-button { position: absolute; top: 1.5rem; left: 1.5rem; }
+    html[dir="rtl"] #tool-workspace .tool-back-button { left: auto; right: 1.5rem; }
+    html[dir="rtl"] #tool-workspace .text-left { text-align: right; }
+    @media (max-width: 640px) {
+        #tool-workspace .tool-back-button { top: 1.25rem; left: 1.25rem; }
+        html[dir="rtl"] #tool-workspace .tool-back-button { left: auto; right: 1.25rem; }
+    }
+</style>
+<style>
+/* Final production visual system */
+.final-content-card{background:#fff;border:1px solid #e2e8f0;border-radius:28px;max-width:1120px;margin:0 auto;padding:52px 64px;box-shadow:0 1px 2px rgba(15,23,42,.03);color:#334155}
+.final-content-card h1{font-size:clamp(2.25rem,4.5vw,4rem);line-height:1.12;font-weight:800;color:#0f172a;margin:0 0 26px;letter-spacing:-.02em}
+.final-content-card .guide-intro{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.9;text-align:center;margin:0 auto 38px;max-width:1050px;color:#334155}
+.final-content-card h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.25;font-weight:800;color:#0f172a;margin:48px 0 18px}
+.final-content-card p{font-size:1.08rem;line-height:1.85;margin:0 0 22px}
+.howto-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:26px 30px;margin:24px 0}
+.howto-step h2{margin:0 0 14px;font-size:1.55rem}
+.howto-step ol{margin:0;padding-left:1.5rem;line-height:1.8;font-size:1.05rem}
+.contact-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.contact-card .contact-copy h1{margin-bottom:20px}
+.contact-secure{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:8px;margin:24px 0}
+.contact-form-wrap h2{margin-top:0}
+.contact-form-wrap form{display:grid;gap:10px}
+.contact-form-wrap input,.contact-form-wrap textarea{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px;font:inherit;background:#fff}
+.contact-form-wrap button{border:0;border-radius:999px;padding:14px 24px;background:#0d9488;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+html[dir="rtl"] .final-content-card{text-align:right}
+html[dir="rtl"] .final-content-card h1,html[dir="rtl"] .final-content-card h2{text-align:right}
+html[dir="rtl"] .final-content-card .guide-intro{text-align:center}
+html[dir="rtl"] .howto-step ol{padding-left:0;padding-right:1.5rem}
+@media(max-width:768px){.final-content-card{padding:32px 22px;border-radius:22px}.contact-card{grid-template-columns:1fr;gap:28px}.final-content-card p{font-size:1rem;line-height:1.75}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "كيفية تصغير حجم ملف PDF إلى 200 كيلوبايت للتقديم على الوظائف", "description": "تعلّم كيفية فتح قفل PDF إذا كانت لديك كلمة المرور: أزل الحماية عن ملفاتك أنت لتسهيل العمل عليها. مجانًا، في متصفحك، وبدون رفع الملفات.", "image": "https://www.ailovepdf.site/assets/og/ailovepdf-pdf-tools.png", "datePublished": "2026-11-06", "dateModified": "2026-11-06", "author": {"@type": "Organization", "name": "AiLovePDF", "url": "https://www.ailovepdf.site/", "logo": "https://www.ailovepdf.site/logo.png"}, "publisher": {"@type": "Organization", "name": "AiLovePDF", "url": "https://www.ailovepdf.site/", "logo": "https://www.ailovepdf.site/logo.png"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/"}, "inLanguage": "ar"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://www.ailovepdf.site/ar/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.ailovepdf.site/ar/blog/"}, {"@type": "ListItem", "position": 3, "name": "كيفية تصغير حجم ملف PDF إلى 200 كيلوبايت للتقديم على الوظائف", "item": "https://www.ailovepdf.site/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "نسيت كلمة مرور ملفي. هل تستطيع الأداة مساعدتي؟", "acceptedAnswer": {"@type": "Answer", "text": "لا، وصدقًا: الأداة تفك القفل بكلمة المرور الصحيحة فقط، ولا تخمّن ولا تكسر ولا تسترد. إن كان الملف لك ونسيت كلمته، ابحث في مدير كلمات المرور أو سجلاتك أو عند من أرسله إليك؛ فإن لم توجد أي نسخة منها، فالمحتوى المشفّر غير قابل للوصول — وهو ثمن قاعدة «لا استرداد» التي تجعل التشفير جديرًا بالثقة أصلًا."}}, {"@type": "Question", "name": "هل يعدّ فكّ قفل ملف أرسله إليّ صاحبه مع كلمة المرور مشروعًا؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، هذا هو الاستخدام المقصود: صاحب الملف منحك كلمة المرور لتعمل على المستند، ففكّ قفل نسختك لإنجاز ذلك العمل مشروع. يبقى عليك احترام حدود التفويض: استخدم النسخة المفتوحة للغرض المتفق عليه واحفظها بأمان ولا توزعها أبعد من ذلك."}}, {"@type": "Question", "name": "هل تُرسل كلمة مروري إلى خادم للتحقق منها؟", "acceptedAnswer": {"@type": "Answer", "text": "لا. مع AiLovePDF تدخل كلمة المرور في متصفحك وتتم المعالجة كلها على جهازك: لا يُرفع الملف ولا كلمة المرور ولا تُحفظ في أي سجل. أي أداة تطلب إرسال كلمة مرور ملف حساس إلى خوادمها يجب أن تثير حذرك فورًا."}}, {"@type": "Question", "name": "هل يمكنني إعادة حماية الملف بعد العمل عليه؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، وهي الممارسة الصحيحة: اعمل على النسخة المفتوحة داخليًا، وحين يحين إرسال الناتج، احمِه بأداة الحماية بكلمة مرور — جديدة إن تغير المستلمون — وأرسل الملف في قناة وكلمة المرور في قناة أخرى."}}]}</script>
+<link href="/logo.png" rel="apple-touch-icon"/>
+<meta content="ar_AR" property="og:locale"/>
+<!-- AiLovePDF first-party analytics: enable Web Analytics in the Vercel dashboard. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer="" src="/_vercel/insights/script.js"></script>
+<script defer="" src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen pb-20">
+<nav class="bg-white shadow-sm sticky top-0 z-50 relative">
+<div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+<!-- Brand Logo -->
+<a aria-label="AiLovePDF الرئيسية" class="flex items-center gap-2 cursor-pointer" href="/ar/">
+<img alt="AiLovePDF" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="/logo.svg"/>
+<i class="fa-solid fa-file-pdf text-teal-600 text-4xl" style="display: none;"></i>
+<span class="text-2xl font-extrabold tracking-tight text-slate-800">AiLove<span class="text-teal-600">PDF</span></span>
+</a>
+<!-- Desktop Menu -->
+<div class="hidden md:flex space-x-6 items-center">
+<a class="nav-btn pb-1 text-base font-semibold transition-colors tab-active text-slate-900" href="/ar/">الأدوات</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/daleel-pdf/">دليل PDF</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/man-nahnu/">من نحن</a>
+<a class="nav-btn pb-1 text-base font-semibold transition-colors text-slate-600" href="/ar/ittisal/">اتصل بنا</a>
+<!-- External Blog Link -->
+<a class="text-slate-600 hover:text-teal-600 pb-1 text-base font-semibold transition-colors flex items-center gap-1" href="/ar/blog/">المدونة</a>
+<div class="lang-switcher-wrap"><select aria-label="Language" class="lang-select-pill" onchange="if(this.value){try{sessionStorage.setItem('ailovepdf_manual_lang',this.options[this.selectedIndex].dataset.lang||'en');}catch(e){}window.location.href=this.value;}"><option data-lang="en" value="/blog/">EN — English</option><option data-lang="es" value="/es/blog/">ES — Español</option><option data-lang="fr" value="/fr/blog/">FR — Français</option><option data-lang="de" value="/de/blog/">DE — Deutsch</option><option data-lang="pt-br" value="/pt-br/blog/">PT — Português</option><option data-lang="ar" selected="selected" value="/ar/blog/">AR — العربية</option></select></div></div>
+<!-- Mobile Menu Toggle Button (3 lines) -->
+<button class="md:hidden text-slate-700 text-2xl focus:outline-none" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden bg-white border-t border-slate-100 flex flex-col absolute w-full left-0 top-full shadow-lg z-40" id="mobile-menu">
+<a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-bold text-teal-600" href="/ar/">الأدوات</a>
+<a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a>
+<a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/daleel-pdf/">دليل PDF</a>
+<a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/man-nahnu/">من نحن</a>
+<a class="nav-btn-mob text-right px-6 py-4 border-b border-slate-50 font-semibold text-slate-600" href="/ar/ittisal/">اتصل بنا</a>
+<a class="text-right px-6 py-4 font-semibold text-slate-600 flex items-center gap-2" href="/ar/blog/">المدونة</a>
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-col gap-4" id="mobile-menu-extras"><div class="flex items-center justify-between gap-3"><span class="text-xs font-bold uppercase tracking-wider text-slate-400">Language</span><div class="lang-switcher-wrap"><select aria-label="Language" class="lang-select-pill" onchange="if(this.value){try{sessionStorage.setItem('ailovepdf_manual_lang',this.options[this.selectedIndex].dataset.lang||'en');}catch(e){}window.location.href=this.value;}"><option data-lang="en" value="/blog/">EN — English</option><option data-lang="es" value="/es/blog/">ES — Español</option><option data-lang="fr" value="/fr/blog/">FR — Français</option><option data-lang="de" value="/de/blog/">DE — Deutsch</option><option data-lang="pt-br" value="/pt-br/blog/">PT — Português</option><option data-lang="ar" selected="selected" value="/ar/blog/">AR — العربية</option></select></div></div><div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-200/70"><span class="text-xs font-bold text-slate-500">تابعنا</span><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div></div></div></div>
+</nav>
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 py-8" data-route="/ar/blog/kayfa-fath-qifl-pdf-idha-kanat-ladayka-kalimat-al-murur/" id="page-root"><nav aria-label="Breadcrumb" class="max-w-4xl mx-auto mb-6 text-sm text-slate-500"><a class="hover:text-teal-600" href="/ar/">الرئيسية</a> <span aria-hidden="true">/</span> <a class="hover:text-teal-600" href="/ar/blog/">Blog</a> <span aria-hidden="true">/</span> <span class="text-slate-700 font-semibold">دليل عملي</span></nav><article class="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200 max-w-4xl mx-auto text-slate-700">
+<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">كيفية فتح قفل PDF إذا كانت لديك كلمة المرور (استخدام مشروع فقط)</h1>
+<p class="text-base text-slate-500 mb-10">نُشر في <time datetime="2026-11-06">6 نوفمبر 2026</time> · بواسطة AiLovePDF</p>
+<p class="text-lg leading-relaxed mb-5">ثمة ملفات تحميها أنت بنفسك ثم تصبح الحماية عبئًا: كشف مشفّر تحتاج دمجه مع غيره كل شهر، أو مستند فريق تطلب كلمة مروره في كل فتح، أو ملف أرسلته محميًا وتريد أرشفة نسخة عمل مفتوحة منه. حين تملك كلمة المرور شرعيًا، إزالة القفل عن نسختك خطوة عمل طبيعية.</p>
+<p class="text-lg leading-relaxed mb-5">معرفة كيفية فتح قفل PDF إذا كانت لديك كلمة المرور تفعل بالضبط هذا ولا شيء غيره: تدخل كلمة المرور الصحيحة فتنتج الأداة نسخة غير مقفلة من ملفك. باستخدام أداة <a class="text-teal-600 font-semibold hover:underline" href="/ar/fath-pdf/">kayfa fath qifl pdf idha kanat ladayka kalimat al-murur</a> المجانية من AiLovePDF يحدث كل شيء داخل متصفحك — لا يُرفع مستندك ولا كلمة مروره إلى أي خادم.</p>
+<p class="text-lg leading-relaxed mb-5">دليل ذو صلة: <a class="text-teal-600 font-semibold hover:underline" href="/ar/blog/kayfa-tanqih-pdf-bil-tariqa-al-sahiha/">كيفية تنقيح PDF بالطريقة الصحيحة: إزالة البيانات فعلًا لا تغطيتها</a></p>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">الحدّ الصريح: كلمة مرورك أنت، أو لا شيء</h2>
+<p class="text-lg leading-relaxed mb-5">لنختصر أي التباس: هذه الأداة لا تكسر كلمات المرور ولا تخمّنها ولا تتجاوزها. إذا كنت لا تعرف كلمة مرور ملف ما، فلن تفتحه هذه الأداة — وهذا تصميم مقصود وأخلاقي وقانوني. ملف لا تملك كلمة مروره إما ليس لك، أو فقدتها، وفي الحالة الثانية طريقك هو مصدر الملف لا أدوات التجاوز.</p>
+<p class="text-lg leading-relaxed mb-5">الاستخدام المشروع واضح المعالم: ملفات شفّرتها أنت، أو أرسلها إليك صاحبها مع كلمة المرور لغرض العمل عليها، أو مستندات مؤسستك التي تديرها بصفتك. ما عدا ذلك فليس «فتح قفل» بل اقتحام، ولا تساعد هذه الأداة عليه ولا يجب أن تبحث عمّن يساعدك فيه.</p>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">متى تنفع النسخة غير المقفلة فعلًا</h2>
+<p class="text-lg leading-relaxed mb-5">أكثر الحالات عملية: الدمج والتقسيم وإعادة الترتيب. أدوات تحرير PDF لا تستطيع العمل على ملف مشفّر مباشرة، فتفكّ قفله أولًا بكلمة مروره، وتنجز عملك على النسخة المفتوحة، ثم — إن لزم — تعيد حماية الناتج النهائي بكلمة مرور جديدة قبل إرساله. هكذا تبقى الحركة الخارجية محمية والعمل الداخلي ميسّرًا.</p>
+<p class="text-lg leading-relaxed mb-5">وحالة ثانية: الأرشفة الطويلة. ملف ستحتاجه بعد سنوات قد يصبح عبئًا إذا ضاعت كلمة مروره بضياع الموظف أو السجل. تقييم المخاطر هنا لك: فإذا كان التهديد الأكبر هو فقدان الوصول لا التسرب، فأرشفة نسخة مفتوحة في خزنة آمنة تملكها قد يكون القرار الصحيح — مع بقاء أي نسخة متنقلة مشفّرة دائمًا.</p>
+<ul class="list-disc pl-6 space-y-2 mb-5 text-lg leading-relaxed"><li>ملف شفّرته أنت وتحتاج دمجه أو تقسيمه</li><li>مستند فريق يصلك محميًا للعمل عليه بموافقة صاحبه</li><li>نسخة أرشيف داخلية في خزنة آمنة تملكها</li><li>ملف محمي بكلمة مرور قديمة موثقة في سجلاتك</li><li>تجهيز مستند لإعادة حمايته بكلمة مرور جديدة</li></ul>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">لا تفكّ ما لا تحتاج فكّه</h2>
+<p class="text-lg leading-relaxed mb-5">فكّ القفل قرار له وجهان: النسخة الناتجة عادية تمامًا — تُقرأ وتُنسخ وتُرسل كأي ملف — فإذا تركتها في مجلد مشترك أو سطح مكتب عام فقد ألغيت الحماية فعليًا لا إجرائيًا. فكّ فقط ما ستعمل عليه الآن، واحفظ الناتج في المكان الآمن نفسه الذي تحفظ فيه الأصول، واحذفه حين تنتهي الحاجة.</p>
+<p class="text-lg leading-relaxed mb-5">وباستخدام <a class="text-teal-600 font-semibold hover:underline" href="/ar/fath-pdf/">kayfa fath qifl pdf idha kanat ladayka kalimat al-murur</a> على جهازك نفسه، حتى لحظة إدخال كلمة المرور لا تغادر متصفحك: لا تُرسل إلى خادم للتحقق ولا تُسجل في أي مكان. وهذه نقطة جوهرية في أي أداة تتعامل مع كلمات المرور — فالسجل الخفي لكلمات المرور أخطر من الملفات نفسها.</p>
+<p class="text-lg leading-relaxed mb-5">وللفرق، قاعدة مرافقة تستحق الكتابة في لوائحكم: من يحق له فكّ أقفال مستندات العمل، ولأي أغراض، وأين تُحفظ النواتج. فرد واحد يفكّ قفل ملف رواتب «للتسهيل» ويتركه في مجلد عام يحوّل إجراءً مشروعًا إلى حادثة تسرب — والقاعدة المكتوبة هي ما يمنع ذلك التسهيل العفوي من التكرار بصمت.</p>
+<p class="text-lg leading-relaxed mb-5">وللفرق التي يدور فيها فك الأقفال بين أيدٍ عدة، يستحق الأمر سجلًا من سطر واحد لكل عملية: اسم الملف، ومن فكّ قفله، والغرض، وأين حُفظ الناتج. ليس بيروقراطية بل ذاكرة مسؤولية: فإذا ظهرت يومًا نسخة غير محمية من مستند سري في مكان لا يجب، أجاب السجل في دقائق من أخرجها ولماذا، بدل تحقيقات تخمينية تظلم الجميع. وحين يعرف الفريق أن الفكّ يُسجَّل، يقتصر تلقائيًا على الحاجات الحقيقية، ويصبح «فكّها للتسهيل» قرارًا يُفكَّر فيه قبل اتخاذه.</p>
+<p class="text-lg leading-relaxed mb-5">وآخر نصيحة تخص الماضي لا المستقبل: كلمات المرور الموثقة على أوراق وقصاصات في الأدراج جزء من سطح الخطر عندك. اجمع ما تجده منها في مدير كلمات مرور واحد مشفر، ثم أتلف الورقيات. كثير من المؤسسات لا تخترقها التقنية بل قصاصة ملصقة على شاشة أو دفتر قديم في مكتب مفتوح. والملف الذي تفكّ قفله اليوم بكلمة من درجك يذكّرك بالدرس: أن أماكن حفظ المفاتيح القديمة يجب أن تموت، وأن الناتج غير المقفل نفسه يجب ألا ينضم إلى فئة الأشياء المتناثرة بلا حراسة.</p>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">فكّ القفل خطوة بخطوة</h2>
+<ol class="list-decimal pl-6 space-y-2 mb-5 text-lg leading-relaxed"><li>تأكد أن كلمة المرور لديك شرعيًا وأن الغرض مشروع.</li><li>افتح أداة [[TOOL]] من AiLovePDF في متصفحك.</li><li>اختر ملف PDF المقفل؛ تبقى المعالجة على جهازك.</li><li>أدخل كلمة المرور الصحيحة للملف.</li><li>نزّل النسخة غير المقفلة واحفظها في مكان آمن.</li><li>أنجز عملك، وأعد حماية الناتج إن كان سيسافر خارجًا.</li></ol>
+<h2 class="text-3xl font-bold text-slate-900 mt-12 mb-6">الأسئلة الشائعة</h2>
+<div class="space-y-3 max-w-4xl mx-auto"><details class="faq-item">
+<summary>نسيت كلمة مرور ملفي. هل تستطيع الأداة مساعدتي؟<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">لا، وصدقًا: الأداة تفك القفل بكلمة المرور الصحيحة فقط، ولا تخمّن ولا تكسر ولا تسترد. إن كان الملف لك ونسيت كلمته، ابحث في مدير كلمات المرور أو سجلاتك أو عند من أرسله إليك؛ فإن لم توجد أي نسخة منها، فالمحتوى المشفّر غير قابل للوصول — وهو ثمن قاعدة «لا استرداد» التي تجعل التشفير جديرًا بالثقة أصلًا.</p>
+</details><details class="faq-item">
+<summary>هل يعدّ فكّ قفل ملف أرسله إليّ صاحبه مع كلمة المرور مشروعًا؟<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">نعم، هذا هو الاستخدام المقصود: صاحب الملف منحك كلمة المرور لتعمل على المستند، ففكّ قفل نسختك لإنجاز ذلك العمل مشروع. يبقى عليك احترام حدود التفويض: استخدم النسخة المفتوحة للغرض المتفق عليه واحفظها بأمان ولا توزعها أبعد من ذلك.</p>
+</details><details class="faq-item">
+<summary>هل تُرسل كلمة مروري إلى خادم للتحقق منها؟<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">لا. مع AiLovePDF تدخل كلمة المرور في متصفحك وتتم المعالجة كلها على جهازك: لا يُرفع الملف ولا كلمة المرور ولا تُحفظ في أي سجل. أي أداة تطلب إرسال كلمة مرور ملف حساس إلى خوادمها يجب أن تثير حذرك فورًا.</p>
+</details><details class="faq-item">
+<summary>هل يمكنني إعادة حماية الملف بعد العمل عليه؟<span aria-hidden="true" class="faq-arrow">⌄</span></summary>
+<p class="text-slate-600">نعم، وهي الممارسة الصحيحة: اعمل على النسخة المفتوحة داخليًا، وحين يحين إرسال الناتج، احمِه بأداة الحماية بكلمة مرور — جديدة إن تغير المستلمون — وأرسل الملف في قناة وكلمة المرور في قناة أخرى.</p>
+</details></div>
+<div class="bg-teal-50 border border-teal-100 rounded-2xl p-8 text-center mt-12">
+<h2 class="text-2xl font-extrabold text-slate-900 mb-3">فكّ قفل ملفاتك أنت، بسهولة</h2>
+<p class="text-lg text-slate-600 leading-relaxed mb-6">إذا كانت لديك كلمة المرور، أنشئ نسخة عمل غير مقفلة في دقيقة. مجانًا، في متصفحك، وبدون إرسال ملفك أو كلمتك إلى أي مكان.</p>
+<a class="inline-block bg-teal-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-teal-700 transition-colors" href="/ar/fath-pdf/">جرّبه الآن — مجانًا</a>
+</div>
+<p class="mt-10 text-center"><a class="font-bold text-teal-600 hover:underline" href="/ar/blog/">العودة إلى مدونة AiLovePDF</a></p>
+</article></main>
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">التنقل</h4>
+<ul class="space-y-4 text-slate-600 text-sm">
+<li><a class="hover:text-teal-600 transition-colors" href="/ar/">الرئيسية</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/ar/man-nahnu/">من نحن</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/kayfiyat-istikhdam/">طريقة الاستخدام</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/ar/daleel-pdf/">دليل PDF</a></li>
+<li><a class="hover:text-teal-600 transition-colors" href="/ar/ittisal/">اتصل بنا</a></li>
+<li><a class="hover:text-teal-600 transition-colors font-bold text-teal-500" href="/ar/khosousiya/">سياسة الخصوصية</a></li>
+<li><a class="hover:text-teal-600 transition-colors inline-flex items-center gap-1" href="/ar/blog/">المدونة</a></li></ul>
+</div>
+<div>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">الأدوات</h4>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-teal-600 transition-colors" href="/ar/damj-pdf/">دمج PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/taqseem-pdf/">تقسيم PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/tadweer-pdf/">تدوير PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/daght-pdf/">ضغط PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/qass-pdf/">قص PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/mala-namadhij-pdf/">ملء نموذج PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/tawqee-pdf/">توقيع PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/muqaranat-pdf/">مقارنة PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/ocr-pdf/">OCR PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/himayat-pdf/">حماية PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/fath-pdf/">فتح قفل PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/tanqih-pdf/">تنقيح PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/islah-pdf/">إصلاح PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/istikhraj-safahat-pdf/">استخراج صفحات PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/tanzeem-pdf/">تنظيم PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/idafat-arqam-safahat/">إضافة أرقام الصفحات</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/idafat-alama-maiya/">إضافة علامة مائية</a></li></ul>
+</div>
+<div>
+<h4 class="font-extrabold text-slate-900 text-lg mb-6">تحويل وتعديل</h4>
+<ul class="space-y-4 text-slate-600 text-sm"><li><a class="hover:text-teal-600 transition-colors" href="/ar/hadhf-safahat-pdf/">حذف الصفحات</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/txt-ila-pdf/">TXT إلى PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/jpg-ila-pdf/">JPG إلى PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/pdf-ila-jpg/">PDF إلى JPG</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/pdf-ila-markdown/">PDF إلى Markdown</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/html-ila-pdf/">HTML إلى PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/excel-ila-pdf/">Excel إلى PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/pdf-ila-excel/">PDF إلى Excel</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/png-ila-pdf/">PNG إلى PDF</a></li><li><a class="hover:text-teal-600 transition-colors" href="/ar/pdf-ila-png/">PDF إلى PNG</a></li></ul>
+</div>
+<div><h4 class="font-extrabold text-slate-900 text-lg mb-6">تابعنا</h4><ul class="space-y-3 text-slate-600 text-sm"><li><a aria-label="AiLovePDF Facebook" class="social-list-link" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></span><span>Facebook</span></a></li><li><a aria-label="AiLovePDF X (Twitter)" class="social-list-link" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></span><span>X (Twitter)</span></a></li><li><a aria-label="AiLovePDF YouTube" class="social-list-link" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span><span>YouTube</span></a></li><li><a aria-label="AiLovePDF TikTok" class="social-list-link" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></span><span>TikTok</span></a></li><li><a aria-label="AiLovePDF Instagram" class="social-list-link" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></span><span>Instagram</span></a></li><li><a aria-label="AiLovePDF LinkedIn" class="social-list-link" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank"><span class="text-slate-500"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span><span>LinkedIn</span></a></li></ul></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
+<a class="hover:text-teal-600" href="/ar/man-nahnu/">من نحن</a>
+<a class="hover:text-teal-600" href="/ar/ittisal/">اتصل بنا</a>
+<a class="hover:text-teal-600" href="/ar/khosousiya/">سياسة الخصوصية</a>
+<a class="hover:text-teal-600" href="/ar/shoroot/">الشروط</a>
+<a class="hover:text-teal-600" href="/ar/ikhlaa-masouliya/">إخلاء المسؤولية</a>
+<a class="hover:text-teal-600" href="/ar/cookies/">سياسة ملفات تعريف الارتباط</a>
+</div>
+<div class="max-w-7xl mx-auto px-4 border-t border-slate-100 pt-8 flex flex-col gap-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><a class="font-bold text-slate-800 flex items-center gap-2 hover:text-teal-600 transition-colors" href="/ar/"><i class="fa-solid fa-file-pdf text-teal-600 text-xl"></i> <span>عائلة AiLovePDF</span></a><div class="social-links-grid"><a aria-label="AiLovePDF Facebook" class="social-icon-btn" data-social="facebook" href="https://web.facebook.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a><a aria-label="AiLovePDF X (Twitter)" class="social-icon-btn" data-social="x" href="https://x.com/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a aria-label="AiLovePDF YouTube" class="social-icon-btn" data-social="youtube" href="https://www.youtube.com/@Ailovepdfsite" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a><a aria-label="AiLovePDF TikTok" class="social-icon-btn" data-social="tiktok" href="https://www.tiktok.com/@ailovepdfsite" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" fill="currentColor" height="17" viewbox="0 0 24 24" width="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a><a aria-label="AiLovePDF Instagram" class="social-icon-btn" data-social="instagram" href="https://www.instagram.com/ailovepdfsite/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="AiLovePDF LinkedIn" class="social-icon-btn" data-social="linkedin" href="https://www.linkedin.com/company/ailovepdfsite" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div><div class="text-slate-500 text-sm font-medium">© 2026 AiLovePDF. جميع الحقوق محفوظة.</div></div><div class="flex justify-center md:justify-between items-center flex-wrap gap-4 pt-4 border-t border-slate-100/80"><div class="flex flex-wrap items-center gap-x-4 gap-y-2" id="footer-lang-links"><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="en" href="/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','en');}catch(e){}">English</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="es" href="/es/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','es');}catch(e){}">Español</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="fr" href="/fr/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','fr');}catch(e){}">Français</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="de" href="/de/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','de');}catch(e){}">Deutsch</a><a class="text-xs text-slate-500 hover:text-teal-600 transition-colors" data-lang-switch="pt-br" href="/pt-br/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','pt-br');}catch(e){}">Português (BR)</a><a class="text-xs text-teal-600 font-bold transition-colors" data-lang-switch="ar" href="/ar/" onclick="try{sessionStorage.setItem('ailovepdf_manual_lang','ar');}catch(e){}">العربية</a></div></div></div>
+</footer>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');if(!m)return;if(m.classList.contains('hidden')){m.classList.remove('hidden');}else{m.classList.add('hidden');}}
+</script>
+</body>
+</html>
